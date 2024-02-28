@@ -111,6 +111,10 @@ a{
         line-height: 18px;
     }
 
+    .mouse{
+        display: none;
+    }
+
 }
 
 .mouse{
