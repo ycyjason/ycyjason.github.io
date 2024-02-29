@@ -648,6 +648,18 @@ a{
     flex-direction: column;
     align-items: flex-start;
     gap:32px;
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+@media (prefers-reduced-motion) {
+    .project-section{
+        transition: none;
+    }
+}
+
+.show{
+    opacity: 1;
 }
 
 .project-section ul, ol, .project-brief ul, ol{
