@@ -798,7 +798,7 @@ a{
 }
 
 .content-subheading{
-    margin-top: 32px;
+    margin-top: 48px;
     margin-bottom: 12px;
     color: #7c7c7e;
 
@@ -858,6 +858,34 @@ a{
 
 .next-container a:hover p{
     color: #7c7c7e;
+}
+
+@media screen and (max-width: 1650px){
+    #experience-title{
+        font-size: 26px;
+        line-height: 28px;
+        padding: 2vh 2vh;
+    }
+
+    #awc-title{
+        font-size: 26px;
+        line-height: 28px;
+        padding: 2vh 2vh;
+    }
+}
+
+@media screen and (max-width: 1220px){
+    #experience-title{
+        font-size: 20px;
+        line-height: 24px;
+        padding: 1.5vh 1.8vh;
+    }
+
+    #awc-title{
+        font-size: 20px;
+        line-height: 24px;
+        padding: 1.5vh 1.8vh;
+    }
 }
 
 @media screen and (max-width: 800px){
