@@ -284,28 +284,28 @@ a{
     opacity: 1;
     visibility: visible;
     height:100%;
-    background-color: rgba(252, 196, 4,0.4);
+    background-color: rgba(204, 231, 250,0.7);
 }
 
 .nav-btn-home:hover:after{
     opacity: 1;
     visibility: visible;
     height:100%;
-    background-color: rgba(61, 224, 64,0.4);
+    background-color: rgba(80, 191, 126,0.3);
 }
 
 .nav-btn-about.active:after{
     opacity: 1;
     visibility: visible;
     height:100%;
-    background-color: rgba(252, 196, 4,0.4);
+    background-color: rgba(204, 231, 250,0.7);
 }
 
 .nav-btn-home.active:after{
     opacity: 1;
     visibility: visible;
     height:100%;
-    background-color: rgba(88, 212, 140, 0.3);
+    background-color: rgba(80, 191, 126,0.3);
 }
 
 @media screen and (max-width: 960px){
