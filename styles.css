@@ -680,7 +680,7 @@ a{
 }
 
 .content-title{
-    padding-bottom: 16px;
+    padding-bottom: 4vh;
 }
 
 .project-section{
@@ -689,7 +689,7 @@ a{
     display:flex;
     flex-direction: column;
     align-items: flex-start;
-    gap:32px;
+    gap:8vh;
     opacity: 0;
     transition: all 1s ease-in;
 }
@@ -928,6 +928,10 @@ a{
         height:240px;
     }
 
+    .about-main{
+        padding: 2vw 10vw;
+    }
+
     .about-section{
         text-align: center;
     }
@@ -950,6 +954,10 @@ a{
     .browse-nxt-section{
         margin-top: 10vh;
         margin-bottom:6vh;
+    }
+
+    .content-subheading{
+        margin-top: 48px;
     }
 }
 
