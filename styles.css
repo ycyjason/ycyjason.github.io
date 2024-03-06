@@ -616,6 +616,9 @@ a{
 
 .image-overlay h3{
     color: white;
+    font-family: "Geologica", sans-serif;
+    line-height: 2.4rem;
+    font-weight: 700;
     display: flex;
     position: relative;
     width: 100%;
