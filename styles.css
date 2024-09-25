@@ -566,7 +566,7 @@ a{
     font-size: 26px; 
     line-height: 28px; 
     color: #1c1c1e;
-    background: linear-gradient(90deg, rgb(54, 99, 67) 0%, rgb(58, 102, 64) 34%, rgb(69, 152, 80) 63%, rgb(54, 99, 67) 100%);
+    background: linear-gradient(90deg, rgb(31, 72, 38) 0%, rgb(47, 138, 84) 34%, rgb(63, 168, 106) 63%, rgb(31, 72, 48) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
