@@ -198,7 +198,11 @@
 .about_list ul li{
     display: flex;
     justify-content: space-between;
+    gap: var(--spacing-16);
     align-items: center;
+}
+.about_list ul li div{
+    width: 70%;
 }
 
 .about_title{
