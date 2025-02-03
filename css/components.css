@@ -233,8 +233,8 @@
   border-radius: 100%;
   background: linear-gradient(
     to right,
-    mediumpurple,
-    dodgerblue,
+    rgb(127, 77, 227),
+    rgb(13, 109, 244),
     blanchedalmond
   );
   background-size: 300% 300%; /* Important for smooth animation */
@@ -266,7 +266,7 @@
     transform: scaleX(0.6);
   }
   50% {
-    scale: 0.7 1.5;
+    scale: 1 1.5;
     background-position: 100% 50%;
     transform: scaleX(1);
   }
