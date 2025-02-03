@@ -67,11 +67,10 @@
 }
 
 .sm_links li a {
-  display: block;
   position: relative;
   padding: 20px 20px;
   align-items: center;
-  display: block;
+  display: flex;
   position: relative;
   top: 0;
   transition: top ease 0.5s;
