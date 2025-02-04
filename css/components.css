@@ -239,7 +239,7 @@
   );
   background-size: 300% 300%; /* Important for smooth animation */
   animation: glowing 15s ease-in-out infinite alternate;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 #ge_blur {
@@ -249,7 +249,7 @@
   width: 100%;
   position: fixed;
   z-index: 0;
-  backdrop-filter: blur(12vmax);
+  backdrop-filter: blur(8vmax);
 }
 
 .prototype{
