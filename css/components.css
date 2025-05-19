@@ -223,6 +223,13 @@
   font-weight: 900;
 }
 
+.quote_text{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--caption-colour);
+}
+
 #ge_back {
   height: 32vmax;
   aspect-ratio: 1;
