@@ -227,7 +227,7 @@
   font-size: 1.25rem;
   line-height: 1.75rem;
   padding-left: 1rem;
-  border-left: 2px solid var(--caption-colour);
+  border-left: 3px solid var(--caption-colour);
 }
 
 #ge_back {
