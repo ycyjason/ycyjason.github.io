@@ -226,6 +226,7 @@
 .quote_text{
   font-size: 1.25rem;
   color: var(--caption-colour);
+  font-style: italic;
   line-height: 1.75rem;
   padding-left: 1rem;
   border-left: 3px solid var(--caption-colour);
