@@ -1,0 +1,220 @@
+@import "../src/styles/global.css";
+
+.field-label {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+  color: var(--color-muted-foreground);
+}
+
+.editor-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-panel-pad);
+}
+
+.editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.editor-input,
+.editor-textarea {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: var(--text-body);
+}
+
+.editor-input:focus-visible,
+.editor-textarea:focus-visible {
+  outline: 2px solid var(--color-foreground);
+  outline-offset: 1px;
+}
+
+.editor-btn {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  background: var(--color-muted);
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease-out-quint), background 0.15s var(--ease-out-quint);
+}
+
+.editor-btn:hover {
+  border-color: var(--color-border-strong);
+}
+
+.editor-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.editor-btn.is-active {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-color: var(--color-primary);
+}
+
+.card-overlay-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 4px 10px;
+  background: var(--color-card);
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  cursor: pointer;
+}
+
+.card-overlay-btn-inline {
+  display: inline-block;
+  margin-top: 12px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 4px 10px;
+  background: var(--color-card);
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  cursor: pointer;
+}
+
+.add-affordance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-xl);
+  background: transparent;
+  color: var(--color-muted-foreground);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  cursor: pointer;
+}
+
+.add-affordance:hover {
+  border-color: var(--color-foreground);
+  color: var(--color-foreground);
+}
+
+/* For lists like Experience that have no card shell of their own — sized to
+   match a row of that list rather than the tall card-grid affordance above. */
+.add-affordance-compact {
+  align-self: start;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--color-muted-foreground);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  cursor: pointer;
+}
+
+.add-affordance-compact:hover {
+  border-color: var(--color-foreground);
+  color: var(--color-foreground);
+}
+
+.editor-body {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.editor-preview {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* a <label> wrapping a hidden file input, so it needs .editor-btn's box model
+   without being a <button> */
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* no danger token in the theme; full-contrast text is the emphasis available */
+.upload-error {
+  color: var(--color-foreground);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.builder-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.builder-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px;
+}
+
+.builder-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 10px;
+  border-left: 2px solid var(--color-border);
+}
+
+.builder-icon-btn {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  color: var(--color-muted-foreground);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  cursor: pointer;
+}
+
+.builder-icon-btn:hover:not(:disabled) {
+  color: var(--color-foreground);
+  border-color: var(--color-border-strong);
+}
+
+.builder-icon-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* No radius, no top border: sits flush against the preview pane to its
+   left, and scrolls independently of it. */
+.settings-drawer {
+  width: 320px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background-color: var(--color-card);
+  border-left: 1px solid var(--color-border);
+  padding: var(--spacing-panel-pad);
+}
+
+/* nested section/block editing needs more room than the card fields do */
+.settings-drawer.is-wide {
+  width: 420px;
+}

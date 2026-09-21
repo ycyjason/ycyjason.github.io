@@ -1,0 +1,764 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-mono);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  :target,
+  section[id] {
+    scroll-margin-top: var(--scroll-offset);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* the one small-uppercase-mono treatment shared by section labels, meta
+     cells, chips, buttons and figure captions */
+  .eyebrow {
+    font-size: var(--text-label);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label-wide);
+    color: var(--color-muted-foreground);
+    line-height: 1.4;
+  }
+
+  /* ---------- shell: rail left, content right ---------- */
+  .shell {
+    display: grid;
+    grid-template-columns: var(--spacing-rail) minmax(0, 1fr);
+    column-gap: var(--spacing-shell);
+    align-items: start;
+  }
+
+  /* ---------- rail ---------- */
+  .rail {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-rail-pad);
+  }
+
+  .ident {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 3px;
+    font-size: var(--text-ui);
+    letter-spacing: var(--tracking-label);
+    color: var(--color-foreground);
+    padding: 20px 10px 20px;
+  }
+
+  /* hover retypes the name itself; clip-path avoids any width/layout shift
+     (letter-spacing makes the text wider than 11ch, so animating width jumped) */
+  .ident .name {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .ident::after {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 1em;
+    background: var(--color-foreground);
+    opacity: 0;
+  }
+
+  .ident:hover .name,
+  .ident:focus-visible .name {
+    animation: type 0.45s steps(11, end);
+  }
+
+  .ident:hover::after,
+  .ident:focus-visible::after {
+    animation: blink 0.9s steps(1, end) 0.45s infinite;
+  }
+
+  @keyframes type {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .navs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-ui);
+    letter-spacing: var(--tracking-label);
+    color: var(--color-muted-foreground);
+    transition: color 0.15s var(--ease-out-quint), background 0.15s var(--ease-out-quint);
+  }
+
+  .nav a::before {
+    content: "\203A";
+    display: inline-block;
+    width: 8px;
+    flex: none;
+    color: var(--color-muted-foreground);
+    opacity: 0.55;
+  }
+
+  .nav a:hover {
+    color: var(--color-foreground);
+    background: var(--color-muted);
+  }
+
+  .nav a:hover::before {
+    opacity: 0.9;
+  }
+
+  /* external group: outbound arrow instead of the enter-section chevron */
+  .nav-ext {
+    margin-top: 24px;
+  }
+
+  .nav-ext a::before {
+    display: none;
+  }
+
+  .nav-ext a::after {
+    content: "\2197";
+    margin-left: auto;
+    flex: none;
+    color: var(--color-muted-foreground);
+    opacity: 0.4;
+    transition: opacity 0.15s var(--ease-out-quint);
+  }
+
+  .nav-ext a:hover::after {
+    opacity: 0.85;
+  }
+
+  .railfoot {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  /* ---------- content ---------- */
+  .inner {
+    width: 100%;
+    max-width: var(--container-measure);
+    padding: 0 var(--spacing-gutter);
+  }
+
+  main {
+    padding-bottom: 120px;
+  }
+
+  .section {
+    padding-bottom: 72px;
+  }
+
+  .section-label {
+    display: block;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* intro */
+  .intro {
+    padding-top: 40px;
+    padding-bottom: 72px;
+  }
+
+  .intro p {
+    max-width: 64ch;
+    color: var(--color-foreground);
+    font-size: var(--text-lead);
+    line-height: 1.8;
+  }
+
+  /* ---------- panels: works + tools share one shell ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-panel);
+  }
+
+  .panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: border-color 0.15s var(--ease-out-quint), background 0.15s var(--ease-out-quint);
+  }
+
+  .panel:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  a.panel:hover {
+    background: color-mix(in srgb, var(--color-card) 92%, var(--color-foreground));
+  }
+
+  .panel .body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    padding: var(--spacing-panel-pad);
+  }
+
+  .panel h2 {
+    font-size: var(--text-title);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .panel p {
+    color: var(--color-muted-foreground);
+    max-width: 54ch;
+  }
+
+  .panel .foot {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 20px;
+  }
+
+  /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
+  .chip {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 2px 6px;
+    background: var(--color-background);
+  }
+
+  .started {
+    margin-top: 4px;
+  }
+
+  /* ---------- experience: plain list, no card shell ---------- */
+  .exp {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px var(--spacing-panel);
+  }
+
+  .exp-item {
+    position: relative;
+  }
+
+  /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
+  .exp-item .cell {
+    display: block;
+  }
+
+  .exp-item h2 {
+    font-size: var(--text-title);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  /* preview placeholder */
+  .shot {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-muted);
+  }
+
+  .shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* empty state: no sample art supplied */
+  .shot.is-empty {
+    background: repeating-linear-gradient(45deg, transparent 0 7px, var(--color-border) 7px 8px);
+  }
+
+  /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
+  .shot.is-empty span {
+    background: var(--color-card);
+    border: 1px dashed var(--color-border-strong);
+    border-radius: var(--radius-md);
+    padding: 4px 8px;
+  }
+
+  /* ---------- theme toggle: icon only ---------- */
+  .tbtn {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-family: inherit;
+    color: var(--color-muted-foreground);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: 0.15s var(--ease-out-quint);
+  }
+
+  .tbtn:hover {
+    color: var(--color-foreground);
+    border-color: var(--color-border-strong);
+    background: var(--color-muted);
+  }
+
+  .tbtn:active {
+    transform: scale(0.97);
+  }
+
+  .tbtn svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* external-links button: mobile only, collapses the nav-ext group.
+     .tbtn.links-btn beats .tbtn so display can be toggled per breakpoint */
+  .tbtn.links-btn {
+    display: none;
+  }
+
+  /* ---------- scroll to top: square marker -> solid arrow button ---------- */
+  .totop {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    font-family: inherit;
+    font-size: var(--text-ui);
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: none;
+    transition: width 0.25s var(--ease-out-quint), height 0.25s var(--ease-out-quint),
+      border-radius 0.25s var(--ease-out-quint);
+  }
+
+  .totop span {
+    opacity: 0;
+    transition: opacity 0.15s var(--ease-out-quint);
+  }
+
+  .totop.on {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    pointer-events: auto;
+  }
+
+  .totop.on span {
+    opacity: 1;
+  }
+
+  .totop.on:hover {
+    opacity: 0.88;
+  }
+
+  .totop.on:active {
+    transform: scale(0.97);
+  }
+
+  /* ---------- entrance: one staggered sequence, intro only ---------- */
+  .reveal {
+    opacity: 0;
+    animation: rise 0.5s var(--ease-out-quint) 0.05s forwards;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 6px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  /* ---------- detail page ---------- */
+  .doc {
+    max-width: var(--container-measure-doc);
+  }
+
+  /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.15s var(--ease-out-quint);
+  }
+
+  .back::before {
+    content: "\2190";
+  }
+
+  .back:hover {
+    color: var(--color-foreground);
+  }
+
+  .doc-head {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .doc-head h1 {
+    font-size: var(--text-h1);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
+  .doc-head .cell {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .lead {
+    margin-top: 24px;
+    max-width: 80ch;
+    font-size: var(--text-lead);
+    line-height: 1.8;
+    color: var(--color-foreground);
+  }
+
+  /* cta: one quiet outbound link to the public repo */
+  .cta {
+    margin-top: 24px;
+  }
+
+  .cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 32px;
+    padding: 0 12px;
+    font-size: var(--text-ui);
+    letter-spacing: var(--tracking-label);
+    color: var(--color-muted-foreground);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: color 0.15s var(--ease-out-quint), border-color 0.15s var(--ease-out-quint),
+      background 0.15s var(--ease-out-quint);
+  }
+
+  .cta a::after {
+    content: "\2197";
+    font-size: var(--text-label);
+    opacity: 0.5;
+  }
+
+  .cta a:hover {
+    color: var(--color-foreground);
+    border-color: var(--color-border-strong);
+    background: var(--color-muted);
+  }
+
+  .cta a:active {
+    transform: scale(0.97);
+  }
+
+  .block {
+    padding-bottom: 64px;
+  }
+
+  /* A section's children are a flat, freely-ordered run of subheadings,
+     paragraphs and figures, so spacing is defined per adjacency rather than by
+     a wrapper around a fixed heading/body pair. */
+  .block h3 {
+    margin-top: 24px;
+    font-weight: 400; /* h3 is bold by default and .eyebrow doesn't reset it */
+  }
+
+  .block p {
+    margin-top: 6px;
+    color: var(--color-foreground);
+  }
+
+  /* consecutive paragraphs need more air than a subheading and its first line */
+  .block p + p {
+    margin-top: 16px;
+  }
+
+  .figure {
+    margin-top: 24px;
+  }
+
+  .figure img,
+  .figure video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  /* the section label, or the top of the section, already supplies the lead-in gap */
+  .block > :first-child,
+  .block > .section-label + * {
+    margin-top: 0;
+  }
+
+  .figure .shot {
+    width: 100%;
+    height: 460px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
+  .figure figcaption {
+    margin-top: 10px;
+  }
+
+  .doc-foot {
+    padding-top: 8px;
+    border-top: 1px solid var(--color-border);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out-quint);
+  }
+
+  .doc-foot.in {
+    opacity: 1;
+  }
+
+  .doc-foot .back {
+    margin-top: 20px;
+  }
+
+  /* ---------- responsive ---------- */
+  /* below the layout's natural width (rail + gap + measure) the content
+     column reaches the right edge, so reserve room for the fixed
+     scroll-top button */
+  @media (max-width: 1500px) {
+    .inner {
+      padding-right: calc(var(--spacing-gutter) + 48px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  /* rail collapses into a single sticky header row: name on the left,
+     contact menu + theme toggle on the right */
+  @media (max-width: 760px) {
+    .shell {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rail {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas: "ident actions";
+      gap: 12px;
+      padding: 14px var(--spacing-rail-pad);
+      background: color-mix(in srgb, var(--color-background) 62%, transparent);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      backdrop-filter: blur(16px) saturate(160%);
+      transition: transform 0.25s var(--ease-out-quint);
+    }
+
+    /* no backdrop-filter support: fall back to an opaque bar so text stays legible */
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .rail {
+        background: var(--color-background);
+      }
+    }
+
+    /* hidden while scrolling down, back on scroll up */
+    .rail.hide {
+      transform: translateY(-100%);
+    }
+
+    .ident {
+      grid-area: ident;
+      padding: 0;
+      align-self: center;
+    }
+
+    /* links button + theme toggle share the top-right cell */
+    .railfoot {
+      grid-area: actions;
+      justify-self: end;
+      margin-top: 0;
+      padding: 0;
+      gap: 6px;
+    }
+
+    .tbtn.links-btn {
+      display: grid;
+    }
+
+    /* wrapper stops being a box so the collapsed menu can anchor to the rail */
+    .navs {
+      display: contents;
+    }
+
+    /* section links hidden on mobile; sections are reachable by scrolling */
+    .nav:not(.nav-ext) {
+      display: none;
+    }
+
+    .nav a {
+      height: 32px;
+      white-space: nowrap;
+    }
+
+    .nav a::before {
+      display: none;
+    }
+
+    /* external links collapse into a menu under the links button */
+    .nav-ext {
+      position: absolute;
+      top: calc(100% - 6px);
+      right: var(--spacing-rail-pad);
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      margin: 0;
+      min-width: 150px;
+      /* opaque: a nested backdrop-filter inside .rail's backdrop root
+         samples nothing outside the rail's box, so blur here no-ops */
+      padding: 4px;
+      background: var(--color-card);
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgb(0 0 0 / 28%);
+    }
+
+    .rail.links-open .nav-ext {
+      display: flex;
+    }
+
+    .nav-ext a::after {
+      margin-left: auto;
+    }
+
+    /* desktop reserves right-edge room for the fixed button; not needed here */
+    .inner {
+      padding-right: var(--spacing-gutter);
+    }
+
+    .shot {
+      height: 170px;
+    }
+
+    .intro {
+      padding-top: 28px;
+    }
+
+    .totop {
+      right: 16px;
+      bottom: 16px;
+    }
+
+    .figure .shot {
+      height: 240px;
+    }
+
+    .doc-head {
+      padding-bottom: 40px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+    }
+  }
+}

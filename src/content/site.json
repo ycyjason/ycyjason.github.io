@@ -1,0 +1,21 @@
+{
+  "name": "jason yeung",
+  "intro": "Placeholder paragraph. tttesttt Placeholder paragraph. tttestttPlaceholder paragraph. tttestttPlaceholder paragraph. tttestttPlaceholder paragraph. tttestttPlaceholder paragraph. tttesttt",
+  "externalLinks": [
+    {
+      "id": "link-0-1789703985571",
+      "label": "linkedin",
+      "href": "https://www.linkedin.com/in/ycyjason/"
+    },
+    {
+      "id": "link-1-1789703985571",
+      "label": "github",
+      "href": "https://github.com/ycyjason"
+    },
+    {
+      "id": "link-2-1789703985571",
+      "label": "email",
+      "href": "mailto:jasonyeung216@gmail.com"
+    }
+  ]
+}
