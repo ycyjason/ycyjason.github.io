@@ -51,6 +51,14 @@ function Block({ block }) {
     )
   }
 
+  if (block.type === 'code') {
+    return (
+      <pre className="code-block">
+        <code>{block.text}</code>
+      </pre>
+    )
+  }
+
   return <p>{block.text}</p>
 }
 

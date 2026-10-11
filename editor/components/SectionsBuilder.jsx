@@ -11,11 +11,13 @@ const BLOCK_KINDS = [
   { type: 'paragraph', label: '+ paragraph' },
   { type: 'image', label: '+ image' },
   { type: 'video', label: '+ video' },
+  { type: 'code', label: '+ code' },
 ]
 
 const createBlock = (type) => {
   if (type === 'image') return { id: newId('blk'), type, src: '', caption: '' }
   if (type === 'video') return { id: newId('blk'), type, src: '', mode: 'click-to-play', caption: '' }
+  if (type === 'code') return { id: newId('blk'), type, text: '' }
   return { id: newId('blk'), type, text: '' }
 }
 
@@ -97,6 +99,19 @@ function BlockFields({ block, onChange, dir }) {
       <input
         className="editor-input"
         placeholder="subheading"
+        value={block.text ?? ''}
+        onChange={(e) => onChange({ text: e.target.value })}
+      />
+    )
+  }
+
+  if (block.type === 'code') {
+    return (
+      <textarea
+        className="editor-textarea editor-textarea-code"
+        rows={8}
+        placeholder="prompt or code snippet"
+        spellCheck={false}
         value={block.text ?? ''}
         onChange={(e) => onChange({ text: e.target.value })}
       />

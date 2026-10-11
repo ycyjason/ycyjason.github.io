@@ -598,6 +598,22 @@
     margin-top: 10px;
   }
 
+  .code-block {
+    margin-top: 24px;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-muted);
+    overflow-x: auto;
+  }
+
+  .code-block code {
+    font-family: var(--font-mono);
+    font-size: var(--text-body);
+    white-space: pre;
+    color: var(--color-foreground);
+  }
+
   .doc-foot {
     padding-top: 8px;
     border-top: 1px solid var(--color-border);
