@@ -13,15 +13,34 @@ const BLOCK_KINDS = [
   { type: 'video', label: '+ video' },
   { type: 'code', label: '+ code' },
   { type: 'metrics', label: '+ metrics' },
+  { type: 'table', label: '+ table' },
 ]
 
-const createMetric = () => ({ id: newId('met'), label: '', text: '' })
+// metrics and table share one shape: a list of label + text pairs
+const createPair = () => ({ id: newId('row'), label: '', text: '' })
+
+const PAIR_COPY = {
+  metrics: {
+    labelHint: 'metric, e.g. conversion rate',
+    textHint: 'result, e.g. increase by 12%',
+    textRows: 2,
+    addLabel: '+ metric',
+    removeLabel: 'remove metric',
+  },
+  table: {
+    labelHint: 'heading',
+    textHint: 'paragraph (start a line with - for a bullet)',
+    textRows: 3,
+    addLabel: '+ row',
+    removeLabel: 'remove row',
+  },
+}
 
 const createBlock = (type) => {
   if (type === 'image') return { id: newId('blk'), type, src: '', caption: '' }
   if (type === 'video') return { id: newId('blk'), type, src: '', mode: 'click-to-play', caption: '' }
   if (type === 'code') return { id: newId('blk'), type, text: '' }
-  if (type === 'metrics') return { id: newId('blk'), type, items: [createMetric()] }
+  if (type in PAIR_COPY) return { id: newId('blk'), type, items: [createPair()] }
   return { id: newId('blk'), type, text: '' }
 }
 
@@ -56,6 +75,51 @@ function RowActions({ index, length, onMove, onRemove, removeLabel }) {
         &times;
       </button>
     </div>
+  )
+}
+
+function PairFields({ items, onChange, copy }) {
+  const patchItem = (id, patch) =>
+    onChange(items.map((item) => (item.id === id ? { ...item, ...patch } : item)))
+
+  return (
+    <>
+      {items.map((item, index) => (
+        <div className="flex items-start gap-1" key={item.id}>
+          <div className="flex flex-col gap-1" style={{ flex: 1, minWidth: 0 }}>
+            <input
+              className="editor-input"
+              placeholder={copy.labelHint}
+              value={item.label ?? ''}
+              onChange={(e) => patchItem(item.id, { label: e.target.value })}
+            />
+            <textarea
+              className="editor-textarea"
+              rows={copy.textRows}
+              placeholder={copy.textHint}
+              value={item.text ?? ''}
+              onChange={(e) => patchItem(item.id, { text: e.target.value })}
+            />
+          </div>
+          <RowActions
+            index={index}
+            length={items.length}
+            removeLabel={copy.removeLabel}
+            onMove={(delta) => onChange(swap(items, index, delta))}
+            onRemove={() => onChange(items.filter((x) => x.id !== item.id))}
+          />
+        </div>
+      ))}
+      <div>
+        <button
+          type="button"
+          className="editor-btn"
+          onClick={() => onChange([...items, createPair()])}
+        >
+          {copy.addLabel}
+        </button>
+      </div>
+    </>
   )
 }
 
@@ -109,50 +173,13 @@ function BlockFields({ block, onChange, dir }) {
     )
   }
 
-  if (block.type === 'metrics') {
-    const items = block.items ?? []
-    const setItems = (next) => onChange({ items: next })
-    const patchItem = (id, patch) =>
-      setItems(items.map((m) => (m.id === id ? { ...m, ...patch } : m)))
-
+  if (block.type in PAIR_COPY) {
     return (
-      <>
-        {items.map((m, index) => (
-          <div className="flex items-start gap-1" key={m.id}>
-            <div className="flex flex-col gap-1" style={{ flex: 1, minWidth: 0 }}>
-              <input
-                className="editor-input"
-                placeholder="metric, e.g. conversion rate"
-                value={m.label ?? ''}
-                onChange={(e) => patchItem(m.id, { label: e.target.value })}
-              />
-              <textarea
-                className="editor-textarea"
-                rows={2}
-                placeholder="result, e.g. increase by 12%"
-                value={m.text ?? ''}
-                onChange={(e) => patchItem(m.id, { text: e.target.value })}
-              />
-            </div>
-            <RowActions
-              index={index}
-              length={items.length}
-              removeLabel="remove metric"
-              onMove={(delta) => setItems(swap(items, index, delta))}
-              onRemove={() => setItems(items.filter((x) => x.id !== m.id))}
-            />
-          </div>
-        ))}
-        <div>
-          <button
-            type="button"
-            className="editor-btn"
-            onClick={() => setItems([...items, createMetric()])}
-          >
-            + metric
-          </button>
-        </div>
-      </>
+      <PairFields
+        items={block.items ?? []}
+        onChange={(items) => onChange({ items })}
+        copy={PAIR_COPY[block.type]}
+      />
     )
   }
 
@@ -173,7 +200,7 @@ function BlockFields({ block, onChange, dir }) {
     <textarea
       className="editor-textarea"
       rows={4}
-      placeholder="paragraph"
+      placeholder="paragraph (start a line with - for a bullet)"
       value={block.text ?? ''}
       onChange={(e) => onChange({ text: e.target.value })}
     />

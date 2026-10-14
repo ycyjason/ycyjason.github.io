@@ -445,22 +445,6 @@
     transform: scale(0.97);
   }
 
-  /* ---------- entrance: one staggered sequence, intro only ---------- */
-  .reveal {
-    opacity: 0;
-    animation: rise 0.5s var(--ease-out-quint) 0.05s forwards;
-  }
-
-  @keyframes rise {
-    from {
-      opacity: 0;
-      translate: 0 6px;
-    }
-    to {
-      opacity: 1;
-      translate: 0 0;
-    }
-  }
 
   /* ---------- detail page ---------- */
   .doc {
@@ -560,6 +544,37 @@
   .block p {
     margin-top: 6px;
     color: var(--color-foreground);
+    white-space: pre-line; /* single newlines typed in the editor stay as line breaks */
+    overflow-wrap: anywhere; /* long unbroken strings wrap instead of overflowing */
+  }
+
+  /* preflight strips list styling, so bullets are restored explicitly */
+  .block ul {
+    margin-top: 8px;
+    padding-left: 18px;
+    list-style: none;
+    color: var(--color-foreground);
+  }
+
+  .block li {
+    position: relative;
+    overflow-wrap: anywhere;
+  }
+
+  /* same square as the meta-line separator; ::marker can't reliably restyle content across browsers */
+  .block li::before {
+    content: "\25AA";
+    position: absolute;
+    left: -18px;
+    color: var(--color-muted-foreground);
+  }
+
+  .block li + li {
+    margin-top: 4px;
+  }
+
+  .block ul + p {
+    margin-top: 16px;
   }
 
   /* consecutive paragraphs need more air than a subheading and its first line */
@@ -569,7 +584,7 @@
 
   /* 6px is only for subheading -> first line; after a block-level element the
      paragraph sits on the same 24px rhythm as the element itself */
-  .block :is(.figure, .code-block, .metrics) + p {
+  .block :is(.figure, .code-block, .metrics, .spec-table) + :is(p, ul) {
     margin-top: 24px;
   }
 
@@ -639,6 +654,55 @@
     margin-top: 6px;
     font-size: var(--text-title);
     color: var(--color-foreground);
+    overflow-wrap: anywhere;
+  }
+
+  /* A bordered, rounded table with a tinted heading column, so it reads as a
+     data table and not as another section heading + rule. Named spec-*, not
+     ".table"/".table-row": Tailwind ships utilities with those names
+     (display:table / table-row) that load after this layer and override it. */
+  .spec-table {
+    margin-top: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-card);
+    overflow: hidden;
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .spec-row + .spec-row {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .spec-row dt,
+  .spec-row dd {
+    padding: 14px 20px;
+  }
+
+  .spec-row dt {
+    background-color: var(--color-muted);
+    border-right: 1px solid var(--color-border);
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+  }
+
+  .spec-row dd > :first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: 600px) {
+    .spec-row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .spec-row dt {
+      border-right: 0;
+      border-bottom: 1px solid var(--color-border);
+    }
   }
 
   .doc-foot {
@@ -796,12 +860,6 @@
 
     .doc-head {
       padding-bottom: 40px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
-      opacity: 1;
     }
   }
 }

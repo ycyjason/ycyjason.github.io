@@ -3,6 +3,48 @@ import { Link } from 'react-router-dom'
 import { useSite } from '../../lib/ContentContext'
 import { assetUrl } from '../../lib/assetUrl'
 
+const BULLET = /^\s*[-*•]\s+(.*)$/
+
+// Plain text with two conventions: a blank line starts a new paragraph, and a
+// line beginning with "- ", "* " or a bullet char becomes a list item. Text
+// with neither renders as a single <p>, exactly as before.
+function RichText({ text }) {
+  const nodes = []
+  let paragraph = []
+  let list = []
+
+  const flush = () => {
+    if (paragraph.length) nodes.push(<p key={nodes.length}>{paragraph.join('\n')}</p>)
+    if (list.length) {
+      nodes.push(
+        <ul key={nodes.length}>
+          {list.map((entry, i) => (
+            <li key={i}>{entry}</li>
+          ))}
+        </ul>,
+      )
+    }
+    paragraph = []
+    list = []
+  }
+
+  for (const line of (text ?? '').split('\n')) {
+    const bullet = line.match(BULLET)
+    if (bullet) {
+      if (paragraph.length) flush()
+      list.push(bullet[1])
+    } else if (!line.trim()) {
+      flush()
+    } else {
+      if (list.length) flush()
+      paragraph.push(line)
+    }
+  }
+  flush()
+
+  return nodes
+}
+
 // Sections hold a flat, freely-ordered list of blocks, so a section can be any
 // mix of subheadings, paragraphs and images in any order.
 function Block({ block }) {
@@ -66,6 +108,23 @@ function Block({ block }) {
     )
   }
 
+  if (block.type === 'table') {
+    const items = (block.items ?? []).filter((r) => r.label || r.text)
+    if (!items.length) return null
+    return (
+      <dl className="spec-table">
+        {items.map((r) => (
+          <div className="spec-row" key={r.id}>
+            <dt>{r.label}</dt>
+            <dd>
+              <RichText text={r.text} />
+            </dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+
   if (block.type === 'code') {
     return (
       <pre className="code-block">
@@ -74,7 +133,7 @@ function Block({ block }) {
     )
   }
 
-  return <p>{block.text}</p>
+  return <RichText text={block.text} />
 }
 
 // company and date are their own fields (also shown on the card); meta is free-form extra

@@ -7,7 +7,7 @@ export default function Intro({ renderOverlay }) {
 
   return (
     <section className="intro inner" id="about">
-      <p className="reveal">{intro}</p>
+      <p>{intro}</p>
       {renderOverlay?.()}
     </section>
   )

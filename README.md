@@ -61,6 +61,7 @@ Block shape (inside `section.blocks[]`), discriminated by `type`, no schema enfo
 { id, type: 'paragraph', text }
 { id, type: 'code',      text }                              // plain monospace, no highlighting/language
 { id, type: 'metrics',   items: [{ id, label, text }] }       // grid of label + result cards, one block = one group
+{ id, type: 'table',     items: [{ id, label, text }] }       // heading left, paragraph right, hairline between rows
 { id, type: 'image',     src, caption }                       // src relative to public/
 { id, type: 'video',     src, caption, mode }                 // mode: click-to-play | autoplay-once | autoplay-loop
 ```
