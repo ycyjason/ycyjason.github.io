@@ -12,12 +12,16 @@ const BLOCK_KINDS = [
   { type: 'image', label: '+ image' },
   { type: 'video', label: '+ video' },
   { type: 'code', label: '+ code' },
+  { type: 'metrics', label: '+ metrics' },
 ]
+
+const createMetric = () => ({ id: newId('met'), label: '', text: '' })
 
 const createBlock = (type) => {
   if (type === 'image') return { id: newId('blk'), type, src: '', caption: '' }
   if (type === 'video') return { id: newId('blk'), type, src: '', mode: 'click-to-play', caption: '' }
   if (type === 'code') return { id: newId('blk'), type, text: '' }
+  if (type === 'metrics') return { id: newId('blk'), type, items: [createMetric()] }
   return { id: newId('blk'), type, text: '' }
 }
 
@@ -102,6 +106,53 @@ function BlockFields({ block, onChange, dir }) {
         value={block.text ?? ''}
         onChange={(e) => onChange({ text: e.target.value })}
       />
+    )
+  }
+
+  if (block.type === 'metrics') {
+    const items = block.items ?? []
+    const setItems = (next) => onChange({ items: next })
+    const patchItem = (id, patch) =>
+      setItems(items.map((m) => (m.id === id ? { ...m, ...patch } : m)))
+
+    return (
+      <>
+        {items.map((m, index) => (
+          <div className="flex items-start gap-1" key={m.id}>
+            <div className="flex flex-col gap-1" style={{ flex: 1, minWidth: 0 }}>
+              <input
+                className="editor-input"
+                placeholder="metric, e.g. conversion rate"
+                value={m.label ?? ''}
+                onChange={(e) => patchItem(m.id, { label: e.target.value })}
+              />
+              <textarea
+                className="editor-textarea"
+                rows={2}
+                placeholder="result, e.g. increase by 12%"
+                value={m.text ?? ''}
+                onChange={(e) => patchItem(m.id, { text: e.target.value })}
+              />
+            </div>
+            <RowActions
+              index={index}
+              length={items.length}
+              removeLabel="remove metric"
+              onMove={(delta) => setItems(swap(items, index, delta))}
+              onRemove={() => setItems(items.filter((x) => x.id !== m.id))}
+            />
+          </div>
+        ))}
+        <div>
+          <button
+            type="button"
+            className="editor-btn"
+            onClick={() => setItems([...items, createMetric()])}
+          >
+            + metric
+          </button>
+        </div>
+      </>
     )
   }
 

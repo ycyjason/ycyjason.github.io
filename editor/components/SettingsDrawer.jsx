@@ -80,6 +80,14 @@ export default function SettingsDrawer({ kind, item, onChange, onDelete, onClose
             />
           </label>
           <label className="editor-field">
+            <span className="field-label">Company (optional)</span>
+            <input
+              className="editor-input"
+              value={item.company ?? ''}
+              onChange={(e) => update('company', e.target.value)}
+            />
+          </label>
+          <label className="editor-field">
             <span className="field-label">Date (optional)</span>
             <input
               className="editor-input"

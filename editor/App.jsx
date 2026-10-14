@@ -22,6 +22,7 @@ function createItem(type) {
     id: slug,
     slug,
     title: `New ${noun}`,
+    company: '',
     date: '',
     summary: '',
     tags: [],

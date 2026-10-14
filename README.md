@@ -47,7 +47,7 @@ src/content/*.json  <--(GET/PUT via dev-server middleware)--  editor (read/write
 Item shape (works/tools):
 ```js
 {
-  id, slug, title, date, summary, tags: [],
+  id, slug, title, company, date, summary, tags: [],   // company, date: optional free text, shown as "company ▪ date"
   cover,        // works only
   meta: [],     // free-form extra line items on detail page
   lead, linkUrl, linkLabel,
@@ -60,6 +60,7 @@ Block shape (inside `section.blocks[]`), discriminated by `type`, no schema enfo
 { id, type: 'heading',   text }
 { id, type: 'paragraph', text }
 { id, type: 'code',      text }                              // plain monospace, no highlighting/language
+{ id, type: 'metrics',   items: [{ id, label, text }] }       // grid of label + result cards, one block = one group
 { id, type: 'image',     src, caption }                       // src relative to public/
 { id, type: 'video',     src, caption, mode }                 // mode: click-to-play | autoplay-once | autoplay-loop
 ```

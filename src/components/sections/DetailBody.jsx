@@ -51,6 +51,21 @@ function Block({ block }) {
     )
   }
 
+  if (block.type === 'metrics') {
+    const items = (block.items ?? []).filter((m) => m.label || m.text)
+    if (!items.length) return null
+    return (
+      <dl className="metrics">
+        {items.map((m) => (
+          <div className="metric" key={m.id}>
+            <dt className="eyebrow">{m.label}</dt>
+            <dd>{m.text}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+
   if (block.type === 'code') {
     return (
       <pre className="code-block">
@@ -62,13 +77,13 @@ function Block({ block }) {
   return <p>{block.text}</p>
 }
 
-// date is its own field (also shown on the card); meta is free-form extra
+// company and date are their own fields (also shown on the card); meta is free-form extra
 // info — duration, role, anything — author-ordered and detail-page-only.
 const SEPARATOR = ' ▪ '
 
 export default function DetailBody({ item }) {
   const { name } = useSite()
-  const metaLine = [item.date, ...(item.meta ?? [])].filter(Boolean).join(SEPARATOR)
+  const metaLine = [item.company, item.date, ...(item.meta ?? [])].filter(Boolean).join(SEPARATOR)
   const [footerVisible, setFooterVisible] = useState(false)
   const footRef = useRef(null)
 

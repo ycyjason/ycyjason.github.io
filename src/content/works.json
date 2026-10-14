@@ -1,17 +1,131 @@
 [
   {
     "id": "new-work-1789703679951",
-    "slug": "new-work-1789703679951",
-    "title": "New work",
-    "date": "",
+    "slug": "fillfull",
+    "title": "Fillfull: E-Commerce for Snacks",
+    "date": "2022",
     "summary": "",
     "tags": [],
-    "cover": "",
-    "meta": [],
-    "lead": "",
+    "cover": "media/works/fillfull/ff_hero_image-1791949256525.webp",
+    "meta": [
+      "Web dev",
+      "UX/UI Design"
+    ],
+    "lead": "Fill Full is an e-commerce platform specialising in snack retail, designed to cater to busy professionals, families, and health-conscious individuals in Hong Kong. The website aims to provide a convenient and enjoyable shopping experience by offering a wide selection of snacks, all while focusing on user-centric design.",
     "linkUrl": "",
     "linkLabel": "",
-    "sections": []
+    "sections": [
+      {
+        "id": "sec-31fd20b6",
+        "label": "Key Deliveries",
+        "blocks": [
+          {
+            "id": "blk-e4a64742",
+            "type": "paragraph",
+            "text": "My work encompassed everything from creating design guidelines to developing a responsive website and implementing user-centred optimisations. It went beyond UX/UI design, also incorporating data analysis and web development. The following content highlights the key features and milestones I delivered throughout the project."
+          },
+          {
+            "id": "blk-b6b2ae06",
+            "type": "image",
+            "src": "media/works/fillfull/ff_hero_image-1791949256525.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-9bf07cb0",
+            "type": "paragraph",
+            "text": "Keeping the design guidelines consistent across the graphic design team was my responsibility. I specified the image dimensions, brand style, and material sizes so every marketing asset looked on-brand and loaded quickly on the site."
+          },
+          {
+            "id": "blk-b44f1fdf",
+            "type": "paragraph",
+            "text": "Across desktop, tablet, and mobile, the website works as one seamless experience. I designed and built the responsive layout, then found and fixed the UI flaws and usability problems on each device."
+          },
+          {
+            "id": "blk-f5ab470c",
+            "type": "paragraph",
+            "text": "I also owned the product recommendation module, leading it from design through to development on Shopify. The module suggests products based on each user's browsing behaviour, guiding visitors toward the items they are most likely to be interested in and helping to drive conversions."
+          },
+          {
+            "id": "blk-7374681f",
+            "type": "paragraph",
+            "text": "Last but not least, analysing Hotjar data is a regular part of the work, and the findings are shared with the wider team. That analysis showed how visitors moved through the site, which led to a redesigned page layout that highlights new campaigns and prompts more engagement with the content."
+          },
+          {
+            "id": "blk-f4a3ec4b",
+            "type": "image",
+            "src": "media/works/fillfull/ff_designguide-1791949270504.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-2ff8ca31",
+            "type": "image",
+            "src": "media/works/fillfull/ff_responsive-1791949274919.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-401544b3",
+            "type": "image",
+            "src": "media/works/fillfull/ff_recommendation-1791949279815.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-81b0173a",
+            "type": "image",
+            "src": "media/works/fillfull/ff_heatmap-1791949282745.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-54a3b7d7",
+        "label": "Outcome",
+        "blocks": [
+          {
+            "id": "blk-e25bb9f6",
+            "type": "paragraph",
+            "text": "Over 8 months working on this website, I contributed to several impactful changes that positively influenced the project's success. These impacts are reflected in user survey feedback, as well as data from Google Analytics and Shopify."
+          },
+          {
+            "id": "blk-ec0acbc1",
+            "type": "metrics",
+            "items": [
+              {
+                "id": "met-42c2eecd",
+                "label": "Pages development",
+                "text": "Designed and developed 20+ campaign pages"
+              },
+              {
+                "id": "met-37b43220",
+                "label": "Product page views",
+                "text": "26% increase in product page views"
+              },
+              {
+                "id": "met-320ea581",
+                "label": "Conversion rates",
+                "text": "12% increase in conversion rates"
+              },
+              {
+                "id": "met-1d11cde2",
+                "label": "User feedback",
+                "text": "87% expressing satisfaction from survey"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-3b8acbe3",
+        "label": "Takeaway",
+        "blocks": [
+          {
+            "id": "blk-8f76bfef",
+            "type": "paragraph",
+            "text": "Throughout this project, collaboration played a key role in shaping the final outcome. I worked closely with the marketing team and graphic designers to ensure their expectations and requirements were fully understood and integrated into the design. Storytelling was an essential skill for presenting my ideas, making them more relatable and engaging for the team. Additionally, taking a data-driven approach was crucial in making the UX improvements measurable. By using data, I was able to validate my hypotheses and demonstrate the real impact of the changes, which made the process even more rewarding."
+          }
+        ]
+      }
+    ],
+    "company": "A.s. Watson (hk)"
   },
   {
     "id": "new-work-1789703681300",
