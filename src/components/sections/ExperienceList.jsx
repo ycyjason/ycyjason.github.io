@@ -1,4 +1,5 @@
 import { useExperience } from '../../lib/ContentContext'
+import RichText from '../ui/RichText'
 
 // renderOverlay/renderAddAffordance are optional editor-only hooks (undefined
 // on the public site, so nothing extra renders there).
@@ -13,6 +14,11 @@ export default function ExperienceList({ renderOverlay, renderAddAffordance }) {
           <div key={item.id} className="exp-item">
             {item.range && <span className="cell eyebrow">{item.range}</span>}
             <h3>{item.company}</h3>
+            {item.description && (
+              <div className="exp-desc">
+                <RichText text={item.description} />
+              </div>
+            )}
             {renderOverlay?.(item)}
           </div>
         ))}

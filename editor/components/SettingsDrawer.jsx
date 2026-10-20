@@ -60,6 +60,15 @@ export default function SettingsDrawer({ kind, item, onChange, onDelete, onClose
               onChange={(e) => update('company', e.target.value)}
             />
           </label>
+          <label className="editor-field">
+            <span className="field-label">Description (optional, start a line with - for a bullet)</span>
+            <textarea
+              className="editor-textarea"
+              rows={5}
+              value={item.description ?? ''}
+              onChange={(e) => update('description', e.target.value)}
+            />
+          </label>
         </>
       ) : (
         <>

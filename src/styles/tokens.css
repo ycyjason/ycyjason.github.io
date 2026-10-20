@@ -11,7 +11,7 @@
   --color-primary: #111111;
   --color-primary-foreground: #FFFFFF;
   --color-muted: #F0F0F0;
-  --color-muted-foreground: #2B2E33;
+  --color-muted-foreground: #52575E;
   --color-border: rgb(17 17 17 / 12%);
   --color-border-strong: rgb(17 17 17 / 24%);
 
@@ -28,9 +28,7 @@
   --text-ui: 0.875rem;
   --text-body: 1rem;
   --text-lead: 1.125rem;
-  --text-title: 1.25rem;
-  --text-intro: 1.5rem;
-  --text-h1: 2.25rem;
+  --text-title: 1.25rem;  --text-h1: 2.25rem;
 
   --tracking-label: 0.08em;
   --tracking-label-wide: 0.12em;

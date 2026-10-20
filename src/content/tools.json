@@ -6,13 +6,163 @@
     "date": "",
     "summary": "",
     "tags": [
-      "BLD.01"
+      "BLD.01",
+      "Claude Code",
+      "Figma",
+      "Vibe Coding"
     ],
     "meta": [],
-    "lead": "",
+    "lead": "Design System Studio, the first tool that I built, is a local web app that turns a few design decisions into a complete design system. You pick a primary colour, a type scale, and a density, then customise a library of 20+ components. One click exports a DESIGN.md, production CSS tokens, and a Figma import file. Your team gets a working foundation on day one, whether a person builds the rest in Figma or an AI agent does.",
     "linkUrl": "",
     "linkLabel": "",
-    "sections": []
+    "sections": [
+      {
+        "id": "sec-e242f71f",
+        "label": "The gap",
+        "blocks": [
+          {
+            "id": "blk-ae101c06",
+            "type": "paragraph",
+            "text": "Most design teams still build their design systems one atom at a time. Someone creates colour styles by hand, then type styles, then spacing, then buttons, inputs, and cards, each wired to the last. The work is slow, repetitive, and easy to get wrong."
+          },
+          {
+            "id": "blk-5b0bf536",
+            "type": "paragraph",
+            "text": "Teams with AI tools can instruct an agent to build the whole system in Figma. Many designers and small teams have no such access. They either grind through it manually or hand the work to an offshore agency. Outsourcing saves money on paper, but the brief gets lost in translation, the output drifts from the brand, and the internal team still spends weeks reviewing it."
+          }
+        ]
+      },
+      {
+        "id": "sec-e7eabccc",
+        "label": "Why it matters",
+        "blocks": [
+          {
+            "id": "blk-66de8f8e",
+            "type": "paragraph",
+            "text": "Product teams want their designers working on the product, not on scaffolding. A consistent system is the foundation for everything after it: landing pages, app screens, marketing assets, and the prompts that AI agents use to generate them. Without a clear, machine-readable spec, every new artefact starts from guesswork."
+          }
+        ]
+      },
+      {
+        "id": "sec-91af7fcd",
+        "label": "What Design System Studio does",
+        "blocks": [
+          {
+            "id": "blk-1a2c7b38",
+            "type": "paragraph",
+            "text": "You set the foundations once. The studio generates a full token set from four seeds: a primary colour, a base type size, a scale ratio, and a density. Colour ramps, type scales, spacing, radius, elevation, and layout all follow from those seeds. Change a seed later, and every scale updates."
+          },
+          {
+            "id": "blk-75d5197f",
+            "type": "paragraph",
+            "text": "You have the freedom to customise the 20+ components. Each property binds to a token, so the system stays consistent as you change it. Archive anything you don’t need, and it disappears from the output without losing your work."
+          },
+          {
+            "id": "blk-4c203108",
+            "type": "paragraph",
+            "text": "One export produces three things your team can use directly:"
+          },
+          {
+            "id": "blk-70a8f655",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-149db2cb",
+                "label": "DESIGN.md",
+                "text": "A readable spec that an AI agent can follow to keep every new artefact on brand."
+              },
+              {
+                "id": "row-499123c7",
+                "label": "CSS tokens and component styles",
+                "text": "Ready for any vibe coding project, any agents can follow."
+              },
+              {
+                "id": "row-cbfee205",
+                "label": "A Figma import file",
+                "text": "A free plugin reads the file to build the variables, text styles, and component sets in your Figma file. No AI or paid tool is needed at any step."
+              }
+            ]
+          },
+          {
+            "id": "blk-fc6404fd",
+            "type": "paragraph",
+            "text": "Your team gets the foundation in an afternoon. Designers extend it in Figma by hand, or agents extend it in Figma with the same spec."
+          }
+        ]
+      },
+      {
+        "id": "sec-11055f26",
+        "label": "How I built it: human in the loop",
+        "blocks": [
+          {
+            "id": "blk-fc789552",
+            "type": "paragraph",
+            "text": "I built the studio with an AI coding agent, and I stayed in control of every decision. The process worked in a loop."
+          },
+          {
+            "id": "blk-ec4eeba3",
+            "type": "heading",
+            "text": "Context first"
+          },
+          {
+            "id": "blk-2b3c00ce",
+            "type": "paragraph",
+            "text": "I start every feature by giving the agent context: what the feature must do, who uses it, what already exists, and what must not change. A vague request produces a vague plan, so I spend the time here."
+          },
+          {
+            "id": "blk-ee8da755",
+            "type": "heading",
+            "text": "Plan, review, approve"
+          },
+          {
+            "id": "blk-55074d37",
+            "type": "paragraph",
+            "text": "The agent proposes a plan before writing code. I read it, challenge the parts that look wrong, and ask for changes. The agent revises the plan. I approve only when the plan matches what I want. This step catches most problems before they become code."
+          },
+          {
+            "id": "blk-0334ac0e",
+            "type": "heading",
+            "text": "Iterate, then build"
+          },
+          {
+            "id": "blk-31b3f4a1",
+            "type": "paragraph",
+            "text": "Once I approve the plan, the agent builds. I review the result against the plan, not against my memory of the plan. If something drifts, I send it back with specific feedback. I do not accept output I cannot explain."
+          },
+          {
+            "id": "blk-6531ba3c",
+            "type": "heading",
+            "text": "One feature at a time"
+          },
+          {
+            "id": "blk-dc2327c6",
+            "type": "paragraph",
+            "text": "I build small first. The first version of the token engine handled one colour ramp. Only after it worked did I add the semantic layer, the component bindings, and the export. Each step had to pass review before the next one started. Small steps make bugs easy to find and easy to undo."
+          },
+          {
+            "id": "blk-920860d4",
+            "type": "heading",
+            "text": "Guardrails for the agent"
+          },
+          {
+            "id": "blk-22ad9e78",
+            "type": "paragraph",
+            "text": "The agent works inside rules I wrote and maintain. The rules cover the architecture, which folders hold which logic, how components and tokens relate, and what the export must never do. For example, the export never ships placeholder text, and it always lists every token value in full. The rules sit in the repository, so every session starts with them. They stop the agent from making the same mistake twice and keep the codebase consistent as it grows."
+          }
+        ]
+      },
+      {
+        "id": "sec-06f5079c",
+        "label": "What this means for your team",
+        "blocks": [
+          {
+            "id": "blk-85a69fdf",
+            "type": "paragraph",
+            "text": "A design system no longer needs to take weeks or go offshore. Your designers can start from a solid, tested foundation, customise it to your brand, and hand the same spec to an AI agent or to a person working in Figma. The output is consistent by design, so your team can spend its time on the product."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "new-tool-1789705324900",
@@ -21,12 +171,68 @@
     "date": "",
     "summary": "",
     "tags": [
-      "BLD.02"
+      "BLD.02",
+      "Claude Code",
+      "Vibe coding"
     ],
     "meta": [],
-    "lead": "",
+    "lead": "This is my second build. It started from a problem I kept seeing among designers. AI tools made prototyping faster and more dynamic, so many of us now build prototypes there instead of in Figma. Each prototype lives on one person’s machine, and the latest version gets lost across chat threads and downloads. This build is a self-hosted usability testing tool that gives designers one central place to store and host the prototype for each testing session.",
     "linkUrl": "",
     "linkLabel": "",
-    "sections": []
+    "sections": [
+      {
+        "id": "sec-0a122f4f",
+        "label": "The gap",
+        "blocks": [
+          {
+            "id": "blk-6a85f4ef",
+            "type": "paragraph",
+            "text": "Figma gave designers a place to build together. Everyone worked in the same file, the team could review and test a prototype from one central location, and you could share it with a client during a workshop and watch them click through it in real time."
+          },
+          {
+            "id": "blk-2f1c3227",
+            "type": "paragraph",
+            "text": "AI prototyping tools made each version a separate copy. Every prototype sits on one person’s machine, and nobody else can open it until that person sends it through a chat channel. If I change a screen, my teammates don’t get the change, so we can’t build the prototype together. Sharing gets worse from there. A client has to download a copy, and run it before they can click through anything. Each extra step adds friction for the participant."
+          }
+        ]
+      },
+      {
+        "id": "sec-dd84e1ac",
+        "label": "Why it matters",
+        "blocks": [
+          {
+            "id": "blk-0d821989",
+            "type": "paragraph",
+            "text": "Design teams build together, and the prototype is where that work comes together. When each person holds a different copy, feedback lands on the wrong version, and a teammate can’t see what changed or why. Collaboration stops at the moment the team most needs it, which is when they are deciding what to test."
+          },
+          {
+            "id": "blk-5c0d6b7a",
+            "type": "paragraph",
+            "text": "Testing is where a design proves itself. The moments that matter most are the hesitations, the wrong clicks, and the changes of direction. When the prototype is passed around as a download, the team tests whichever copy someone sent last, and the setup work pushes participants away before the test begins. A live link that opens in a browser removes that friction and lets the team watch the moments a screen recording sent later never shows."
+          }
+        ]
+      },
+      {
+        "id": "sec-2a03142d",
+        "label": "The solution",
+        "blocks": [
+          {
+            "id": "blk-6b2f9691",
+            "type": "paragraph",
+            "text": "This tool gives a study one central home that the whole team shares. A designer creates a study with tasks and uploads the prototype, and the tool stores it in one place for everyone. Teammates pin comments to a live prototype, reply in threads, and resolve them. Each upload creates a new version, and every comment stays attached to the version it was left on, so the team always discusses the same build."
+          },
+          {
+            "id": "blk-182133c3",
+            "type": "paragraph",
+            "text": "For testing, the designer shares a session link. Participants open it in a browser, with nothing to download or install, pick a task, and work through it. Every click, scroll, and input is recorded. The team can watch a session live as it happens, or replay any recorded attempt later. The same link works in a workshop, so a client can click through the prototype while the team watches."
+          },
+          {
+            "id": "blk-32f41d72",
+            "type": "paragraph",
+            "text": "The app runs on the designer’s own Supabase project, so prototypes and recordings (data) stay in their infrastructure. It uses Vite, React 19, Tailwind v4, and shadcn/ui."
+          }
+        ]
+      }
+    ]
   }
 ]

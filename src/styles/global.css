@@ -267,11 +267,10 @@
   }
 
   .intro p {
-    max-width: 48ch;
     white-space: pre-line; /* line breaks typed in the editor are kept */
-    color: var(--color-foreground);
-    font-size: var(--text-intro);
-    line-height: 1.6;
+    color: var(--color-muted-foreground);
+    font-size: var(--text-body);
+    line-height: 1.8;
   }
 
   /* ---------- panels: works + tools share one shell ---------- */
@@ -324,12 +323,21 @@
     max-width: 54ch;
   }
 
-  .panel .foot {
+  /* tag row, shared by cards and the detail header */
+  .foot {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
+  }
+
+  .panel .foot {
     margin-top: auto;
     padding-top: 20px;
+  }
+
+  .doc-head .foot {
+    margin-top: 12px;
   }
 
   /* text treatment comes from the shared .eyebrow class applied alongside this in JSX */
@@ -368,9 +376,24 @@
     margin-top: 2px;
   }
 
+  .exp-desc {
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: var(--text-ui);
+  }
+
+  .exp-desc > :first-child {
+    margin-top: 0;
+  }
+
+  /* secondary text, like a card summary */
+  .exp-item .exp-desc :is(p, ul) {
+    color: var(--color-muted-foreground);
+  }
+
   /* preview placeholder */
   .shot {
-    height: 220px;
+    aspect-ratio: 3 / 2; /* matches the cover images, so cards show the whole image at any width */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -532,10 +555,9 @@
 
   .lead {
     margin-top: 24px;
-    max-width: 64ch;
     font-size: var(--text-lead);
     line-height: 1.8;
-    color: var(--color-foreground);
+    color: var(--color-muted-foreground);
   }
 
   /* cta: one quiet outbound link to the public repo */
@@ -582,11 +604,14 @@
      paragraphs and figures, so spacing is defined per adjacency rather than by
      a wrapper around a fixed heading/body pair. */
   .block h3 {
+    font-family: var(--font-sans); /* same face as .section-label */
     margin-top: 24px;
     font-weight: 400; /* h3 is bold by default and .eyebrow doesn't reset it */
   }
 
-  .block p {
+  /* RichText output (paragraphs + square-bullet lists) is shared by detail
+     sections and experience descriptions */
+  :is(.block, .exp-desc) p {
     margin-top: 6px;
     color: var(--color-foreground);
     white-space: pre-line; /* single newlines typed in the editor stay as line breaks */
@@ -594,36 +619,36 @@
   }
 
   /* preflight strips list styling, so bullets are restored explicitly */
-  .block ul {
+  :is(.block, .exp-desc) ul {
     margin-top: 8px;
     padding-left: 18px;
     list-style: none;
     color: var(--color-foreground);
   }
 
-  .block li {
+  :is(.block, .exp-desc) li {
     position: relative;
     overflow-wrap: anywhere;
   }
 
   /* same square as the meta-line separator; ::marker can't reliably restyle content across browsers */
-  .block li::before {
+  :is(.block, .exp-desc) li::before {
     content: "\25AA";
     position: absolute;
     left: -18px;
     color: var(--color-muted-foreground);
   }
 
-  .block li + li {
+  :is(.block, .exp-desc) li + li {
     margin-top: 4px;
   }
 
-  .block ul + p {
+  :is(.block, .exp-desc) ul + p {
     margin-top: 16px;
   }
 
   /* consecutive paragraphs need more air than a subheading and its first line */
-  .block p + p {
+  :is(.block, .exp-desc) p + p {
     margin-top: 16px;
   }
 
@@ -638,12 +663,17 @@
   }
 
   .figure img,
-  .figure video {
+  .figure video,
+  .figure iframe {
     display: block;
     width: 100%;
     height: auto;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
+  }
+
+  .figure iframe {
+    aspect-ratio: 16 / 9;
   }
 
   /* the section label, or the top of the section, already supplies the lead-in gap */
@@ -676,7 +706,8 @@
   .code-block code {
     font-family: var(--font-mono);
     font-size: var(--text-body);
-    white-space: pre;
+    white-space: pre-wrap; /* keep indentation and newlines, but wrap long lines */
+    overflow-wrap: anywhere; /* break unbroken strings (URLs, minified code) */
     color: var(--color-foreground);
   }
 
@@ -884,10 +915,6 @@
     /* desktop reserves right-edge room for the fixed button; not needed here */
     .inner {
       padding-right: var(--spacing-gutter);
-    }
-
-    .shot {
-      height: 170px;
     }
 
     .intro {

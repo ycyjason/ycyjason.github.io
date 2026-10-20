@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { uploadFile } from '../lib/api'
+import { youtubeId } from '../../src/lib/youtube'
 
 const MODES = [
   { value: 'click-to-play', label: 'click to play' },
@@ -32,7 +33,7 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
       <input
         className="editor-input"
         aria-label="video path"
-        placeholder="media/works/clip.mp4"
+        placeholder="media/works/clip.mp4 or a YouTube link"
         value={value ?? ''}
         onChange={(e) => onChangeSrc(e.target.value)}
       />
@@ -56,18 +57,21 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
           </button>
         )}
       </div>
-      <select
-        className="editor-input"
-        aria-label="playback mode"
-        value={mode ?? 'click-to-play'}
-        onChange={(e) => onChangeMode(e.target.value)}
-      >
-        {MODES.map((m) => (
-          <option key={m.value} value={m.value}>
-            {m.label}
-          </option>
-        ))}
-      </select>
+      {/* play mode only applies to uploaded files; YouTube embeds carry their own player */}
+      {!youtubeId(value) && (
+        <select
+          className="editor-input"
+          aria-label="playback mode"
+          value={mode ?? 'click-to-play'}
+          onChange={(e) => onChangeMode(e.target.value)}
+        >
+          {MODES.map((m) => (
+            <option key={m.value} value={m.value}>
+              {m.label}
+            </option>
+          ))}
+        </select>
+      )}
       {error && <span className="field-label upload-error">{error}</span>}
     </div>
   )

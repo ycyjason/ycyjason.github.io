@@ -2,48 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSite } from '../../lib/ContentContext'
 import { assetUrl } from '../../lib/assetUrl'
-
-const BULLET = /^\s*[-*•]\s+(.*)$/
-
-// Plain text with two conventions: a blank line starts a new paragraph, and a
-// line beginning with "- ", "* " or a bullet char becomes a list item. Text
-// with neither renders as a single <p>, exactly as before.
-function RichText({ text }) {
-  const nodes = []
-  let paragraph = []
-  let list = []
-
-  const flush = () => {
-    if (paragraph.length) nodes.push(<p key={nodes.length}>{paragraph.join('\n')}</p>)
-    if (list.length) {
-      nodes.push(
-        <ul key={nodes.length}>
-          {list.map((entry, i) => (
-            <li key={i}>{entry}</li>
-          ))}
-        </ul>,
-      )
-    }
-    paragraph = []
-    list = []
-  }
-
-  for (const line of (text ?? '').split('\n')) {
-    const bullet = line.match(BULLET)
-    if (bullet) {
-      if (paragraph.length) flush()
-      list.push(bullet[1])
-    } else if (!line.trim()) {
-      flush()
-    } else {
-      if (list.length) flush()
-      paragraph.push(line)
-    }
-  }
-  flush()
-
-  return nodes
-}
+import { youtubeId } from '../../lib/youtube'
+import RichText from '../ui/RichText'
 
 // Sections hold a flat, freely-ordered list of blocks, so a section can be any
 // mix of subheadings, paragraphs and images in any order.
@@ -71,10 +31,20 @@ function Block({ block }) {
     // viewer gets controls to pause, seek, or rewatch.
     const isLoop = block.mode === 'autoplay-loop'
     const isAutoplay = isLoop || block.mode === 'autoplay-once'
+    const ytId = youtubeId(block.src)
 
     return (
       <figure className="figure">
-        {block.src ? (
+        {ytId ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${ytId}`}
+            title={block.caption || 'YouTube video'}
+            allow="accelerometer; encrypted-media; picture-in-picture; fullscreen"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        ) : block.src ? (
           <video
             src={assetUrl(block.src)}
             autoPlay={isAutoplay}

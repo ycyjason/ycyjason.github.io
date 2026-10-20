@@ -16,7 +16,7 @@ import SettingsDrawer from './components/SettingsDrawer'
 import DetailDrawer from './components/DetailDrawer'
 
 function createItem(type) {
-  if (type === 'experience') return { id: `exp-${Date.now()}`, range: '', company: '' }
+  if (type === 'experience') return { id: `exp-${Date.now()}`, range: '', company: '', description: '' }
   const noun = type === 'works' ? 'work' : 'tool'
   const slug = `${slugify(`new ${noun}`)}-${Date.now()}`
   return {
