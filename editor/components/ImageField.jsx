@@ -25,6 +25,7 @@ export default function ImageField({ label, value, onChange, dir }) {
       {label && <span className="field-label">{label}</span>}
       <input
         className="editor-input"
+        aria-label={label || 'image path'}
         placeholder="media/works/shot.webp"
         value={value ?? ''}
         onChange={(e) => onChange(e.target.value)}

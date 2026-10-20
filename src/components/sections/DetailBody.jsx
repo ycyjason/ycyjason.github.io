@@ -189,7 +189,7 @@ export default function DetailBody({ item }) {
 
       {(item.sections ?? []).map((section) => (
         <section className="block" key={section.id}>
-          {section.label && <span className="section-label eyebrow">{section.label}</span>}
+          {section.label && <h2 className="section-label eyebrow">{section.label}</h2>}
           {(section.blocks ?? []).map((block) => (
             <Block key={block.id} block={block} />
           ))}

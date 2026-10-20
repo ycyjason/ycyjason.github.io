@@ -9,6 +9,7 @@ import ExperienceList from '../src/components/sections/ExperienceList'
 import DetailBody from '../src/components/sections/DetailBody'
 import { fetchContent, saveContent } from './lib/api'
 import { slugify } from './lib/slugify'
+import { swap } from './lib/swap'
 import CardOverlay from './components/CardOverlay'
 import AddAffordance from './components/AddAffordance'
 import SettingsDrawer from './components/SettingsDrawer'
@@ -108,6 +109,30 @@ export default function App() {
     persist(nextDraft)
   }
 
+  // Reordering saves immediately, like delete: the overlay arrows can be used
+  // with no drawer open, and the drawers hold the only save button.
+  const moveItem = (type, id, delta) => {
+    const index = draft[type].findIndex((item) => item.id === id)
+    const target = index + delta
+    if (index < 0 || target < 0 || target >= draft[type].length) return
+    const nextDraft = { ...draft, [type]: swap(draft[type], index, delta) }
+    setDraft(nextDraft)
+    persist(nextDraft)
+  }
+
+  const renderOverlay = (type) => (item) => {
+    const list = draft[type]
+    const index = list.findIndex((x) => x.id === item.id)
+    return (
+      <CardOverlay
+        onEdit={() => setEditing({ type, id: item.id })}
+        onMove={(delta) => moveItem(type, item.id, delta)}
+        isFirst={index === 0}
+        isLast={index === list.length - 1}
+      />
+    )
+  }
+
   const activeItem = editing
     ? editing.type === 'site'
       ? draft.site
@@ -134,27 +159,21 @@ export default function App() {
                   )}
                 />
                 <WorksGrid
-                  renderOverlay={(item) => (
-                    <CardOverlay onEdit={() => setEditing({ type: 'works', id: item.id })} />
-                  )}
+                  renderOverlay={renderOverlay('works')}
                   renderAddAffordance={() => (
                     <AddAffordance label="+ add work" onClick={() => addItem('works')} />
                   )}
                   onItemClick={(item) => setView({ mode: 'detail', type: 'works', slug: item.slug })}
                 />
                 <ToolsGrid
-                  renderOverlay={(item) => (
-                    <CardOverlay onEdit={() => setEditing({ type: 'tools', id: item.id })} />
-                  )}
+                  renderOverlay={renderOverlay('tools')}
                   renderAddAffordance={() => (
                     <AddAffordance label="+ add tool" onClick={() => addItem('tools')} />
                   )}
                   onItemClick={(item) => setView({ mode: 'detail', type: 'tools', slug: item.slug })}
                 />
                 <ExperienceList
-                  renderOverlay={(item) => (
-                    <CardOverlay onEdit={() => setEditing({ type: 'experience', id: item.id })} />
-                  )}
+                  renderOverlay={renderOverlay('experience')}
                   renderAddAffordance={() => (
                     <AddAffordance
                       label="+ add experience"

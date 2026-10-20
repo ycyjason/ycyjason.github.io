@@ -7,12 +7,12 @@ export default function ExperienceList({ renderOverlay, renderAddAffordance }) {
 
   return (
     <section className="section inner" id="experience">
-      <span className="section-label eyebrow">experience</span>
+      <h2 className="section-label eyebrow">experience</h2>
       <div className="exp">
         {experience.map((item) => (
           <div key={item.id} className="exp-item">
             {item.range && <span className="cell eyebrow">{item.range}</span>}
-            <h2>{item.company}</h2>
+            <h3>{item.company}</h3>
             {renderOverlay?.(item)}
           </div>
         ))}

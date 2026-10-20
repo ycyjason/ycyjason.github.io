@@ -11,7 +11,7 @@ export default function WorksGrid({ renderOverlay, renderAddAffordance, onItemCl
 
   return (
     <section className="section inner" id="work">
-      <span className="section-label eyebrow">works</span>
+      <h2 className="section-label eyebrow">works</h2>
       <div className="grid">
         {works.map((item) => (
           <Link
@@ -28,7 +28,7 @@ export default function WorksGrid({ renderOverlay, renderAddAffordance, onItemCl
           >
             <Cover src={item.cover} />
             <div className="body">
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <p>{item.summary}</p>
               {(item.company || item.date) && (
                 <span className="cell started eyebrow">

@@ -8,7 +8,7 @@ export default function ToolsGrid({ renderOverlay, renderAddAffordance, onItemCl
 
   return (
     <section className="section inner" id="tools">
-      <span className="section-label eyebrow">tools</span>
+      <h2 className="section-label eyebrow">tools</h2>
       <div className="grid">
         {tools.map((item) => (
           <Link
@@ -24,7 +24,7 @@ export default function ToolsGrid({ renderOverlay, renderAddAffordance, onItemCl
             }
           >
             <div className="body">
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <p>{item.summary}</p>
               {item.tags?.length > 0 && (
                 <div className="foot">

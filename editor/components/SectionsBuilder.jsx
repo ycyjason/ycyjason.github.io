@@ -1,5 +1,6 @@
 import ImageField from './ImageField'
 import VideoField from './VideoField'
+import { swap } from '../lib/swap'
 
 const newId = (prefix) => `${prefix}-${crypto.randomUUID().slice(0, 8)}`
 
@@ -44,13 +45,7 @@ const createBlock = (type) => {
   return { id: newId('blk'), type, text: '' }
 }
 
-const swap = (list, index, delta) => {
-  const next = [...list]
-  ;[next[index], next[index + delta]] = [next[index + delta], next[index]]
-  return next
-}
-
-function RowActions({ index, length, onMove, onRemove, removeLabel }) {
+export function RowActions({ index, length, onMove, onRemove, removeLabel }) {
   return (
     <div className="flex items-center gap-1">
       <button

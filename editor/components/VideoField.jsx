@@ -31,6 +31,7 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
     <div className="editor-field">
       <input
         className="editor-input"
+        aria-label="video path"
         placeholder="media/works/clip.mp4"
         value={value ?? ''}
         onChange={(e) => onChangeSrc(e.target.value)}
@@ -57,6 +58,7 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
       </div>
       <select
         className="editor-input"
+        aria-label="playback mode"
         value={mode ?? 'click-to-play'}
         onChange={(e) => onChangeMode(e.target.value)}
       >

@@ -4,7 +4,7 @@ export default function ThemeToggle() {
   const [theme, toggle] = useTheme()
 
   return (
-    <button className="tbtn" onClick={toggle} aria-label="Toggle theme" title="Toggle theme">
+    <button className="tbtn" onClick={toggle} aria-label="Dark mode" aria-pressed={theme === 'dark'} title="Toggle theme">
       {theme === 'dark' ? (
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4" />

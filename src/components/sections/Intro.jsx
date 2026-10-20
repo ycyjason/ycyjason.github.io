@@ -3,10 +3,11 @@ import { useSite } from '../../lib/ContentContext'
 // renderOverlay is an optional editor-only hook (undefined on the public
 // site, so nothing extra renders there).
 export default function Intro({ renderOverlay }) {
-  const { intro } = useSite()
+  const { name, intro } = useSite()
 
   return (
     <section className="intro inner" id="about">
+      <h1 className="sr-only">{name}</h1>
       <p>{intro}</p>
       {renderOverlay?.()}
     </section>
