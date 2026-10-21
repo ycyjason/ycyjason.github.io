@@ -9,7 +9,7 @@ export default defineConfig({
   root: 'editor',
   base: '/edit/',
   // serve the project's public/ (not editor/public), so an image uploaded to
-  // public/images previews in the editor the moment it lands on disk
+  // public/media previews in the editor the moment it lands on disk
   publicDir: '../public',
   plugins: [react(), tailwindcss(), contentApi()],
 })

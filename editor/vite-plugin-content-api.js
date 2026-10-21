@@ -9,8 +9,8 @@ const ALLOWED_TYPES = new Set(['works', 'tools', 'experience', 'site'])
 // experience and site have no such fields, so they're skipped entirely.
 const MEDIA_TYPES = new Set(['works', 'tools'])
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif', '.svg'])
-// mp4/webm only: broad browser <video> support without a transcoding step.
-const VIDEO_EXTENSIONS = new Set(['.mp4','.mov' ,'.webm'])
+// Formats a browser <video> plays natively, so no transcoding step is needed.
+const VIDEO_EXTENSIONS = new Set(['.mp4', '.mov', '.webm'])
 const MAX_IMAGE_BYTES = 12 * 1024 * 1024
 const MAX_VIDEO_BYTES = 100 * 1024 * 1024
 
@@ -24,12 +24,6 @@ const safeSegment = (value) =>
     .replace(/[^a-z0-9._-]+/g, '-')
     .replace(/^[-.]+|[-.]+$/g, '')
 
-// Rejects without destroying the socket: req and res share one connection,
-// so destroying req on an over-limit upload resets the connection before the
-// error response can be sent — the client sees a bare network failure
-// instead of "file is larger than 12MB". Once over the limit this stops
-// buffering (bounded memory) but keeps draining the incoming bytes so the
-// socket stays healthy enough to deliver the response.
 // Vite's dev server keeps an in-memory set of known publicDir files, and only
 // refreshes it from its own file watcher's 'add' event — a file written
 // straight to disk here isn't recognized as servable until that event fires,
@@ -154,6 +148,12 @@ function cleanupOrphanedMedia(oldItems, newItems) {
   }
 }
 
+// Rejects without destroying the socket: req and res share one connection,
+// so destroying req on an over-limit upload resets the connection before the
+// error response can be sent — the client sees a bare network failure
+// instead of "file is larger than 12MB". Once over the limit this stops
+// buffering (bounded memory) but keeps draining the incoming bytes so the
+// socket stays healthy enough to deliver the response.
 const readBody = (req, limit) =>
   new Promise((resolve, reject) => {
     const chunks = []
