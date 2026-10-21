@@ -76,7 +76,8 @@
   cursor: not-allowed;
 }
 
-.card-overlay-btn {
+.card-overlay-btn,
+.card-overlay-btn-inline {
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   padding: 4px 10px;
@@ -90,14 +91,22 @@
 .card-overlay-btn-inline {
   display: inline-block;
   margin-top: 12px;
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-md);
-  padding: 4px 10px;
-  background: var(--color-card);
-  color: var(--color-foreground);
+}
+
+.add-affordance,
+.add-affordance-compact {
+  border: 1px dashed var(--color-border-strong);
+  background: transparent;
+  color: var(--color-muted-foreground);
   font-family: var(--font-mono);
   font-size: var(--text-ui);
   cursor: pointer;
+}
+
+.add-affordance:hover,
+.add-affordance-compact:hover {
+  border-color: var(--color-foreground);
+  color: var(--color-foreground);
 }
 
 .add-affordance {
@@ -105,37 +114,15 @@
   align-items: center;
   justify-content: center;
   min-height: 220px;
-  border: 1px dashed var(--color-border-strong);
   border-radius: var(--radius-xl);
-  background: transparent;
-  color: var(--color-muted-foreground);
-  font-family: var(--font-mono);
-  font-size: var(--text-ui);
-  cursor: pointer;
-}
-
-.add-affordance:hover {
-  border-color: var(--color-foreground);
-  color: var(--color-foreground);
 }
 
 /* For lists like Experience that have no card shell of their own — sized to
    match a row of that list rather than the tall card-grid affordance above. */
 .add-affordance-compact {
   align-self: start;
-  border: 1px dashed var(--color-border-strong);
   border-radius: var(--radius-md);
   padding: 8px 14px;
-  background: transparent;
-  color: var(--color-muted-foreground);
-  font-family: var(--font-mono);
-  font-size: var(--text-ui);
-  cursor: pointer;
-}
-
-.add-affordance-compact:hover {
-  border-color: var(--color-foreground);
-  color: var(--color-foreground);
 }
 
 .editor-body {
