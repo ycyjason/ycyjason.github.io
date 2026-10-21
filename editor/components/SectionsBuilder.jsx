@@ -1,5 +1,6 @@
 import ImageField from './ImageField'
 import VideoField from './VideoField'
+import RowActions from './RowActions'
 import { swap } from '../lib/swap'
 
 const newId = (prefix) => `${prefix}-${crypto.randomUUID().slice(0, 8)}`
@@ -43,34 +44,6 @@ const createBlock = (type) => {
   if (type === 'code') return { id: newId('blk'), type, text: '' }
   if (type in PAIR_COPY) return { id: newId('blk'), type, items: [createPair()] }
   return { id: newId('blk'), type, text: '' }
-}
-
-export function RowActions({ index, length, onMove, onRemove, removeLabel }) {
-  return (
-    <div className="flex items-center gap-1">
-      <button
-        type="button"
-        className="builder-icon-btn"
-        aria-label="move up"
-        disabled={index === 0}
-        onClick={() => onMove(-1)}
-      >
-        &uarr;
-      </button>
-      <button
-        type="button"
-        className="builder-icon-btn"
-        aria-label="move down"
-        disabled={index === length - 1}
-        onClick={() => onMove(1)}
-      >
-        &darr;
-      </button>
-      <button type="button" className="builder-icon-btn" aria-label={removeLabel} onClick={onRemove}>
-        &times;
-      </button>
-    </div>
-  )
 }
 
 function PairFields({ items, onChange, copy }) {

@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { uploadFile } from '../lib/api'
+import { UploadControls, useUpload } from './UploadControls'
 import { youtubeId } from '../../src/lib/youtube'
 
 const MODES = [
@@ -8,25 +7,11 @@ const MODES = [
   { value: 'autoplay-once', label: 'autoplay once (muted)' },
 ]
 
-// Mirrors ImageField's shape (path input + upload button + clear), plus a
+// Mirrors ImageField's shape (path input + upload controls), plus a
 // play-mode select, since that's a per-video authoring choice rather than
 // something the viewer controls.
 export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir }) {
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState('')
-
-  const upload = async (file) => {
-    if (!file) return
-    setBusy(true)
-    setError('')
-    try {
-      onChangeSrc(await uploadFile(file, dir))
-    } catch (err) {
-      setError(String(err.message ?? err))
-    } finally {
-      setBusy(false)
-    }
-  }
+  const { busy, error, upload } = useUpload(dir, onChangeSrc)
 
   return (
     <div className="editor-field">
@@ -37,26 +22,7 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
         value={value ?? ''}
         onChange={(e) => onChangeSrc(e.target.value)}
       />
-      <div className="flex items-center gap-2">
-        <label className="editor-btn file-btn">
-          {busy ? 'uploading…' : 'upload video'}
-          <input
-            type="file"
-            accept="video/*"
-            hidden
-            disabled={busy}
-            onChange={(e) => {
-              upload(e.target.files?.[0])
-              e.target.value = ''
-            }}
-          />
-        </label>
-        {value && (
-          <button type="button" className="editor-btn" onClick={() => onChangeSrc('')}>
-            clear
-          </button>
-        )}
-      </div>
+      <UploadControls noun="video" busy={busy} upload={upload} hasValue={!!value} onClear={() => onChangeSrc('')} />
       {/* play mode only applies to uploaded files; YouTube embeds carry their own player */}
       {!youtubeId(value) && (
         <select
