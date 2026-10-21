@@ -4,6 +4,8 @@ import { useSite } from '../../lib/ContentContext'
 import { assetUrl } from '../../lib/assetUrl'
 import { youtubeId } from '../../lib/youtube'
 import RichText from '../ui/RichText'
+import Placeholder from '../ui/Placeholder'
+import { joinMeta } from '../../lib/joinMeta'
 
 // Sections hold a flat, freely-ordered list of blocks, so a section can be any
 // mix of subheadings, paragraphs and images in any order.
@@ -16,9 +18,7 @@ function Block({ block }) {
         {block.src ? (
           <img src={assetUrl(block.src)} alt={block.caption ?? ''} />
         ) : (
-          <span className="shot is-empty" aria-hidden="true">
-            <span className="eyebrow">image placeholder</span>
-          </span>
+          <Placeholder />
         )}
         {block.caption && <figcaption className="eyebrow">{block.caption}</figcaption>}
       </figure>
@@ -54,9 +54,7 @@ function Block({ block }) {
             playsInline
           />
         ) : (
-          <span className="shot is-empty" aria-hidden="true">
-            <span className="eyebrow">video placeholder</span>
-          </span>
+          <Placeholder label="video placeholder" />
         )}
         {block.caption && <figcaption className="eyebrow">{block.caption}</figcaption>}
       </figure>
@@ -108,11 +106,10 @@ function Block({ block }) {
 
 // company and date are their own fields (also shown on the card); meta is free-form extra
 // info — duration, role, anything — author-ordered and detail-page-only.
-const SEPARATOR = ' ▪ '
 
 export default function DetailBody({ item }) {
   const { name } = useSite()
-  const metaLine = [item.company, item.date, ...(item.meta ?? [])].filter(Boolean).join(SEPARATOR)
+  const metaLine = joinMeta([item.company, item.date, ...(item.meta ?? [])])
   const [footerVisible, setFooterVisible] = useState(false)
   const footRef = useRef(null)
 

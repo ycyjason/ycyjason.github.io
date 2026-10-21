@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useWorks } from '../../lib/ContentContext'
 import Cover from '../ui/Cover'
-
-const SEPARATOR = ' ▪ '
+import { joinMeta } from '../../lib/joinMeta'
 
 // renderOverlay/renderAddAffordance/onItemClick are optional editor-only
 // hooks (undefined on the public site, so the Link navigates normally there).
@@ -32,7 +31,7 @@ export default function WorksGrid({ renderOverlay, renderAddAffordance, onItemCl
               <p>{item.summary}</p>
               {(item.company || item.date) && (
                 <span className="cell started eyebrow">
-                  {[item.company, item.date].filter(Boolean).join(SEPARATOR)}
+                  {joinMeta([item.company, item.date])}
                 </span>
               )}
               {item.tags?.length > 0 && (
