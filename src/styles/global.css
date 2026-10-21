@@ -269,7 +269,7 @@
      by the global rule at the top of this file. */
   main > :not(.doc),
   .doc > :not(.doc-foot) {
-    animation: reveal 0.7s var(--ease-out-quint) backwards;
+    animation: reveal 1.5s var(--ease-out-quint) backwards;
   }
 
   main > :nth-child(2),
