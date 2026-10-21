@@ -510,22 +510,22 @@
           {
             "id": "blk-9bf07cb0",
             "type": "paragraph",
-            "text": "Keeping the design guidelines consistent across the graphic design team was my responsibility. I specified the image dimensions, brand style, and material sizes so every marketing asset looked on-brand and loaded quickly on the site."
+            "text": "I developed design guidelines for the team to follow, covering image dimensions, brand style, and material file sizes. Before I joined, content was created freely, so material on the website was inconsistent. Image file sizes were large, marketing materials did not align with the brand colours, and some campaign pages were off from the brand vision."
           },
           {
             "id": "blk-b44f1fdf",
             "type": "paragraph",
-            "text": "Across desktop, tablet, and mobile, the website works as one seamless experience. I designed and built the responsive layout, then found and fixed the UI flaws and usability problems on each device."
+            "text": "More than 60% of our users access the site on mobile (according to Google Analytics), so I designed and developed the website to be responsive, supporting desktop, tablet, and mobile viewports."
           },
           {
             "id": "blk-f5ab470c",
             "type": "paragraph",
-            "text": "I also owned the product recommendation module, leading it from design through to development on Shopify. The module suggests products based on each user's browsing behaviour, guiding visitors toward the items they are most likely to be interested in and helping to drive conversions."
+            "text": "To improve the user experience by tailoring each user’s shopping preferences and turning their interests into conversions, I own the product recommendation module from design through to development."
           },
           {
             "id": "blk-7374681f",
             "type": "paragraph",
-            "text": "Last but not least, analysing Hotjar data is a regular part of the work, and the findings are shared with the wider team. That analysis showed how visitors moved through the site, which led to a redesigned page layout that highlights new campaigns and prompts more engagement with the content."
+            "text": "I also act as a researcher, regularly analysing data from Google Analytics and Hotjar to identify patterns, trends, and opportunities that guide the business direction."
           },
           {
             "id": "blk-f4a3ec4b",
@@ -603,19 +603,5 @@
       }
     ],
     "company": "A.s. Watson (hk)"
-  },
-  {
-    "id": "new-work-1789703682583",
-    "slug": "new-work-1789703682583",
-    "title": "New work",
-    "date": "",
-    "summary": "",
-    "tags": [],
-    "cover": "",
-    "meta": [],
-    "lead": "",
-    "linkUrl": "",
-    "linkLabel": "",
-    "sections": []
   }
 ]

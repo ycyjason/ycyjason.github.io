@@ -1,6 +1,5 @@
 {
   "name": "jason yeung",
-  "headline": "Hey, I'm Jason.",
   "intro": "I'm a product designer at Cognizant, helping businesses across industries turn their challenges into digital solutions. I enjoy learning how things work, experimenting with new tech, and building tools that solve real problems and make everyday work better.",
   "externalLinks": [
     {
@@ -18,5 +17,6 @@
       "label": "email",
       "href": "mailto:jasonyeung216@gmail.com"
     }
-  ]
+  ],
+  "headline": "Hey, I'm Jason"
 }
