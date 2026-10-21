@@ -266,7 +266,14 @@
     padding-bottom: 72px;
   }
 
-  .intro p {
+  .intro-headline {
+    margin-bottom: 16px;
+    font-size: var(--text-title);
+    line-height: 1.4;
+    color: var(--color-foreground);
+  }
+
+  .intro p:not(.intro-headline) {
     white-space: pre-line; /* line breaks typed in the editor are kept */
     color: var(--color-muted-foreground);
     font-size: var(--text-body);
