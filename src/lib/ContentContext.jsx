@@ -1,33 +1,26 @@
 import { createContext, useContext } from 'react'
-import { getSite, getWorks, getTools, getExperience, getItemBySlug } from './content'
+import site from '../content/site.json'
+import works from '../content/works.json'
+import tools from '../content/tools.json'
+import experience from '../content/experience.json'
 
-// Default null: on the public site nothing ever wraps a <ContentProvider>,
-// so every hook falls through to the static content.js getters below and
-// behaves exactly as a direct getWorks()/getSite() call would. The editor
-// is the only consumer that ever supplies a value, feeding in-memory draft
-// state instead of the build-time JSON.
-const ContentContext = createContext(null)
+// Default is the build-time JSON: on the public site nothing ever wraps a
+// <ContentProvider>, so every hook reads the static content directly. The
+// editor is the only consumer that supplies a value, feeding in-memory draft
+// state ({ site, works, tools, experience }) instead.
+const ContentContext = createContext({ site, works, tools, experience })
 
 export const ContentProvider = ContentContext.Provider
 
-export function useSite() {
-  return useContext(ContentContext)?.site ?? getSite()
-}
+export const useSite = () => useContext(ContentContext).site
+export const useWorks = () => useContext(ContentContext).works
+export const useTools = () => useContext(ContentContext).tools
+export const useExperience = () => useContext(ContentContext).experience
 
-export function useWorks() {
-  return useContext(ContentContext)?.works ?? getWorks()
-}
-
-export function useTools() {
-  return useContext(ContentContext)?.tools ?? getTools()
-}
-
-export function useExperience() {
-  return useContext(ContentContext)?.experience ?? getExperience()
-}
-
+// works and tools share the "item detail" shape and route (/work/:slug,
+// /tools/:slug) so a single lookup covers both without the caller caring
+// which list an item came from
 export function useItemBySlug(slug) {
-  const ctx = useContext(ContentContext)
-  if (!ctx) return getItemBySlug(slug)
-  return ctx.works.find((item) => item.slug === slug) ?? ctx.tools.find((item) => item.slug === slug)
+  const { works, tools } = useContext(ContentContext)
+  return works.find((item) => item.slug === slug) ?? tools.find((item) => item.slug === slug)
 }

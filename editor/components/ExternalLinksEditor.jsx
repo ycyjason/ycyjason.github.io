@@ -1,4 +1,4 @@
-import { RowActions } from './SectionsBuilder'
+import RowActions from './RowActions'
 import { swap } from '../lib/swap'
 
 const newId = () => `link-${crypto.randomUUID().slice(0, 8)}`

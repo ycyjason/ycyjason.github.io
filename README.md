@@ -40,7 +40,7 @@ src/content/*.json  <--(GET/PUT via dev-server middleware)--  editor (read/write
 ### Content model
 
 `src/content/`:
-- `site.json` — single object: `name`, `intro`, `externalLinks[]`.
+- `site.json` — single object: `name`, `headline` (optional), `intro`, `externalLinks[]`.
 - `works.json`, `tools.json` — arrays of "item" objects, shared shape, rendered by the same detail page (different route prefix: `/work/:slug` vs `/tools/:slug`).
 - `experience.json` — array of `{ id, range, company, ... }`.
 

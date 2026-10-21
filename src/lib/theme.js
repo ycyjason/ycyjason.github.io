@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 
 const STORAGE_KEY = 'portfolio.theme'
 
-export function getTheme() {
+function getTheme() {
   return localStorage.getItem(STORAGE_KEY) === 'light' ? 'light' : 'dark'
 }
 
-export function setTheme(theme) {
+function setTheme(theme) {
   localStorage.setItem(STORAGE_KEY, theme)
   document.documentElement.classList.toggle('dark', theme === 'dark')
 }

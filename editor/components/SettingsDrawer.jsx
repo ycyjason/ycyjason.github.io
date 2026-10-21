@@ -29,6 +29,14 @@ export default function SettingsDrawer({ kind, item, onChange, onDelete, onClose
       {kind === 'site' ? (
         <>
           <label className="editor-field">
+            <span className="field-label">Introduction headline (optional)</span>
+            <input
+              className="editor-input"
+              value={item.headline ?? ''}
+              onChange={(e) => update('headline', e.target.value)}
+            />
+          </label>
+          <label className="editor-field">
             <span className="field-label">Introduction paragraph</span>
             <textarea
               className="editor-textarea"
