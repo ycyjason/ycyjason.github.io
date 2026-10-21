@@ -59,7 +59,7 @@ export default function Rail() {
         <nav className="nav nav-ext" id="ext-links" aria-label="Elsewhere">
           {externalLinks.map((link) => (
             <a
-              key={link.id ?? link.label}
+              key={link.id}
               href={link.href}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener' : undefined}
