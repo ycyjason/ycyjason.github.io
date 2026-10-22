@@ -104,11 +104,10 @@ function Block({ block }) {
   return <RichText text={block.text} />
 }
 
-// company and date are their own fields (also shown on the card); meta is free-form extra
-// info — duration, role, anything — author-ordered and detail-page-only.
-
 export default function DetailBody({ item }) {
   const { name } = useSite()
+  // company and date are their own fields (also shown on the card); meta is free-form extra
+  // info (duration, role, anything), author-ordered and detail-page-only.
   const metaLine = joinMeta([item.company, item.date, ...(item.meta ?? [])])
   const [footerVisible, setFooterVisible] = useState(false)
   const footRef = useRef(null)
