@@ -1,4 +1,4 @@
-import { UploadControls, useUpload } from './UploadControls'
+import { UploadControls } from './UploadControls'
 import { youtubeId } from '../../src/lib/youtube'
 
 const MODES = [
@@ -11,8 +11,6 @@ const MODES = [
 // play-mode select, since that's a per-video authoring choice rather than
 // something the viewer controls.
 export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir }) {
-  const { busy, error, upload } = useUpload(dir, onChangeSrc)
-
   return (
     <div className="editor-field">
       <input
@@ -22,7 +20,7 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
         value={value ?? ''}
         onChange={(e) => onChangeSrc(e.target.value)}
       />
-      <UploadControls noun="video" busy={busy} upload={upload} hasValue={!!value} onClear={() => onChangeSrc('')} />
+      <UploadControls kind="video" dir={dir} value={value} onChange={onChangeSrc} />
       {/* play mode only applies to uploaded files; YouTube embeds carry their own player */}
       {!youtubeId(value) && (
         <select
@@ -38,7 +36,6 @@ export default function VideoField({ value, mode, onChangeSrc, onChangeMode, dir
           ))}
         </select>
       )}
-      {error && <span className="field-label upload-error">{error}</span>}
     </div>
   )
 }

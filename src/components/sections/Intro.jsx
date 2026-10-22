@@ -9,7 +9,7 @@ export default function Intro({ renderOverlay }) {
     <section className="intro inner" id="about">
       <h1 className="sr-only">{name}</h1>
       {headline && <p className="intro-headline">{headline}</p>}
-      <p>{intro}</p>
+      <p className="intro-body">{intro}</p>
       {renderOverlay?.()}
     </section>
   )

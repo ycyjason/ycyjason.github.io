@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { uploadFile } from '../lib/api'
 
-// Shared by ImageField and VideoField: tracks the in-flight/error state of an
-// upload into `dir` and hands the stored path to `onUploaded`.
-export function useUpload(dir, onUploaded) {
+// Shared by ImageField and VideoField: upload button, clear button and error
+// line for a path field. Uploads into `dir` and hands the stored path to
+// `onChange`. `kind` is "image" or "video": it labels the button and sets the
+// file filter.
+export function UploadControls({ kind, dir, value, onChange }) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
 
@@ -12,7 +14,7 @@ export function useUpload(dir, onUploaded) {
     setBusy(true)
     setError('')
     try {
-      onUploaded(await uploadFile(file, dir))
+      onChange(await uploadFile(file, dir))
     } catch (err) {
       setError(String(err.message ?? err))
     } finally {
@@ -20,31 +22,29 @@ export function useUpload(dir, onUploaded) {
     }
   }
 
-  return { busy, error, upload }
-}
-
-// `noun` is "image" or "video": it labels the button and sets the file filter.
-export function UploadControls({ noun, busy, upload, hasValue, onClear }) {
   return (
-    <div className="flex items-center gap-2">
-      <label className="editor-btn file-btn">
-        {busy ? 'uploading…' : `upload ${noun}`}
-        <input
-          type="file"
-          accept={`${noun}/*`}
-          hidden
-          disabled={busy}
-          onChange={(e) => {
-            upload(e.target.files?.[0])
-            e.target.value = '' // so picking the same file again still fires
-          }}
-        />
-      </label>
-      {hasValue && (
-        <button type="button" className="editor-btn" onClick={onClear}>
-          clear
-        </button>
-      )}
-    </div>
+    <>
+      <div className="flex items-center gap-2">
+        <label className="editor-btn file-btn">
+          {busy ? 'uploading…' : `upload ${kind}`}
+          <input
+            type="file"
+            accept={`${kind}/*`}
+            hidden
+            disabled={busy}
+            onChange={(e) => {
+              upload(e.target.files?.[0])
+              e.target.value = '' // so picking the same file again still fires
+            }}
+          />
+        </label>
+        {value && (
+          <button type="button" className="editor-btn" onClick={() => onChange('')}>
+            clear
+          </button>
+        )}
+      </div>
+      {error && <span className="field-label upload-error">{error}</span>}
+    </>
   )
 }

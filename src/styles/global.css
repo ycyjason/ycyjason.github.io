@@ -308,7 +308,7 @@
     color: var(--color-foreground);
   }
 
-  .intro p:not(.intro-headline) {
+  .intro-body {
     white-space: pre-line; /* line breaks typed in the editor are kept */
     color: var(--color-muted-foreground);
     font-size: var(--text-body);

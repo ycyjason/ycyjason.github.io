@@ -11,6 +11,9 @@ const MEDIA_TYPES = new Set(['works', 'tools'])
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif', '.svg'])
 // Formats a browser <video> plays natively, so no transcoding step is needed.
 const VIDEO_EXTENSIONS = new Set(['.mp4', '.mov', '.webm'])
+// The "-<Date.now()>" suffix the upload endpoint gives every file it writes;
+// the orphan sweep only touches names with it, so hand-placed files survive.
+const UPLOADED_NAME = /-\d{13}\.[a-z0-9]+$/
 const MAX_IMAGE_BYTES = 12 * 1024 * 1024
 const MAX_VIDEO_BYTES = 100 * 1024 * 1024
 
@@ -51,20 +54,23 @@ function waitUntilPublic(server, absolutePath, timeoutMs = 3000) {
   })
 }
 
-// Every path a save of works.json/tools.json can reference: each item's
-// cover, plus every image/video block's src across all of its sections.
-function collectMediaPaths(items) {
-  const paths = new Set()
-  for (const item of items ?? []) {
-    if (item.cover) paths.add(item.cover)
-    for (const section of item.sections ?? []) {
-      for (const block of section.blocks ?? []) {
-        if ((block.type === 'image' || block.type === 'video') && block.src) {
-          paths.add(block.src)
-        }
-      }
+const readContent = (type) => JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, `${type}.json`), 'utf-8'))
+
+// Calls fn(holder, key) for every media path an item references: its cover,
+// plus every image/video block's src. Defined once so the sweep and the slug
+// migration can never disagree about what counts as "in use".
+function forEachMediaRef(item, fn) {
+  if (item.cover) fn(item, 'cover')
+  for (const section of item.sections ?? []) {
+    for (const block of section.blocks ?? []) {
+      if ((block.type === 'image' || block.type === 'video') && block.src) fn(block, 'src')
     }
   }
+}
+
+function collectMediaPaths(items) {
+  const paths = new Set()
+  for (const item of items ?? []) forEachMediaRef(item, (holder, key) => paths.add(holder[key]))
   return paths
 }
 
@@ -106,14 +112,9 @@ function migrateRenamedSlugs(type, oldItems, newItems) {
       const newPrefix = `media/${type}/${newSlug}/`
       const rewrite = (p) => (p && p.startsWith(oldPrefix) ? newPrefix + p.slice(oldPrefix.length) : p)
 
-      if (item.cover) item.cover = rewrite(item.cover)
-      for (const section of item.sections ?? []) {
-        for (const block of section.blocks ?? []) {
-          if ((block.type === 'image' || block.type === 'video') && block.src) {
-            block.src = rewrite(block.src)
-          }
-        }
-      }
+      forEachMediaRef(item, (holder, key) => {
+        holder[key] = rewrite(holder[key])
+      })
     } catch (err) {
       console.warn(
         `[content-api] failed to migrate media for renamed slug "${oldSlug}" -> "${newSlug}":`,
@@ -123,27 +124,47 @@ function migrateRenamedSlugs(type, oldItems, newItems) {
   }
 }
 
-// Deletes whatever media a save just dropped a reference to — a removed
-// block, a removed section, a removed item, a cleared field, or a path
-// replaced by a fresh upload all show up here the same way: present in the
-// old content, absent from the new. Best-effort: a cleanup failure must
-// never fail the actual content save.
-function cleanupOrphanedMedia(oldItems, newItems) {
-  const oldPaths = collectMediaPaths(oldItems)
-  const newPaths = collectMediaPaths(newItems)
-
-  for (const relPath of oldPaths) {
-    if (newPaths.has(relPath)) continue
-
-    const absPath = path.resolve(PUBLIC_DIR, relPath)
-    if (!absPath.startsWith(`${PUBLIC_DIR}${path.sep}`)) continue
-
+// Deletes every editor-uploaded file under public/media/<type>/ that no
+// works/tools item references, and prunes folders left empty. Sweeping the folder instead of
+// diffing old content against new also catches uploads that never reached a
+// save (upload, clear, upload again, save). Best-effort: a cleanup failure
+// must never fail the content save.
+function sweepUnreferencedMedia(type, data) {
+  const referenced = collectMediaPaths(data)
+  for (const other of MEDIA_TYPES) {
+    if (other === type) continue
     try {
-      fs.unlinkSync(absPath)
-    } catch (err) {
-      if (err.code !== 'ENOENT') {
-        console.warn(`[content-api] failed to remove orphaned media "${relPath}":`, err.message)
+      for (const p of collectMediaPaths(readContent(other))) referenced.add(p)
+    } catch {
+      // unreadable sibling: it contributes no references
+    }
+  }
+
+  // Returns how many entries remain, so the caller can prune an empty folder
+  // without reading it a second time.
+  const walk = (dir) => {
+    let remaining = 0
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const abs = path.join(dir, entry.name)
+      if (entry.isDirectory() && !entry.name.startsWith('.')) {
+        if (walk(abs) === 0) fs.rmdirSync(abs)
+        else remaining++
+      } else if (entry.isFile() && UPLOADED_NAME.test(entry.name)) {
+        const relPath = path.relative(PUBLIC_DIR, abs).split(path.sep).join('/')
+        if (referenced.has(relPath)) remaining++
+        else fs.unlinkSync(abs)
+      } else {
+        remaining++ // hand-placed files, dotfiles and symlinks are left alone
       }
+    }
+    return remaining
+  }
+
+  try {
+    walk(path.join(MEDIA_DIR, type))
+  } catch (err) {
+    if (err.code !== 'ENOENT') {
+      console.warn(`[content-api] failed to sweep unreferenced media in "media/${type}":`, err.message)
     }
   }
 }
@@ -209,14 +230,12 @@ export default function contentApiPlugin() {
           req.on('end', () => {
             try {
               const data = JSON.parse(body)
-              const oldData = MEDIA_TYPES.has(type)
-                ? JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-                : null
+              const hasMedia = MEDIA_TYPES.has(type)
 
-              if (oldData) migrateRenamedSlugs(type, oldData, data)
+              if (hasMedia) migrateRenamedSlugs(type, readContent(type), data)
 
               fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`)
-              if (oldData) cleanupOrphanedMedia(oldData, data)
+              if (hasMedia) sweepUnreferencedMedia(type, data)
 
               res.statusCode = 204
               res.end()
