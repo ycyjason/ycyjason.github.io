@@ -9,7 +9,7 @@
     "tags": [],
     "cover": "media/works/telstrahealth/th-hero-1792986593376.webp",
     "meta": [],
-    "lead": "Telstra Health runs 30+ clinical and healthcare products, and their teams change often. I was assigned as a Product Designer from Cognizant, I help each team understand its market and users, define and prioritise requirements, and design solutions. Over time I have started using AI across that whole process: a DESIGN.md for each product, instruct AI agents to use Figma, and prototypes built in code. One piece of work, adding multi-factor authentication to a ten-year-old legacy product, shows how this plays out in practice.",
+    "lead": "Telstra Health runs more than 30 clinical and healthcare products. Some have been in market for a decade or more and keep extending into new markets. Others are newer but already maturing. As a Product Designer from Cognizant, I work across these teams to understand users and markets, define requirements, and design solutions. Over time I have built AI into that process, from a DESIGN.md for each product to agents working directly in Figma and prototypes built in code. Multi-factor authentication on a ten-year-old legacy product is one example of how this works in practice.",
     "linkUrl": "",
     "linkLabel": "",
     "sections": [
@@ -32,12 +32,12 @@
           {
             "id": "blk-e149bb0d",
             "type": "paragraph",
-            "text": "Each Telstra Health product has a product manager, business analyst, product owner, clinical safety officer, and a tech team. People in these roles leave, and new people join, often with little knowledge of the domain or the architecture. A product manager can own the timeline and the priorities, but may not know what the system can do, what would take months."
+            "text": "Many Telstra Health products have been around for a long time. Their architecture, past decisions, and constraints have built up over years, and much of that history is not written down. Product managers, business analysts, and stakeholders join and leave these teams regularly, and many arrive without a clear picture of how the system is built, what it can and cannot do easily, or why it is shaped the way it is. They can see the market and the roadmap clearly, but the cost of a change to the underlying system often stays hidden until late in the process. As a result, decisions get stuck in a loop: priorities cannot be set until the tech team confirms feasibility, and those answers arrive after the options have already been shaped."
           },
           {
             "id": "blk-7bb14eb6",
             "type": "paragraph",
-            "text": "That gap is where I work. My engineering background lets me read the constraints the tech team describes and translate them into options the wider group can judge. I bring the market and user evidence, the requirements, and the feasibility checks into one conversation. The design is less a set of screens than a record of the decisions the team has made and the reasons behind them."
+            "text": "My role is to close that gap. I take the constraints the engineering team describes, make design decisions within them, and build artefacts the wider group can judge alongside the market and user evidence. The design becomes more than the visual layer: it is a record of the decisions made, the trade-offs accepted, and the reasons behind them."
           }
         ]
       },
@@ -46,15 +46,15 @@
         "label": "How I work with AI now",
         "blocks": [
           {
+            "id": "blk-ddbd872d",
+            "type": "paragraph",
+            "text": "Working well with AI comes down to clear context, precise instructions, and firm guardrails. Design with AI: the DESIGN.md file is the core of every magic begin. It records the product’s brand rules, components, and patterns. I define it before prompting any agent to design, so every artefact the agent generates stays consistent with the brand. Where a product has a design system, I use it as the source. Where it has none, I have the agent document the platform’s conventions from its published guidance, covering the visual components. I then compare the output against the real product and refine the file until the agent can follow it 100%."
+          },
+          {
             "id": "blk-f3d56041",
             "type": "image",
             "src": "media/works/telstrahealth/th-mcp-1792988554347.webp",
-            "caption": ""
-          },
-          {
-            "id": "blk-ddbd872d",
-            "type": "paragraph",
-            "text": "Before I start on any product, I set up the agent workspace with a DESIGN.md file that describes the product’s brand rules, components, and patterns. The agent reads that file, so the artefacts it generates stay consistent with the brand. Where a product has no design system, the same approach works: I have the agent document the platform’s conventions from its published guidance in a single DESIGN.md file, covering the visual components, and then check the result against the real product."
+            "caption": "Claude Figma MCP"
           },
           {
             "id": "blk-cae1ae45",
@@ -64,18 +64,18 @@
           {
             "id": "blk-8ae6d6e8",
             "type": "paragraph",
-            "text": "What has changed is how I explore. Instead of drawing one or two options and refining them over several weeks, I can ask for a set of variations in an afternoon, each testing a different answer to an open question. The team reacts to concrete options, and the discussion moves from “what should this look like” to “which trade-off do we accept.”"
+            "text": "What has changed is how I explore. Instead of hand-crafting one or two options and refining them over several weeks, I give the agent the context and constraints, prompt it for a set of variations, and then review each one myself, reasoning through each one. This surfaces more angles and more ideas that meet the need before a design decision is made. The team reacts to concrete options that already have AI in the loop, so the discussion moves from “what should this look like” to “which trade-off do we accept.”"
           },
           {
             "id": "blk-19da4070",
             "type": "image",
             "src": "media/works/telstrahealth/th-vibecode-1792988567774.webp",
-            "caption": ""
+            "caption": "Rapid Prototyping with AI"
           },
           {
             "id": "blk-06d64e8b",
             "type": "paragraph",
-            "text": "For flows with many branches, I describe the user journey to the agent and have it build a working HTML, CSS, and JavaScript prototype. Figma handles the linear path well, but more complex logic is hard to wire up there. A prototype built in real code defines the interaction and the user flow end to end, and it comes close to a production-ready experience that the team can refer."
+            "text": "For flows with many branches and complex logic, I describe the user journey to the agent and have it build a working HTML, CSS, and JavaScript prototype. Figma handles the linear path well, but more complex logic is hard to wire up there. A prototype built in real code defines the interaction and the user flow end to end, and it comes close to a production-ready experience that the team can refer."
           }
         ]
       },
@@ -91,12 +91,12 @@
           {
             "id": "blk-a4feab81",
             "type": "paragraph",
-            "text": "Several details were still open. Would a user stay signed in for a set number of days? Would the code expire, and should the user see a countdown? Clinicians do not always have a steady connection or phone signal, so a code sent by SMS may never arrive."
+            "text": "Several questions were still open when I started researching and designing the feature. Would a user stay signed in for a set number of days? Would the code expire, and should the user see a countdown? Clinicians do not always have a steady connection or phone signal, so an SMS code may never arrive. The design I bring to the team therefore needs to answer these questions and put them on the table for discussion."
           },
           {
             "id": "blk-2c8e39d0",
             "type": "paragraph",
-            "text": "I asked the agent to document the WinForms conventions from Microsoft’s published resources, then had it implement those components in Figma. That gave me a base set of visual resources I could play with to wireframe the MFA journey. With the base design in place, I asked the agent to extend it into different variations based on the other open considerations, such as trust periods, expiry, timers, and fallbacks when a code never arrives. After reasoning through the options, I built a prototype in code to show the user stories, so the team could walk through the journey rather than imagine it."
+            "text": "Without a design system for this product, and knowing only the framework it was built on, I asked the agent to document the WinForms conventions from Microsoft’s published resources. It then implemented those components in Figma through MCP, giving me a base set of visual resources to wireframe the MFA journey. On those wireframes, I had the agent produce variations covering the open considerations: trust periods, expiry, timers, and fallbacks when a code never arrives. After reasoning through the options, I built a prototype in code that simulates the journey from MFA setup to verification, so the team could walk through it rather than imagine it."
           },
           {
             "id": "blk-c05d9720",
@@ -117,7 +117,7 @@
           {
             "id": "blk-cbd4b28b",
             "type": "paragraph",
-            "text": "Designers used to wait on tooling to test an idea. Turning a concept into something people could click through took days, and often the idea died before anyone saw it. AI has removed that constraint. The distance between an imagined interaction and a working artefact is now short enough that I can build it, show it, and change it within the same meeting. The question has moved from “can we build this?” to “should we build this, and why?”"
+            "text": "Turning an idea into something people can interact with was once out of reach for many designers. Often the idea died before anyone saw it. AI has removed that constraint. The gap between an imagined interaction and a working artefact is now small enough to build it, show it, and change it within the same meeting. So the work shifts from drawing a few wireframes to building options the team can test. The team can bounce ideas around, spark discussion, and keep the momentum going, because each conversation starts from something tangible the agent has just produced. The business question has shifted from “can we have more options?” to “which option do we pick?”"
           },
           {
             "id": "blk-e7d2e43e",
