@@ -17,6 +17,42 @@
     "linkLabel": "",
     "sections": [
       {
+        "id": "sec-63179522",
+        "label": "",
+        "blocks": [
+          {
+            "id": "blk-a1b96534",
+            "type": "image",
+            "src": "media/tools/bld01/bld01-setup-1793145324640.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-b00d90d8",
+            "type": "image",
+            "src": "media/tools/bld01/bld01-detail-1793145482317.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-1574b708",
+            "type": "image",
+            "src": "media/tools/bld01/bld01-edit-1793145522513.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-50422228",
+            "type": "image",
+            "src": "media/tools/bld01/bld01-export-1793146153570.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-51fe9445",
+            "type": "image",
+            "src": "media/tools/bld01/bld01-plugin-1793146126040.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
         "id": "sec-e242f71f",
         "label": "The gap",
         "blocks": [
