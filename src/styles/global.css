@@ -378,6 +378,10 @@
     padding-top: 20px;
   }
 
+  #tools .panel .foot {
+    padding-top: 4px;
+  }
+
   .doc-head .foot {
     margin-top: 12px;
   }

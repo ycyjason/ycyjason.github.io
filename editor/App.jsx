@@ -158,19 +158,19 @@ export default function App() {
                     <CardOverlay inline onEdit={() => setEditing({ type: 'site', id: 'site' })} />
                   )}
                 />
-                <WorksGrid
-                  renderOverlay={renderOverlay('works')}
-                  renderAddAffordance={() => (
-                    <AddAffordance label="+ add work" onClick={() => addItem('works')} />
-                  )}
-                  onItemClick={(item) => setView({ mode: 'detail', type: 'works', slug: item.slug })}
-                />
                 <ToolsGrid
                   renderOverlay={renderOverlay('tools')}
                   renderAddAffordance={() => (
                     <AddAffordance label="+ add tool" onClick={() => addItem('tools')} />
                   )}
                   onItemClick={(item) => setView({ mode: 'detail', type: 'tools', slug: item.slug })}
+                />
+                <WorksGrid
+                  renderOverlay={renderOverlay('works')}
+                  renderAddAffordance={() => (
+                    <AddAffordance label="+ add work" onClick={() => addItem('works')} />
+                  )}
+                  onItemClick={(item) => setView({ mode: 'detail', type: 'works', slug: item.slug })}
                 />
                 <ExperienceList
                   renderOverlay={renderOverlay('experience')}

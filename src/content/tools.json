@@ -2,7 +2,7 @@
   {
     "id": "new-tool-1789705323985",
     "slug": "BLD01",
-    "title": "Design system studio",
+    "title": "Design System Studio",
     "date": "",
     "summary": "",
     "tags": [
@@ -81,7 +81,7 @@
       },
       {
         "id": "sec-91af7fcd",
-        "label": "What Design System Studio does",
+        "label": "What this tool does",
         "blocks": [
           {
             "id": "blk-1a2c7b38",
@@ -203,7 +203,7 @@
   {
     "id": "new-tool-1789705324900",
     "slug": "BLD02",
-    "title": "Usability testing tool",
+    "title": "Usability Testing Tool",
     "date": "",
     "summary": "",
     "tags": [

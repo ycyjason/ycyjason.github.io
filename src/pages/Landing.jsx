@@ -23,8 +23,8 @@ export default function Landing() {
     <>
       <Shell>
         <Intro />
-        <WorksGrid />
         <ToolsGrid />
+        <WorksGrid />
         <ExperienceList />
       </Shell>
       <ScrollToTop />

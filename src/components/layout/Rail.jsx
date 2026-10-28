@@ -4,8 +4,8 @@ import { useSite } from '../../lib/ContentContext'
 import ThemeToggle from '../ui/ThemeToggle'
 
 const SECTIONS = [
-  { id: 'work', label: 'works' },
   { id: 'tools', label: 'tools' },
+  { id: 'work', label: 'works' },
   { id: 'experience', label: 'experience' },
 ]
 
