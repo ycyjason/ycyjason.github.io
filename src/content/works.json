@@ -1,0 +1,828 @@
+[
+  {
+    "id": "new-work-1792972695149",
+    "slug": "telstrahealth",
+    "title": "Telstra Health: Designing with AI in the Loop",
+    "company": "Telstra Health",
+    "date": "2025/26",
+    "summary": "",
+    "tags": [],
+    "cover": "media/works/telstrahealth/th-hero-1792986593376.webp",
+    "meta": [],
+    "lead": "Telstra Health runs more than 30 clinical and healthcare products. Some have been in market for a decade or more and keep extending into new markets. Others are newer but already maturing. As a Product Designer from Cognizant, I work across these teams to understand users and markets, define requirements, and design solutions. Over time I have built AI into that process, from a DESIGN.md for each product to agents working directly in Figma and prototypes built in code. Adding multi-factor authentication (MFA) to a ten-year-old legacy product is the clearest example of how it works.",
+    "linkUrl": "",
+    "linkLabel": "",
+    "sections": [
+      {
+        "id": "sec-4fa184ed",
+        "label": "",
+        "blocks": [
+          {
+            "id": "blk-79c2b065",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-hero-1792986593376.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-bbaf2eac",
+        "label": "Why design needs a bridge here",
+        "blocks": [
+          {
+            "id": "blk-e149bb0d",
+            "type": "paragraph",
+            "text": "Many Telstra Health products carry years of architecture, past decisions and constraints, and much of that history is not written down. Product managers, business analysts and stakeholders change regularly, and many arrive without a clear picture of how the system is built or what change would cost. They see the market and the roadmap clearly, but the engineering cost of a change often stays hidden until late."
+          },
+          {
+            "id": "blk-ad8637e3",
+            "type": "paragraph",
+            "text": "The result is a loop. Priorities can't be set until the tech team confirms feasibility, and the answers arrive after the options have already been shaped."
+          },
+          {
+            "id": "blk-7bb14eb6",
+            "type": "paragraph",
+            "text": "My role is to close that loop. I take the constraints the engineering team describes, make design decisions within them, and build artefacts the wider group can judge alongside the market and user evidence. The design becomes a record of the decisions made, the trade-offs accepted, and the reasons behind them."
+          }
+        ]
+      },
+      {
+        "id": "sec-6fad8f34",
+        "label": "How I work with AI",
+        "blocks": [
+          {
+            "id": "blk-d1bce801",
+            "type": "paragraph",
+            "text": "Working well with AI comes down to clear context, precise instructions, and firm guardrails. "
+          },
+          {
+            "id": "blk-ddbd872d",
+            "type": "paragraph",
+            "text": "DESIGN.md file as the source of truth, the core of every magic begin. This markdown file document the product’s brand rules, components, and patterns. Thus, every artefact the agent generates stays consistent with the brand by following it. Where a product has a design system, I use it as the source. Where it has none, I have the agent document the platform’s conventions from its published guidance, covering the visual components. I then compare the output against the real product and refine the file until the agent can follow it 100%."
+          },
+          {
+            "id": "blk-f3d56041",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-mcp-1792988554347.webp",
+            "caption": "Claude Figma MCP"
+          },
+          {
+            "id": "blk-cae1ae45",
+            "type": "paragraph",
+            "text": "Figma still stay as the shared source. Through the Figma MCP connection, the agent writes generated components and screens into Figma and read changes back, so the file remains the library other teams reference. I use Figma for the final visual layer, and for development-ready files."
+          },
+          {
+            "id": "blk-8ae6d6e8",
+            "type": "paragraph",
+            "text": "Exploring wider, then deciding. Instead of hand-crafting one or two options and refining them over weeks, I give the agent the context and constraints and ask for a set of variations based on my requirement. I review each one myself and reason through each its trade-offs. This surfaces more angles and more ideas that meet the need before a design decision is made. The team reacts to concrete options, so the discussion moves from “what should this look like” to “which trade-off do we accept.”"
+          },
+          {
+            "id": "blk-19da4070",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-vibecode-1792988567774.webp",
+            "caption": "Rapid Prototyping with AI"
+          },
+          {
+            "id": "blk-06d64e8b",
+            "type": "paragraph",
+            "text": "Prototyping real logic in code for better storytelling. Figma handles linear path well, but flows with many branches and complex logic are hard to wire up there. For those, I describe the user journey to the agent and have it build a working HTML, CSS, JavaScript prototype. It defines the interaction end to end and lets the team walk through the flow instead of imagining it."
+          }
+        ]
+      },
+      {
+        "id": "sec-eb4f8881",
+        "label": "A worked example: multi-factor authentication",
+        "blocks": [
+          {
+            "id": "blk-886addec",
+            "type": "paragraph",
+            "text": "MedicalDirector needed MFA to meet a conformance requirement. The product was built about ten years ago in WinForms, had no Figma file, and no design system. The agreed flow from initial discussion was simple: the system sends a one-time password, the user enters it, and the user chooses how to receive it. The team was building on Azure, so the mechanics were familiar to the engineers."
+          },
+          {
+            "id": "blk-a4feab81",
+            "type": "paragraph",
+            "text": "Several questions were still open. The simple flow hid decisions nobody had made yet:\n- Should a user stay signed in for a set number of days, and for how long?\n- Does the code sent through the Azure gateway expire have an expiration period?\n- Clinicians don't always have a steady connection or phone signal, so an SMS code may never arrive. What happen then?"
+          },
+          {
+            "id": "blk-0dcccf4a",
+            "type": "paragraph",
+            "text": "My job was to put these on the table with options and trade-offs for the team, not to answer them alone."
+          },
+          {
+            "id": "blk-9018dd2b",
+            "type": "heading",
+            "text": "My approach"
+          },
+          {
+            "id": "blk-2c8e39d0",
+            "type": "paragraph",
+            "text": "- Built a base from published conventions: With no design system to kick off, I asked agent to document WinForms conventions from Microsoft's published resources, then implemented those components in Figma through MCP. That gave me a visual base to wireframe on.\n- Generate variations by defining requirements and constraints for the AI agent to explore each open question, including trust periods, code expiry, session timers, and fallback mechanisms for all non-happy-path scenarios. I then reviewed and validated each option to assess feasibility, experience, and trade-offs.\n- Built a working prototype in code that simulates the journey from MFA setup to verification, so the team could easily follow."
+          },
+          {
+            "id": "blk-cafe12b5",
+            "type": "heading",
+            "text": "AI with human-in-the-loop"
+          },
+          {
+            "id": "blk-962015f9",
+            "type": "paragraph",
+            "text": "When testing AI-generated artefacts against the real product before anything begin, some generated visuals did not follow MedicalDirector's design patterns. While they appeared plausible, they did not align with the application's established experience and required human review to identify the mismatch."
+          },
+          {
+            "id": "blk-4a4825fd",
+            "type": "paragraph",
+            "text": "Instead of asking the agent to correct the mistake within the same session, I addressed the root cause first. I updated the DESIGN.md with clear rules defining what the agent must and must not do, creating guardrails for all subsequent outputs. Once those constraints were in place, I could generate new variations based on my own ideas and bring them directly into Figma without manually recreating them. The outputs remained consistent with the product's design patterns, allowing me to present a broader range of options to the team."
+          },
+          {
+            "id": "blk-b0e2326e",
+            "type": "paragraph",
+            "text": "This is the human-in-the-loop aspect of the process. The agent generates outputs quickly, but I decide what meets the standard. Each mistake becomes a new rule or constraint, improving the quality of future outputs through continuous iteration and review."
+          },
+          {
+            "id": "blk-d3f21f63",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-ai-rules-1793941841555.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-b8cc09c3",
+            "type": "heading",
+            "text": "What team decided"
+          },
+          {
+            "id": "blk-04b32e2d",
+            "type": "paragraph",
+            "text": "With the open questions identified, my design explorations with AI helped the team evaluate trade-offs and consider different perspectives rather than relying on assumptions. Three design decisions emerged from those discussions:"
+          },
+          {
+            "id": "blk-7ed8acb9",
+            "type": "paragraph",
+            "text": "- Trust period: Practitioners cannot always rely on network connectivity, and SMS verification requires both mobile signal and internet access. The design allows users to remain trusted for a defined period, reducing the need to complete MFA at every sign-in.\n- Code expiry: Verification codes sent through the Azure gateway already expire. The design therefore includes the expiry timer and makes it visible to users rather than hiding it.\n- Code not received: The design allows users to request a new verification code if one does not arrive, with limits on retry attempts to balance usability and security."
+          },
+          {
+            "id": "blk-64184ca7",
+            "type": "heading",
+            "text": "Outcome"
+          },
+          {
+            "id": "blk-1d724306",
+            "type": "paragraph",
+            "text": "I led the reasoning, explored the design options, and built the artefacts within a week. By putting realistic design options and trade-offs in front of the team early, I initiated requirements discussions sooner than would otherwise have happened. Stakeholders aligned on a shared understanding, blockers were resolved earlier, and the team was able to move into development sooner. As a result, the project met the conformance deadline 2 weeks ahead of schedule, giving the team additional capacity and reducing delivery pressure."
+          }
+        ]
+      },
+      {
+        "id": "sec-bc5909d1",
+        "label": "What designing with AI changes",
+        "blocks": [
+          {
+            "id": "blk-064271a5",
+            "type": "heading",
+            "text": "Building is no longer the bottleneck"
+          },
+          {
+            "id": "blk-cbd4b28b",
+            "type": "paragraph",
+            "text": "The gap between an imagined interaction and a working artefact is now small enough to build it, show it and change it within the same meeting. The question sift from \"can we have more options?\" to \"which option do we pick?\""
+          },
+          {
+            "id": "blk-e7d2e43e",
+            "type": "heading",
+            "text": "Artefacts close the gap between teams"
+          },
+          {
+            "id": "blk-a30e0c4d",
+            "type": "paragraph",
+            "text": "A product manager, clinician or engineer who can't picture an edge case can walk through it in a prototype. Alignment happens earlier and with less rework, and I can tell a clearer story: here is the problem, here are the options, here is the one we chose and why"
+          }
+        ]
+      },
+      {
+        "id": "sec-f0b463db",
+        "label": "What still needs a human",
+        "blocks": [
+          {
+            "id": "blk-0bf91c7c",
+            "type": "paragraph",
+            "text": "Human-in-the-loop is key. Humans have the full context of the problem, along with the experience, judgment, and domain knowledge needed to shape the final solution in ways that AI alone cannot."
+          },
+          {
+            "id": "blk-9344ce34",
+            "type": "paragraph",
+            "text": "In this case, all AI-generated outputs needed to be validated against the platform's actual behaviour and technical constraints. A design guide is only as reliable as the sources and evidence behind it, and any recommendations affecting authentication, security, or patient data must still undergo clinical safety and stakeholder review."
+          },
+          {
+            "id": "blk-a4397361",
+            "type": "paragraph",
+            "text": "AI-assisted prototypes are valuable for exploring ideas and accelerating discussion, but they are not a substitute for formal requirements, specifications, or implementation decisions. Their role is to facilitate informed conversations and help teams evaluate options and trade-offs before committing to a solution."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "new-work-1789703681300",
+    "slug": "heatseeker",
+    "title": "AI-Powered Live Market Experimentation Platform",
+    "date": "2025",
+    "summary": "",
+    "tags": [],
+    "cover": "media/works/heatseeker/hs_hero_image-1792648063540.webp",
+    "meta": [
+      "Product Designer"
+    ],
+    "lead": "Heatseeker is an AI-powered SaaS platform that enables rapid market experimentation through live tests on social media. It helps businesses uncover what truly resonates with their audience, optimise messaging, and confidently invest in high-potential ideas. By leveraging real-time customer insights, Heatseeker turns gut instincts into data-validated strategies, accelerating growth and reducing time-to-market.",
+    "linkUrl": "https://www.heatseeker.ai/",
+    "linkLabel": "To Heatseeker",
+    "sections": [
+      {
+        "id": "sec-38a2fc39",
+        "label": "Deliverables",
+        "blocks": [
+          {
+            "id": "blk-b1247839",
+            "type": "paragraph",
+            "text": "Brought on as a contractor, I was responsible for kickstarting the design of the AI Persona feature—leading the full UX process from research and ideation to prototyping and developer hand-off. I collaborated closely with the product team to define user goals and pain points, mapped key user flows, and designed wireframes and high-fidelity prototypes."
+          },
+          {
+            "id": "blk-f27fb907",
+            "type": "paragraph",
+            "text": "I delivered an MVP that laid a solid foundation for the design team, enabling them to further evolve the feature based on user needs. This helped the team move forward with clarity and direction, ensuring the product delivers actionable, data-driven insights to its users."
+          },
+          {
+            "id": "blk-b7d93e9b",
+            "type": "paragraph",
+            "text": "Due to company policy, much of my work on this project remains confidential. Feel free to reach out if you’d like to learn more."
+          },
+          {
+            "id": "blk-b8f7faa7",
+            "type": "image",
+            "src": "media/works/heatseeker/hs_hero_image-1792648063540.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-f68408db",
+        "label": "Challenges",
+        "blocks": [
+          {
+            "id": "blk-8835ae1f",
+            "type": "paragraph",
+            "text": "Throughout my career as a product designer, I’ve collaborated closely with marketers and business owners, and I’ve seen firsthand the constraints they face, limited time, budget, and access to real data, when making strategic decisions. Personas are commonly used to align marketing efforts with customer needs and help teams across product lines better understand their audience. In early discovery interviews, users expressed frustration with the manual persona creation process, describing it as time-consuming, subjective, and often disconnected from real customer behaviour. Without data-backed personas, teams risk misaligned strategies and missed opportunities, underscoring the need for a faster, more reliable, and actionable solution."
+          }
+        ]
+      },
+      {
+        "id": "sec-fd298edc",
+        "label": "Grounded in research",
+        "blocks": [
+          {
+            "id": "blk-555c553e",
+            "type": "paragraph",
+            "text": "No matter how many times I start a design process, I always begin with research. It helps me understand the problem space, uncover opportunities, and gain the context needed to inform effective design decisions. For this project, I studied established persona frameworks to learn how marketers traditionally build personas. I also conducted competitor analysis to identify what existing tools do well and where they fall short, helping me define clear opportunities and position our product more strategically."
+          },
+          {
+            "id": "blk-2acf713c",
+            "type": "image",
+            "src": "media/works/heatseeker/hs_research-1792455253496.webp",
+            "caption": "Competitor Analysis – insights from analysing existing persona-generating tools"
+          },
+          {
+            "id": "blk-2f0caabb",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-fe82fc27",
+                "label": "PersonaGenerator",
+                "text": "This tool requires users to manually define each persona, which can be time-consuming. However, its export feature is well-designed, making it easy to share the persona documents with team members for collaboration."
+              },
+              {
+                "id": "row-47472669",
+                "label": "UserPersona.Dev",
+                "text": "It uses AI to generate personas based on provided context; however, the resulting profiles often feel artificial, raising concerns about their accuracy. This makes it difficult for users to confidently rely on the personas for decision-making."
+              },
+              {
+                "id": "row-8be41fb5",
+                "label": "FounderPal",
+                "text": "Another AI-powered persona generator, but the key question remains: how accurate is it? Without supporting data, users may doubt whether the generated personas truly represent their target audience, risking misguided decisions."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-3c00965d",
+        "label": "Curiosity drives good design",
+        "blocks": [
+          {
+            "id": "blk-33c2438c",
+            "type": "paragraph",
+            "text": "I collaborated with the CPO and consulted clients to gather requirements for the persona feature. This informed which data and AI modules to use and what information would be most valuable. Throughout the process, I began developing a mindset that I believe every designer should embrace: asking questions and seeking clarity whenever possible. Doing so ensures we truly consider users' needs at every stage of the design process."
+          },
+          {
+            "id": "blk-124a06a5",
+            "type": "code",
+            "text": "“Good design starts with good questions. Curiosity is how we uncover real user needs and design with intention.”"
+          },
+          {
+            "id": "blk-effba1f4",
+            "type": "paragraph",
+            "text": "Together, we developed a solution and created a standardised prompt for the LLM to generate persona outputs, providing marketers with an intuitive, data-backed way to build accurate personas that enhance audience targeting and drive conversions."
+          }
+        ]
+      },
+      {
+        "id": "sec-fd47f3e7",
+        "label": "Low-Fi, High Impact",
+        "blocks": [
+          {
+            "id": "blk-15f4ba27",
+            "type": "paragraph",
+            "text": "Before diving into visual design, I always start with sketching and wireframing. This step is crucial for organising my thoughts and exploring different ways to present information effectively."
+          },
+          {
+            "id": "blk-d704980e",
+            "type": "paragraph",
+            "text": "For the AI persona feature, the key design challenge was maintaining simplicity. Since all information is data-driven, it was important to avoid overwhelming users with complex visuals. Each time I created wireframes, I focused on clearly structuring the LLM-generated outputs in the UI. I then gathered feedback from the team iteratively to ensure the design was informed by real input, not assumptions."
+          }
+        ]
+      },
+      {
+        "id": "sec-6baeaa32",
+        "label": "Prototyping with Intent and Strategy",
+        "blocks": [
+          {
+            "id": "blk-4f88d0d5",
+            "type": "paragraph",
+            "text": "I prototyped 8 iterations to validate assumptions around persona navigation, data display, and how users read and interpret the content. I learned that prototyping is not just about gathering feedback or testing the product; it’s about clearly defining what information you want from users, how you plan to collect it, and which aspects of the design you aim to evaluate. Without a clear strategy, prototyping can become aimless and inefficient. Working in a startup environment allowed me to continuously apply this strategic mindset, iterating designs multiple times based on solid user feedback to refine and improve the product."
+          },
+          {
+            "id": "blk-87123d0f",
+            "type": "image",
+            "src": "media/works/heatseeker/hs_prototype-1792455507397.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-38d59015",
+        "label": "From Vision to MVP in Three Weeks",
+        "blocks": [
+          {
+            "id": "blk-fd948588",
+            "type": "paragraph",
+            "text": "This feature is still actively evolving. The MVP I designed has successfully attracted interest from clients like Medibank, HCF, and ADMA, who see strong potential in the tool. During client pitches, the AI-generated language in the personas resonated strongly, prompting several “aha” moments. Following these sessions, we gathered valuable feedback, which I analysed to identify future design directions and uncover new opportunities. These insights will guide the next iteration phase, with a focus on improving usability, refining data presentation, and expanding functionality to better support marketing teams."
+          },
+          {
+            "id": "blk-6e35b919",
+            "type": "image",
+            "src": "media/works/heatseeker/hs_delivery-1792455558396.webp",
+            "caption": "Smart Persona: AI-Backed Customer Insights"
+          },
+          {
+            "id": "blk-f5a3f3f3",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-5fee2ea9",
+                "label": "User pain point",
+                "text": "Client feedback revealed that different product lines often created separate, unaligned personas due to siloed marketing experiments. Without real audience data, these personas were largely assumption-based, making them unreliable and inconsistent. This prevented teams from identifying behavioural patterns or communication tone, ultimately hindering their ability to craft targeted, effective messaging."
+              },
+              {
+                "id": "row-cff53bc1",
+                "label": "Goal",
+                "text": "To create a unified, data-driven persona system that helps teams generate consistent, accurate, and actionable customer profiles across product lines, enabling more aligned marketing strategies, clearer audience understanding, and more effective, targeted messaging."
+              },
+              {
+                "id": "row-c5153ef4",
+                "label": "Design solution",
+                "text": "- Generate actionable insights into customers’ backgrounds, needs, and behaviours to support strategic decision-making.\n- Link live data points to persona attributes, increasing credibility and confidence in the output.\n- Enable cross-team collaboration by providing a unified persona format accessible to multiple product lines.\n- Support deeper exploration of customer motivations and pain points to uncover opportunities for alignment and growth."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-67647ed1",
+        "label": "what's next",
+        "blocks": [
+          {
+            "id": "blk-ac0894a5",
+            "type": "paragraph",
+            "text": "Based on additional feedback collected from users, I’ve analysed the data to identify future design directions and uncover new opportunities for improvement. These insights will inform the next phase of iteration, focusing on enhancing usability, refining data presentation, and expanding functionality to better support marketing teams."
+          },
+          {
+            "id": "blk-c0f42cad",
+            "type": "image",
+            "src": "media/works/heatseeker/hs_analysis-1792455740355.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-6bd533f3",
+        "label": "Takeaway",
+        "blocks": [
+          {
+            "id": "blk-54a2132a",
+            "type": "paragraph",
+            "text": "Working on this project helped me uncover a deeper challenge in designing AI-powered experiences: while AI can automate and accelerate tasks like persona generation, it often lacks the nuance, emotion, and context that create a genuine human connection. I realised that bridging the gap between AI output and real user experience isn't just about functionality — it's about trust, relatability, and relevance. Many users shared that the personas felt too generic, making it hard to see their real customers reflected in the results. This experience taught me that to design more human AI experiences, we need to go beyond the output by embedding real data to build credibility, allowing interaction to foster engagement, and enabling personalisation to reflect unique user contexts. Designing with these principles brings AI closer to people, not just in utility, but in empathy."
+          }
+        ]
+      }
+    ],
+    "company": "Heatseeker AI"
+  },
+  {
+    "id": "new-work-1789703682116",
+    "slug": "drinkwise",
+    "title": "Smart Drinking Habit Tracker",
+    "date": "2024",
+    "summary": "",
+    "tags": [],
+    "cover": "media/works/drinkwise/dw_hero_image-1792456279599.webp",
+    "meta": [
+      "Product designer"
+    ],
+    "lead": "DrinkWise is a mobile app designed to help young Australians curb alcohol consumption through personalised support, habit tracking, and healthier social alternatives. As my capstone project for my master's degree, our team tackled the issue of alcohol abuse by creating a solution that promotes long-term behavioural change.",
+    "linkUrl": "",
+    "linkLabel": "",
+    "sections": [
+      {
+        "id": "sec-4081262b",
+        "label": "",
+        "blocks": [
+          {
+            "id": "blk-a1cee979",
+            "type": "video",
+            "src": "https://www.youtube.com/embed/1vpFeix-5pA?si=MRNL0AbobmwJ9_9c",
+            "mode": "click-to-play",
+            "caption": "Directed, filmed, and edited by Jason Yeung"
+          }
+        ]
+      },
+      {
+        "id": "sec-e3654f3b",
+        "label": "Taking the lead",
+        "blocks": [
+          {
+            "id": "blk-c49f7d28",
+            "type": "paragraph",
+            "text": "In this project, I led a team of five computer science students, serving as the sole designer and front-end developer. Beyond crafting an intuitive UI and building a cohesive design system, I acted as the bridge between design and development, ensuring seamless implementation. I collaborated closely with developers, collecting feedback to refine interactions and translate designs into practical, scalable solutions. Additionally, I aligned individual contributions with project goals and timelines, reinforcing a strong balance between innovation and feasibility."
+          },
+          {
+            "id": "blk-b0ba24ef",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_app_preview-1792456381331.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-f9409d7f",
+            "type": "heading",
+            "text": "Building a strong foundation for collaboration"
+          },
+          {
+            "id": "blk-2d8be9e4",
+            "type": "paragraph",
+            "text": "From the outset, I prioritised understanding my team members’ strengths and backgrounds to foster effective collaboration. Since we had never worked together before, I initiated conversations to align expectations and define clear project goals. To bridge the gap between design and development, I asked three key questions:\n- How have you worked with designers in the past?\n- How do you think a design can be practically implemented?\n- Are there any frameworks you are familiar with and would like to use?"
+          },
+          {
+            "id": "blk-842f46c0",
+            "type": "paragraph",
+            "text": "These discussions provided valuable insights into the team’s experience with design and development, shaping how I approached the design process. By understanding their technical preferences and constraints, I tailored the level of design detail to ensure seamless implementation. This early alignment laid the groundwork for an efficient workflow, enabling us to build an intuitive and technically feasible solution together."
+          }
+        ]
+      },
+      {
+        "id": "sec-de488875",
+        "label": "The challenge",
+        "blocks": [
+          {
+            "id": "blk-bd71256c",
+            "type": "paragraph",
+            "text": "When we first embarked on this project, we quickly realised the severity of alcohol overconsumption, especially among young adults. The issue became even more personal when some of our friends were involved in drunk driving incidents, nearly causing accidents and injuries. This firsthand experience reinforced our determination to tackle the problem. Through extensive research, we discovered that social pressure and stress were major contributors to frequent drinking habits, shaping our approach to design a solution that not only tracks alcohol intake but also offers healthier, socially engaging alternatives."
+          },
+          {
+            "id": "blk-7249e3bc",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_affinity_diagram-1792456534155.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-8f3a8af6",
+        "label": "Empowering behavioural change through design",
+        "blocks": [
+          {
+            "id": "blk-210d4295",
+            "type": "paragraph",
+            "text": "Our design prioritises user freedom after discovering that many young adults feel dissatisfied when products overwhelm them with excessive control or information, especially when addressing personal habits. Instead of taking an intrusive approach, we designed features that gently guide users toward self-awareness and change, ensuring they feel empowered rather than restricted."
+          },
+          {
+            "id": "blk-0554abca",
+            "type": "heading",
+            "text": "Dynamic dashboard – visualising progress for motivation"
+          },
+          {
+            "id": "blk-cb42f03f",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_dashboard-1792456910780.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-14bdc2b5",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-69048ce0",
+                "label": "User pain point",
+                "text": "Many young adults want to reduce their drinking, but existing apps fail to provide meaningful progress tracking or a sense of achievement when they make positive changes. Without clear feedback, users struggle to stay motivated."
+              },
+              {
+                "id": "row-5d3aa377",
+                "label": "Goal",
+                "text": "Create a dashboard that offers real-time insights into drinking patterns, reinforcing progress with positive reinforcement and actionable feedback."
+              },
+              {
+                "id": "row-242e9586",
+                "label": "Design solution",
+                "text": "- Tracks users’ goals and shows weekly achievements to reinforce motivation.\n- Displays drinking activity reduction trends for self-awareness.\n- Provides cumulative progress tracking since app adoption.\n- Sends push notifications to report milestones and keep users engaged."
+              }
+            ]
+          },
+          {
+            "id": "blk-20f3af0c",
+            "type": "heading",
+            "text": "Drinking activity log – encouraging self-reflection"
+          },
+          {
+            "id": "blk-2b439909",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_activitylog-1792457051093.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-7b2a70e9",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-d8be800f",
+                "label": "User pain point",
+                "text": "Young adults often neglect or forget their drinking habits, making it difficult for them to reflect on patterns and understand the triggers behind their behaviour. Our research revealed that many interviewees experienced moments of self-reflection but lacked a clear record to analyse their habits."
+              },
+              {
+                "id": "row-56a79cec",
+                "label": "Goal",
+                "text": "Introduce a detailed logging system that encourages self-awareness, helping users identify drinking patterns and make more informed choices."
+              },
+              {
+                "id": "row-5320c229",
+                "label": "Design solution",
+                "text": "- Allows users to log drinking activities with timestamps and contextual details.\n- Enables them to review past records, fostering reflection and awareness.\n- Contributes to progress tracking, reinforcing accountability."
+              }
+            ]
+          },
+          {
+            "id": "blk-8a4c5338",
+            "type": "heading",
+            "text": "Personalised social event recommendations – alternatives to drinking"
+          },
+          {
+            "id": "blk-e0d2f5f8",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_socialevent-1792457225053.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-b8a37a3b",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-eb53cee3",
+                "label": "User pain point",
+                "text": "Many young adults associate alcohol with social confidence and peer acceptance. Some feel pressured to drink in social settings, making it difficult to engage in alcohol-free experiences."
+              },
+              {
+                "id": "row-54a9a88f",
+                "label": "Goal",
+                "text": "Social engagement without alcohol by recommending fulfilling, alternative activities tailored to users' interests."
+              },
+              {
+                "id": "row-806be996",
+                "label": "Design solution",
+                "text": "- Suggests personalised social events based on user preferences.\n- Uses push notifications to recommend alternative activities at key moments.\n- Reinforces the idea that meaningful social experiences don't have to involve alcohol."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-8b50e699",
+        "label": "Translating design into implementation",
+        "blocks": [
+          {
+            "id": "blk-289128d6",
+            "type": "paragraph",
+            "text": "To ensure seamless implementation, I maintained constant communication with the development team throughout the design process. By involving developers early—through discussions on component feasibility, prototype reviews, and UI framework alignment—I gathered valuable feedback that improved technical feasibility."
+          },
+          {
+            "id": "blk-f84d2413",
+            "type": "paragraph",
+            "text": "Since the team was familiar with Tailwind CSS, I customised its design system to match the app’s branding and documented it thoroughly. I believe that as a designer, understanding technical aspects leads to more practical and effective designs. Instead of relying solely on theory, I prefer hands-on experience. To bridge the gap between design and development, I learned the basics of React Native and set up the development environment using Expo Router, ensuring a smoother transition from design to implementation."
+          },
+          {
+            "id": "blk-c4ba2a1e",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_designsystem-1792457372989.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-823f954d",
+        "label": "Outcome",
+        "blocks": [
+          {
+            "id": "blk-c3ba95fb",
+            "type": "paragraph",
+            "text": "To measure the success of DrinkWise, I evaluated the app using key performance indicators, including usability testing, the System Usability Scale (SUS), and direct user feedback."
+          },
+          {
+            "id": "blk-e76f0e7e",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-89364f15",
+                "label": "Usability testing",
+                "text": "Six interviewees participated in usability testing, where all tasks were completed in under 10 seconds. Users expressed overall confidence in navigating the app, though some suggested the addition of a reward system for goal achievements and the ability to select commonly consumed drinks. The app successfully met usability goals, enabling quick and seamless task completion, which is vital for user engagement."
+              },
+              {
+                "id": "row-b131bba6",
+                "label": "System usability scale (SUS)",
+                "text": "The app achieved an average SUS score of 82.08, indicating excellent usability. Participants praised the app's ease of use and intuitive design. However, feedback pointed to inconsistencies in the UI and some cumbersome areas, which will be addressed for further UX refinement."
+              },
+              {
+                "id": "row-382e17d2",
+                "label": "Effectiveness",
+                "text": "\nThe app was well-received for helping users track their drinking habits, set limits, and find alternative activities. While most found the notifications helpful, some requested more control over reminder timing. This led to an update allowing users to choose their preferred reminder days. Overall, the app was praised for its effectiveness in reducing alcohol consumption."
+              },
+              {
+                "id": "row-fec5fc87",
+                "label": "Additional achievements",
+                "text": "The project received a Grade 7 (High Distinction) and was nominated as one of the best solutions among 30+ competing teams. It will be showcased as an exemplary case for future students taking the course."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-2ad7a2de",
+        "label": "Takeaway",
+        "blocks": [
+          {
+            "id": "blk-fff9ca8c",
+            "type": "paragraph",
+            "text": "Wrapping up my Master's degree at UQ with the DrinkWise project has been an incredibly rewarding experience. Leading a cross-disciplinary team of five computer science students, we developed DrinkWise, a mobile app aimed at helping young Australians reduce alcohol consumption through habit tracking and personalised activity suggestions. As the only designer, I learned the importance of being open to new areas, like front-end development, and collaborated closely with the team to create a seamless design system that aligned with technical needs. This project not only honed my design and leadership skills but also fostered team bonding and personal growth. I’m proud of what we achieved and excited to bring these experiences into my future career as a product designer."
+          },
+          {
+            "id": "blk-3a07753d",
+            "type": "image",
+            "src": "media/works/drinkwise/dw_groupphoto-1792457930511.webp",
+            "caption": ""
+          }
+        ]
+      }
+    ],
+    "company": "University of Queensland"
+  },
+  {
+    "id": "new-work-1789703679951",
+    "slug": "fillfull",
+    "title": "Fillfull: E-Commerce for Snacks",
+    "date": "2022",
+    "summary": "",
+    "tags": [],
+    "cover": "media/works/fillfull/ff_hero_image-1791949256525.webp",
+    "meta": [
+      "Web dev",
+      "UX/UI Design"
+    ],
+    "lead": "Fill Full is an e-commerce platform specialising in snack retail, designed to cater to busy professionals, families, and health-conscious individuals in Hong Kong. The website aims to provide a convenient and enjoyable shopping experience by offering a wide selection of snacks, all while focusing on user-centric design.",
+    "linkUrl": "",
+    "linkLabel": "",
+    "sections": [
+      {
+        "id": "sec-31fd20b6",
+        "label": "Key Deliveries",
+        "blocks": [
+          {
+            "id": "blk-e4a64742",
+            "type": "paragraph",
+            "text": "My work encompassed everything from creating design guidelines to developing a responsive website and implementing user-centred optimisations. It went beyond UX/UI design, also incorporating data analysis and web development. The following content highlights the key features and milestones I delivered throughout the project."
+          },
+          {
+            "id": "blk-b6b2ae06",
+            "type": "image",
+            "src": "media/works/fillfull/ff_hero_image-1791949256525.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-9bf07cb0",
+            "type": "paragraph",
+            "text": "I developed design guidelines for the team to follow, covering image dimensions, brand style, and material file sizes. Before I joined, content was created freely, so material on the website was inconsistent. Image file sizes were large, marketing materials did not align with the brand colours, and some campaign pages were off from the brand vision."
+          },
+          {
+            "id": "blk-b44f1fdf",
+            "type": "paragraph",
+            "text": "More than 60% of our users access the site on mobile (according to Google Analytics), so I designed and developed the website to be responsive, supporting desktop, tablet, and mobile viewports."
+          },
+          {
+            "id": "blk-f5ab470c",
+            "type": "paragraph",
+            "text": "To improve the user experience by tailoring each user’s shopping preferences and turning their interests into conversions, I own the product recommendation module from design through to development."
+          },
+          {
+            "id": "blk-7374681f",
+            "type": "paragraph",
+            "text": "I also act as a researcher, regularly analysing data from Google Analytics and Hotjar to identify patterns, trends, and opportunities that guide the business direction."
+          },
+          {
+            "id": "blk-f4a3ec4b",
+            "type": "image",
+            "src": "media/works/fillfull/ff_designguide-1791949270504.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-2ff8ca31",
+            "type": "image",
+            "src": "media/works/fillfull/ff_responsive-1791949274919.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-401544b3",
+            "type": "image",
+            "src": "media/works/fillfull/ff_recommendation-1791949279815.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-81b0173a",
+            "type": "image",
+            "src": "media/works/fillfull/ff_heatmap-1791949282745.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-54a3b7d7",
+        "label": "Outcome",
+        "blocks": [
+          {
+            "id": "blk-e25bb9f6",
+            "type": "paragraph",
+            "text": "Over 8 months working on this website, I contributed to several impactful changes that positively influenced the project's success. These impacts are reflected in user survey feedback, as well as data from Google Analytics and Shopify."
+          },
+          {
+            "id": "blk-ec0acbc1",
+            "type": "metrics",
+            "items": [
+              {
+                "id": "met-42c2eecd",
+                "label": "Pages development",
+                "text": "Designed and developed 20+ campaign pages"
+              },
+              {
+                "id": "met-37b43220",
+                "label": "Product page views",
+                "text": "26% increase in product page views"
+              },
+              {
+                "id": "met-320ea581",
+                "label": "Conversion rates",
+                "text": "12% increase in conversion rates"
+              },
+              {
+                "id": "met-1d11cde2",
+                "label": "User feedback",
+                "text": "87% expressing satisfaction from survey"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-3b8acbe3",
+        "label": "Takeaway",
+        "blocks": [
+          {
+            "id": "blk-8f76bfef",
+            "type": "paragraph",
+            "text": "Throughout this project, collaboration played a key role in shaping the final outcome. I worked closely with the marketing team and graphic designers to ensure their expectations and requirements were fully understood and integrated into the design. Storytelling was an essential skill for presenting my ideas, making them more relatable and engaging for the team. Additionally, taking a data-driven approach was crucial in making the UX improvements measurable. By using data, I was able to validate my hypotheses and demonstrate the real impact of the changes, which made the process even more rewarding."
+          }
+        ]
+      }
+    ],
+    "company": "A.s. Watson (hk)"
+  }
+]
