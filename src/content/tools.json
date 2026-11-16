@@ -217,6 +217,36 @@
     "linkLabel": "",
     "sections": [
       {
+        "id": "sec-7d57c16a",
+        "label": "",
+        "blocks": [
+          {
+            "id": "blk-dbafe3a1",
+            "type": "image",
+            "src": "media/tools/bld02/bld02-project-detail-1794811136850.webp",
+            "caption": "Session details"
+          },
+          {
+            "id": "blk-55592a4b",
+            "type": "image",
+            "src": "media/tools/bld02/bld02-comment-1794811231827.webp",
+            "caption": "Version control & commenting"
+          },
+          {
+            "id": "blk-a9b26d8f",
+            "type": "image",
+            "src": "media/tools/bld02/bld02-playback-1794811257049.webp",
+            "caption": "User testing playback"
+          },
+          {
+            "id": "blk-0edc407a",
+            "type": "image",
+            "src": "media/tools/bld02/bld02-streaming-1794811608028.webp",
+            "caption": "Session streaming"
+          }
+        ]
+      },
+      {
         "id": "sec-0a122f4f",
         "label": "The gap",
         "blocks": [
