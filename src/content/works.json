@@ -8,7 +8,9 @@
     "summary": "",
     "tags": [],
     "cover": "media/works/telstrahealth/th-hero-1792986593376.webp",
-    "meta": [],
+    "meta": [
+      "Product Designer"
+    ],
     "lead": "Telstra Health runs more than 30 clinical and healthcare products. Some have been in market for a decade or more and keep extending into new markets. Others are newer but already maturing. As a Product Designer from Cognizant, I work across these teams to understand users and markets, define requirements, and design solutions. Over time I have built AI into that process, from a DESIGN.md for each product to agents working directly in Figma and prototypes built in code. Adding multi-factor authentication (MFA) to a ten-year-old legacy product is the clearest example of how it works.",
     "linkUrl": "",
     "linkLabel": "",
