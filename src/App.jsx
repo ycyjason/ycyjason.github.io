@@ -2,10 +2,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Landing from './pages/Landing'
 import ItemDetail from './pages/ItemDetail'
 import ScrollRestoration from './components/layout/ScrollRestoration'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <GoogleAnalytics />
       <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Landing />} />
