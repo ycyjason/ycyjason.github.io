@@ -200,7 +200,7 @@
           {
             "id": "blk-f6121ea6",
             "type": "paragraph",
-            "text": "With the design foundation in place, I used Claude and Figma MCP to explore alternative solutions for scenarios that had not been fully defined in the initial requirements. I broke down the open questions around trust periods, verification code expiry, session timeouts and fallback scenarios, then prompted AI to generate different design approaches directly in Figma. This allowed me to compare alternatives, evaluate usability and technical trade-offs, and facilitate more informed discussions with stakeholders before aligning on a solution."
+            "text": "With the design foundation in place, I moved on to exploring how the new feature could work across different user stories. The initial requirements left gaps in interactions and edge cases, so I used Claude and Figma MCP to turn these uncertainties into tangible design scenarios. By generating and iterating on different design approaches directly in Figma, I could validate assumptions, identify missing interactions and refine solutions against usability and technical constraints before bringing them to stakeholders for validation."
           },
           {
             "id": "blk-22a05fbd",
@@ -217,40 +217,41 @@
             "id": "blk-9fc8c0fc",
             "type": "paragraph",
             "text": "With the design direction agreed upon, I used AI-assisted coding to turn the Figma designs into a working MFA prototype. I connected the key screens and interactions, bringing the journey from initial MFA setup through to verification and different edge cases. Rather than relying on static screens to communicate the intended behaviour, the prototype allowed stakeholders and engineers to experience the proposed flow, understand interaction details and validate the solution before development."
-          },
+          }
+        ]
+      },
+      {
+        "id": "sec-d4d64b73",
+        "label": "Outcome",
+        "blocks": [
           {
-            "id": "blk-e7351080",
-            "type": "heading",
-            "text": "Outcome"
-          },
-          {
-            "id": "blk-36c3948f",
+            "id": "blk-08ac4f8e",
             "type": "paragraph",
             "text": "By combining AI-assisted design exploration, Figma integration and code-based prototyping, I completed the design reasoning and supporting artefacts within a week. More importantly, the team could evaluate realistic options, resolve open questions and align on the intended experience much earlier. This helped the project move into development sooner and ultimately meet its conformance deadline two weeks ahead of schedule."
           },
           {
-            "id": "blk-b0643944",
+            "id": "blk-1a8f82de",
             "type": "metrics",
             "items": [
               {
-                "id": "row-022aaefb",
+                "id": "row-60a807c8",
                 "label": "DELIVERY IMPACT",
-                "text": "Design work completed 2 weeks ahead of the conformance deadline."
+                "text": "Delivered designs 2 weeks ahead of the conformance deadline."
               },
               {
-                "id": "row-078ba09f",
+                "id": "row-3470f334",
                 "label": "STAKEHOLDER ALIGNMENT",
-                "text": "Clearer decisions through tangible design alternatives and working prototypes."
+                "text": "Clearer decisions through tangible prototypes."
               },
               {
-                "id": "row-f589128d",
+                "id": "row-24db519e",
                 "label": "DEVELOPMENT READINESS",
-                "text": "Reduced ambiguity around requirements, interactions and technical considerations."
+                "text": "Reduced ambiguity in requirements and interactions."
               },
               {
-                "id": "row-32ea5872",
+                "id": "row-cc2d0d67",
                 "label": "Reduced Design Iterations",
-                "text": "Minimised back-and-forth design changes through earlier decisions and clearer requirements."
+                "text": "Reduced rework through earlier decisions and clearer requirements."
               }
             ]
           }
