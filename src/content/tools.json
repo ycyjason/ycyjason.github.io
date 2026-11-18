@@ -221,28 +221,34 @@
         "label": "",
         "blocks": [
           {
+            "id": "blk-a4cff24c",
+            "type": "image",
+            "src": "media/tools/bld02/bld02-cover-1794970778840.webp",
+            "caption": ""
+          },
+          {
             "id": "blk-dbafe3a1",
             "type": "image",
             "src": "media/tools/bld02/bld02-project-detail-1794811136850.webp",
-            "caption": "Session details"
+            "caption": ""
           },
           {
             "id": "blk-55592a4b",
             "type": "image",
             "src": "media/tools/bld02/bld02-comment-1794811231827.webp",
-            "caption": "Version control & commenting"
+            "caption": ""
           },
           {
             "id": "blk-a9b26d8f",
             "type": "image",
             "src": "media/tools/bld02/bld02-playback-1794811257049.webp",
-            "caption": "User testing playback"
+            "caption": ""
           },
           {
             "id": "blk-0edc407a",
             "type": "image",
             "src": "media/tools/bld02/bld02-streaming-1794814484440.webp",
-            "caption": "Session streaming"
+            "caption": ""
           }
         ]
       },
