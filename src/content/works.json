@@ -34,142 +34,225 @@
           {
             "id": "blk-e149bb0d",
             "type": "paragraph",
-            "text": "Many Telstra Health products carry years of architecture, past decisions and constraints, and much of that history is not written down. Product managers, business analysts and stakeholders change regularly, and many arrive without a clear picture of how the system is built or what change would cost. They see the market and the roadmap clearly, but the engineering cost of a change often stays hidden until late."
-          },
-          {
-            "id": "blk-ad8637e3",
-            "type": "paragraph",
-            "text": "The result is a loop. Priorities can't be set until the tech team confirms feasibility, and the answers arrive after the options have already been shaped."
+            "text": "Working with Telstra Health, one of the biggest challenges I faced was designing within a complex ecosystem of more than 30 established products."
           },
           {
             "id": "blk-7bb14eb6",
             "type": "paragraph",
-            "text": "My role is to close that loop. I take the constraints the engineering team describes, make design decisions within them, and build artefacts the wider group can judge alongside the market and user evidence. The design becomes a record of the decisions made, the trade-offs accepted, and the reasons behind them."
+            "text": "\nMany of these products had years of accumulated architecture, technical decisions and constraints. However, much of that knowledge wasn't formally documented, making it difficult for product managers, business analysts and stakeholders to understand how the systems worked and what was involved in making changes."
+          },
+          {
+            "id": "blk-ad8637e3",
+            "type": "paragraph",
+            "text": "From a design perspective, this created 3 key challenges that hindered delivery:"
+          },
+          {
+            "id": "blk-4c5f154a",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-208e945a",
+                "label": "Requirement Definition",
+                "text": "Business and user requirements often drive initial design discussions, while technical constraints and implementation complexity are overlooked. Without tangible artefacts to visualise the proposed solution, stakeholders struggle to align on requirements, leading to frequent changes and design rework."
+              },
+              {
+                "id": "row-352b7163",
+                "label": "Knowledge Gaps",
+                "text": "Without tangible solutions or prototypes to demonstrate how the existing product works, teams often lack a shared understanding of its underlying architecture, interactions and user flows. This makes it difficult to make informed design decisions that account for the existing system and user experience."
+              },
+              {
+                "id": "row-9eb7d0a8",
+                "label": "Delayed Decisions",
+                "text": "Design directions often depend on engineering teams validating feasibility. However, reviews frequently happen after designs are completed. Further clarification around requirements and interaction behaviour can trigger repeated design changes, revisiting decisions and delaying delivery."
+              }
+            ]
+          },
+          {
+            "id": "blk-d5bbfc73",
+            "type": "paragraph",
+            "text": "Looking across these challenges, I realised they were connected by one recurring issue."
+          },
+          {
+            "id": "blk-56aa6875",
+            "type": "code",
+            "text": "Theme: Too much uncertainty was being carried into the design process."
           }
         ]
       },
       {
         "id": "sec-6fad8f34",
-        "label": "How I work with AI",
+        "label": "Rethinking the Design Process with AI",
         "blocks": [
           {
             "id": "blk-d1bce801",
             "type": "paragraph",
-            "text": "Working well with AI comes down to clear context, precise instructions, and firm guardrails. "
+            "text": "We were often making decisions based on incomplete context, without tangible solutions to explore or a clear understanding of how things would work in practice."
           },
           {
-            "id": "blk-ddbd872d",
+            "id": "blk-83358b04",
             "type": "paragraph",
-            "text": "DESIGN.md file as the source of truth, the core of every magic begin. This markdown file document the product’s brand rules, components, and patterns. Thus, every artefact the agent generates stays consistent with the brand by following it. Where a product has a design system, I use it as the source. Where it has none, I have the agent document the platform’s conventions from its published guidance, covering the visual components. I then compare the output against the real product and refine the file until the agent can follow it 100%."
+            "text": "I started thinking about how AI could help change this."
           },
           {
-            "id": "blk-f3d56041",
-            "type": "image",
-            "src": "media/works/telstrahealth/th-mcp-1792988554347.webp",
-            "caption": "Claude Figma MCP"
-          },
-          {
-            "id": "blk-cae1ae45",
+            "id": "blk-9808dcd2",
             "type": "paragraph",
-            "text": "Figma still stay as the shared source. Through the Figma MCP connection, the agent writes generated components and screens into Figma and read changes back, so the file remains the library other teams reference. I use Figma for the final visual layer, and for development-ready files."
+            "text": "Rather than using AI simply to generate UI faster, I wanted to use it to make different design possibilities tangible, help teams understand complex product behaviour and communicate design intent more clearly to engineering."
           },
           {
-            "id": "blk-8ae6d6e8",
+            "id": "blk-056dc5d5",
             "type": "paragraph",
-            "text": "Exploring wider, then deciding. Instead of hand-crafting one or two options and refining them over weeks, I give the agent the context and constraints and ask for a set of variations based on my requirement. I review each one myself and reason through each its trade-offs. This surfaces more angles and more ideas that meet the need before a design decision is made. The team reacts to concrete options, so the discussion moves from “what should this look like” to “which trade-off do we accept.”"
+            "text": "This led me to rethink the design process and identify 3 key opportunities for AI to reduce uncertainty and improve team alignment."
           },
           {
-            "id": "blk-19da4070",
-            "type": "image",
-            "src": "media/works/telstrahealth/th-vibecode-1792988567774.webp",
-            "caption": "Rapid Prototyping with AI"
+            "id": "blk-cc337954",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-b861ada6",
+                "label": "Broaden Design Exploration",
+                "text": "I wanted to use AI to explore different design directions and generate alternative solutions. This gives stakeholders tangible options to compare, discuss trade-offs and align on what should be included before committing to a solution."
+              },
+              {
+                "id": "row-39fef978",
+                "label": "Make Product Behaviour Visible",
+                "text": "I explored using AI to turn complex user journeys into interactive prototypes, helping the team better understand how the product works, how users navigate between screens and how different interactions behave."
+              },
+              {
+                "id": "row-a6d4d52e",
+                "label": "Improve Design Handoff",
+                "text": "I wanted to go beyond static design files by using AI to create more functional and detailed handoff artefacts. This helps engineers understand the intended interactions, screen transitions and underlying logic, reducing guesswork during implementation."
+              }
+            ]
           },
           {
-            "id": "blk-06d64e8b",
-            "type": "paragraph",
-            "text": "Prototyping real logic in code for better storytelling. Figma handles linear path well, but flows with many branches and complex logic are hard to wire up there. For those, I describe the user journey to the agent and have it build a working HTML, CSS, JavaScript prototype. It defines the interaction end to end and lets the team walk through the flow instead of imagining it."
+            "id": "blk-b73faf2f",
+            "type": "heading",
+            "text": "From Explore, Understand to Implement"
+          },
+          {
+            "id": "blk-42cc4a6e",
+            "type": "code",
+            "text": "Explore: What are the possible solutions, and what are the trade-offs?"
+          },
+          {
+            "id": "blk-5c987e3f",
+            "type": "code",
+            "text": "Understand: How should the product and user journeys actually work?"
+          },
+          {
+            "id": "blk-88a3b5d1",
+            "type": "code",
+            "text": "Communicate: How can engineering implement the intended experience accurately?"
           }
         ]
       },
       {
-        "id": "sec-eb4f8881",
-        "label": "A worked example: multi-factor authentication",
+        "id": "sec-ee492eda",
+        "label": "See AI In Action",
         "blocks": [
           {
-            "id": "blk-886addec",
+            "id": "blk-5094519e",
             "type": "paragraph",
-            "text": "MedicalDirector needed MFA to meet a conformance requirement. The product was built about ten years ago in WinForms, had no Figma file, and no design system. The agreed flow from initial discussion was simple: the system sends a one-time password, the user enters it, and the user chooses how to receive it. The team was building on Azure, so the mechanics were familiar to the engineers."
+            "text": "To demonstrate how I applied these ideas in practice, I'd like to share a project involving the introduction of Multi-Factor Authentication to an established healthcare product."
           },
           {
-            "id": "blk-a4feab81",
+            "id": "blk-a32e87ce",
             "type": "paragraph",
-            "text": "Several questions were still open. The simple flow hid decisions nobody had made yet:\n- Should a user stay signed in for a set number of days, and for how long?\n- Does the code sent through the Azure gateway expire have an expiration period?\n- Clinicians don't always have a steady connection or phone signal, so an SMS code may never arrive. What happen then?"
+            "text": "The product had been built over many years, with limited design documentation or existing Figma resources to work from."
           },
           {
-            "id": "blk-0dcccf4a",
+            "id": "blk-88bd7b1c",
             "type": "paragraph",
-            "text": "My job was to put these on the table with options and trade-offs for the team, not to answer them alone."
+            "text": "As a result, the team faced challenges understanding the existing product behaviour, clarifying requirements and aligning on how the new experience should work."
           },
           {
-            "id": "blk-9018dd2b",
+            "id": "blk-ef2e5592",
+            "type": "paragraph",
+            "text": "I saw an opportunity to use AI to make these discussions more tangible, explore different solutions and help the team reach alignment earlier. To bring this approach into practice, I structured the workflow into 3 stages, using AI to support each stage of the design process."
+          },
+          {
+            "id": "blk-4f17efba",
             "type": "heading",
-            "text": "My approach"
+            "text": "Stage 01: Establish the Design Foundation"
           },
           {
-            "id": "blk-2c8e39d0",
-            "type": "paragraph",
-            "text": "- Built a base from published conventions: With no design system to kick off, I asked agent to document WinForms conventions from Microsoft's published resources, then implemented those components in Figma through MCP. That gave me a visual base to wireframe on.\n- Generate variations by defining requirements and constraints for the AI agent to explore each open question, including trust periods, code expiry, session timers, and fallback mechanisms for all non-happy-path scenarios. I then reviewed and validated each option to assess feasibility, experience, and trade-offs.\n- Built a working prototype in code that simulates the journey from MFA setup to verification, so the team could easily follow."
-          },
-          {
-            "id": "blk-cafe12b5",
-            "type": "heading",
-            "text": "AI with human-in-the-loop"
-          },
-          {
-            "id": "blk-962015f9",
-            "type": "paragraph",
-            "text": "When testing AI-generated artefacts against the real product before anything begin, some generated visuals did not follow MedicalDirector's design patterns. While they appeared plausible, they did not align with the application's established experience and required human review to identify the mismatch."
-          },
-          {
-            "id": "blk-4a4825fd",
-            "type": "paragraph",
-            "text": "Instead of asking the agent to correct the mistake within the same session, I addressed the root cause first. I updated the DESIGN.md with clear rules defining what the agent must and must not do, creating guardrails for all subsequent outputs. Once those constraints were in place, I could generate new variations based on my own ideas and bring them directly into Figma without manually recreating them. The outputs remained consistent with the product's design patterns, allowing me to present a broader range of options to the team."
-          },
-          {
-            "id": "blk-b0e2326e",
-            "type": "paragraph",
-            "text": "This is the human-in-the-loop aspect of the process. The agent generates outputs quickly, but I decide what meets the standard. Each mistake becomes a new rule or constraint, improving the quality of future outputs through continuous iteration and review."
-          },
-          {
-            "id": "blk-d3f21f63",
+            "id": "blk-58d0f6b8",
             "type": "image",
-            "src": "media/works/telstrahealth/th-ai-rules-1793941841555.webp",
+            "src": "media/works/telstrahealth/th-mcp-1792988554347.webp",
             "caption": ""
           },
           {
-            "id": "blk-b8cc09c3",
+            "id": "blk-0dbe0716",
+            "type": "paragraph",
+            "text": "Through preliminary research, I found that the product was a legacy application built entirely with Microsoft WinForms, with no existing Figma library or design documentation. Before exploring new design solutions with AI, I needed to establish a shared design foundation that reflected the product's existing UI patterns. I used AI to document Microsoft's WinForms conventions and translate them into reusable Figma components through MCP. I then created `DESIGN.md` to define explicit design rules and constraints, providing AI with the context needed to generate more consistent and product-aligned designs."
+          },
+          {
+            "id": "blk-094b38d0",
             "type": "heading",
-            "text": "What team decided"
+            "text": "Stage 02: Broaden Design Exploration"
           },
           {
-            "id": "blk-04b32e2d",
+            "id": "blk-6e717c39",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-variations-1794959529234.png",
+            "caption": ""
+          },
+          {
+            "id": "blk-f6121ea6",
             "type": "paragraph",
-            "text": "With the open questions identified, my design explorations with AI helped the team evaluate trade-offs and consider different perspectives rather than relying on assumptions. Three design decisions emerged from those discussions:"
+            "text": "With the design foundation in place, I used Claude and Figma MCP to explore alternative solutions for scenarios that had not been fully defined in the initial requirements. I broke down the open questions around trust periods, verification code expiry, session timeouts and fallback scenarios, then prompted AI to generate different design approaches directly in Figma. This allowed me to compare alternatives, evaluate usability and technical trade-offs, and facilitate more informed discussions with stakeholders before aligning on a solution."
           },
           {
-            "id": "blk-7ed8acb9",
+            "id": "blk-22a05fbd",
+            "type": "heading",
+            "text": "Stage 03:Validate Through Prototyping"
+          },
+          {
+            "id": "blk-4e6dc4ce",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-vibecode-1792988567774.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-9fc8c0fc",
             "type": "paragraph",
-            "text": "- Trust period: Practitioners cannot always rely on network connectivity, and SMS verification requires both mobile signal and internet access. The design allows users to remain trusted for a defined period, reducing the need to complete MFA at every sign-in.\n- Code expiry: Verification codes sent through the Azure gateway already expire. The design therefore includes the expiry timer and makes it visible to users rather than hiding it.\n- Code not received: The design allows users to request a new verification code if one does not arrive, with limits on retry attempts to balance usability and security."
+            "text": "With the design direction agreed upon, I used AI-assisted coding to turn the Figma designs into a working MFA prototype. I connected the key screens and interactions, bringing the journey from initial MFA setup through to verification and different edge cases. Rather than relying on static screens to communicate the intended behaviour, the prototype allowed stakeholders and engineers to experience the proposed flow, understand interaction details and validate the solution before development."
           },
           {
-            "id": "blk-64184ca7",
+            "id": "blk-e7351080",
             "type": "heading",
             "text": "Outcome"
           },
           {
-            "id": "blk-1d724306",
+            "id": "blk-36c3948f",
             "type": "paragraph",
-            "text": "I led the reasoning, explored the design options, and built the artefacts within a week. By putting realistic design options and trade-offs in front of the team early, I initiated requirements discussions sooner than would otherwise have happened. Stakeholders aligned on a shared understanding, blockers were resolved earlier, and the team was able to move into development sooner. As a result, the project met the conformance deadline 2 weeks ahead of schedule, giving the team additional capacity and reducing delivery pressure."
+            "text": "By combining AI-assisted design exploration, Figma integration and code-based prototyping, I completed the design reasoning and supporting artefacts within a week. More importantly, the team could evaluate realistic options, resolve open questions and align on the intended experience much earlier. This helped the project move into development sooner and ultimately meet its conformance deadline two weeks ahead of schedule."
+          },
+          {
+            "id": "blk-b0643944",
+            "type": "metrics",
+            "items": [
+              {
+                "id": "row-022aaefb",
+                "label": "DELIVERY IMPACT",
+                "text": "Design work completed 2 weeks ahead of the conformance deadline."
+              },
+              {
+                "id": "row-078ba09f",
+                "label": "STAKEHOLDER ALIGNMENT",
+                "text": "Clearer decisions through tangible design alternatives and working prototypes."
+              },
+              {
+                "id": "row-f589128d",
+                "label": "DEVELOPMENT READINESS",
+                "text": "Reduced ambiguity around requirements, interactions and technical considerations."
+              },
+              {
+                "id": "row-32ea5872",
+                "label": "Reduced Design Iterations",
+                "text": "Minimised back-and-forth design changes through earlier decisions and clearer requirements."
+              }
+            ]
           }
         ]
       },
@@ -185,7 +268,7 @@
           {
             "id": "blk-cbd4b28b",
             "type": "paragraph",
-            "text": "The gap between an imagined interaction and a working artefact is now small enough to build it, show it and change it within the same meeting. The question sift from \"can we have more options?\" to \"which option do we pick?\""
+            "text": "The gap between an imagined interaction and a working artefact is now small enough to build it, show it and change it within the same meeting. The question shift from \"can we have more options?\" to \"which option do we pick?\""
           },
           {
             "id": "blk-e7d2e43e",
@@ -195,7 +278,7 @@
           {
             "id": "blk-a30e0c4d",
             "type": "paragraph",
-            "text": "A product manager, clinician or engineer who can't picture an edge case can walk through it in a prototype. Alignment happens earlier and with less rework, and I can tell a clearer story: here is the problem, here are the options, here is the one we chose and why"
+            "text": "A product manager, clinician or engineer who can't picture an edge case can walk through it in a prototype. Alignment happens earlier and with less rework, and I can tell a clearer story: here is the problem, here are the options, here is the one we chose and why."
           }
         ]
       },
@@ -206,17 +289,22 @@
           {
             "id": "blk-0bf91c7c",
             "type": "paragraph",
-            "text": "Human-in-the-loop is key. Humans have the full context of the problem, along with the experience, judgment, and domain knowledge needed to shape the final solution in ways that AI alone cannot."
+            "text": "I believe a Human-in-the-Loop approach is essential when designing with AI. Rather than allowing AI to operate independently, I keep human judgement involved throughout the process to establish guardrails, guide, review and validate its outputs, ensuring the work remains grounded in real user needs and context."
           },
           {
             "id": "blk-9344ce34",
             "type": "paragraph",
-            "text": "In this case, all AI-generated outputs needed to be validated against the platform's actual behaviour and technical constraints. A design guide is only as reliable as the sources and evidence behind it, and any recommendations affecting authentication, security, or patient data must still undergo clinical safety and stakeholder review."
+            "text": "In this project, all AI-generated outputs needed to be validated against the platform's actual behaviour and technical constraints. A design guide is only as reliable as the sources and evidence behind it, while recommendations affecting authentication, security and patient data still require appropriate stakeholder and clinical safety review."
           },
           {
             "id": "blk-a4397361",
             "type": "paragraph",
-            "text": "AI-assisted prototypes are valuable for exploring ideas and accelerating discussion, but they are not a substitute for formal requirements, specifications, or implementation decisions. Their role is to facilitate informed conversations and help teams evaluate options and trade-offs before committing to a solution."
+            "text": "Similarly, AI-assisted prototypes are valuable for exploring ideas and accelerating discussions, but they cannot replace formal requirements, specifications or engineering decisions. Their purpose is to help teams evaluate options and trade-offs before committing to a solution."
+          },
+          {
+            "id": "blk-b3d3693b",
+            "type": "code",
+            "text": "AI can generate the possibilities. Good design judgement turns them into solutions that matter to people."
           }
         ]
       }
