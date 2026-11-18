@@ -212,7 +212,7 @@
       "Vibe coding"
     ],
     "meta": [],
-    "lead": "This is my second build. It started from a problem I kept seeing among designers. AI tools made prototyping faster and more dynamic, so many of us now build prototypes there instead of in Figma. Each prototype lives on one person’s machine, and the latest version gets lost across chat threads and downloads. This build is a self-hosted usability testing tool that gives designers one central place to store and host the prototype for each testing session.",
+    "lead": "This is my second build. It started from a problem I kept seeing among designers. AI tools made prototyping faster and more dynamic, so many of us now build prototypes there instead of in Figma. Each prototype lives on one person’s machine, and the latest version gets lost across chat threads and downloads. This tool is a self-hosted usability testing tool that gives designers one central place to store and host the prototype for each testing session.",
     "linkUrl": "",
     "linkLabel": "",
     "sections": [
@@ -259,12 +259,22 @@
           {
             "id": "blk-6a85f4ef",
             "type": "paragraph",
-            "text": "Figma gave designers a place to build together. Everyone worked in the same file, the team could review and test a prototype from one central location, and you could share it with a client during a workshop and watch them click through it in real time."
+            "text": "AI prototyping has made it easier than ever to turn ideas into working experiences. But the workflow between building a prototype and testing it with real users still has gaps."
           },
           {
             "id": "blk-2f1c3227",
             "type": "paragraph",
-            "text": "AI prototyping tools made each version a separate copy. Every prototype sits on one person’s machine, and nobody else can open it until that person sends it through a chat channel. If I change a screen, my teammates don’t get the change, so we can’t build the prototype together. Sharing gets worse from there. A client has to download a copy, and run it before they can click through anything. Each extra step adds friction for the participant."
+            "text": "With tools like Claude Code, prototypes are often tied to individual working environments. Sharing a build with teammates requires sending files or links through separate channels, making it harder to review changes and maintain a shared understanding of the latest version."
+          },
+          {
+            "id": "blk-54fb4c71",
+            "type": "paragraph",
+            "text": "Tools like Figma Make have made collaboration and sharing much easier. A prototype can be shared through a URL, allowing others to access it directly in their browser. However, sharing a prototype doesn't mean you can observe how someone interacts with it. To watch a participant navigate the experience, the team still needs them to set up a separate screen-sharing session."
+          },
+          {
+            "id": "blk-f2b880f0",
+            "type": "paragraph",
+            "text": "This creates another layer of friction. Participants need to follow additional instructions, configure their screen sharing and make sure everything works before testing can begin. Every extra step introduces another opportunity for confusion, delays or drop-off."
           }
         ]
       },
@@ -275,12 +285,17 @@
           {
             "id": "blk-0d821989",
             "type": "paragraph",
-            "text": "Design teams build together, and the prototype is where that work comes together. When each person holds a different copy, feedback lands on the wrong version, and a teammate can’t see what changed or why. Collaboration stops at the moment the team most needs it, which is when they are deciding what to test."
+            "text": "A prototype is only valuable when people can experience it. The real insights come from seeing how users interact with it: the hesitation before a click, the unexpected wrong turn, or the moment they struggle to understand an interface."
           },
           {
             "id": "blk-5c0d6b7a",
             "type": "paragraph",
-            "text": "Testing is where a design proves itself. The moments that matter most are the hesitations, the wrong clicks, and the changes of direction. When the prototype is passed around as a download, the team tests whichever copy someone sent last, and the setup work pushes participants away before the test begins. A live link that opens in a browser removes that friction and lets the team watch the moments a screen recording sent later never shows."
+            "text": "But when testing requires participants to download files, configure screen sharing or navigate multiple tools, the setup itself becomes a barrier. Every extra step makes testing harder to organise and creates more opportunities for friction."
+          },
+          {
+            "id": "blk-3c8e7bd5",
+            "type": "paragraph",
+            "text": "By making prototypes instantly accessible and capturing interactions as they happen, teams can focus less on setting up sessions and more on understanding real user behaviour to make better design decisions."
           }
         ]
       },
@@ -299,9 +314,19 @@
             "text": "For testing, the designer shares a session link. Participants open it in a browser, with nothing to download or install, pick a task, and work through it. Every click, scroll, and input is recorded. The team can watch a session live as it happens, or replay any recorded attempt later. The same link works in a workshop, so a client can click through the prototype while the team watches."
           },
           {
+            "id": "blk-579ba5d0",
+            "type": "heading",
+            "text": "Your own testing environment, fully owned by you."
+          },
+          {
             "id": "blk-32f41d72",
             "type": "paragraph",
-            "text": "The app runs on the designer’s own Supabase project, so prototypes and recordings (data) stay in their infrastructure. It uses Vite, React 19, Tailwind v4, and shadcn/ui."
+            "text": "Clone the tool, connect your own Supabase project and get an independent environment to host prototypes, record user interactions and analyse feedback, all within your own infrastructure."
+          },
+          {
+            "id": "blk-cae3fc58",
+            "type": "code",
+            "text": "Built with: Vite · React 19 · Tailwind CSS v4 · shadcn/ui · Supabase"
           }
         ]
       }
