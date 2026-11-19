@@ -9,7 +9,9 @@
     "tags": [],
     "cover": "media/works/telstrahealth/th-hero-1792986593376.webp",
     "meta": [
-      "Product Designer"
+      "Product Designer",
+      "Healthcare",
+      "Enterprise Healthcare Platforms"
     ],
     "lead": "As a Product Designer at Cognizant, I drove design across Telstra Health's portfolio of 30+ established products, working with cross-functional teams to understand user and market needs, shape requirements and deliver solutions. One of my key contributions was leading discovery and end-to-end design for a new capability on a virtual health platform, helping extend the product into new markets and attract more customers. Beyond traditional design workflows, I've integrated AI into my process through product-specific DESIGN.md files, AI agents in Figma and code-based prototyping. Adding multi-factor authentication (MFA) to a decade-old legacy product demonstrates how this approach helps navigate technical complexity and accelerate design exploration.",
     "linkUrl": "",
@@ -336,7 +338,9 @@
     "tags": [],
     "cover": "media/works/heatseeker/hs_hero_image-1792648063540.webp",
     "meta": [
-      "Product Designer"
+      "Product Designer",
+      "Market Research",
+      "AI-powered Experimentation SaaS"
     ],
     "lead": "Heatseeker is an AI-powered SaaS platform that enables rapid market experimentation through live tests on social media. It helps businesses uncover what truly resonates with their audience, optimise messaging, and confidently invest in high-potential ideas. By leveraging real-time customer insights, Heatseeker turns gut instincts into data-validated strategies, accelerating growth and reducing time-to-market.",
     "linkUrl": "https://www.heatseeker.ai/",
@@ -550,7 +554,8 @@
     "tags": [],
     "cover": "media/works/drinkwise/dw_hero_image-1792456279599.webp",
     "meta": [
-      "Product designer"
+      "Product designer",
+      "Public Health"
     ],
     "lead": "DrinkWise is a mobile app designed to help young Australians curb alcohol consumption through personalised support, habit tracking, and healthier social alternatives. As my capstone project for my master's degree, our team tackled the issue of alcohol abuse by creating a solution that promotes long-term behavioural change.",
     "linkUrl": "",
@@ -814,7 +819,9 @@
     "cover": "media/works/fillfull/ff_hero_image-1791949256525.webp",
     "meta": [
       "Web dev",
-      "UX/UI Design"
+      "UX/UI Design",
+      "Retail",
+      "E-commerce"
     ],
     "lead": "Fill Full is an e-commerce platform specialising in snack retail, designed to cater to busy professionals, families, and health-conscious individuals in Hong Kong. The website aims to provide a convenient and enjoyable shopping experience by offering a wide selection of snacks, all while focusing on user-centric design.",
     "linkUrl": "",
