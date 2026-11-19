@@ -34,12 +34,12 @@
           {
             "id": "blk-e149bb0d",
             "type": "paragraph",
-            "text": "Working with Telstra Health, one of the biggest challenges I faced was designing within a complex ecosystem of more than 30 established products."
+            "text": "As a Product Designer in TH, I worked across more than 30 of their classic products. The biggest challenges I faced was designing products with significant accumulated technical debt, where technical constraints weren't always discussed upfront."
           },
           {
             "id": "blk-7bb14eb6",
             "type": "paragraph",
-            "text": "\nMany of these products had years of accumulated architecture, technical decisions and constraints. However, much of that knowledge wasn't formally documented, making it difficult for product managers, business analysts and stakeholders to understand how the systems worked and what was involved in making changes."
+            "text": "Many of these products had years of accumulated architecture, technical decisions and constraints. However, much of this knowledge wasn't formally documented, making it difficult for product managers, business analysts and stakeholders to understand how the systems worked and make informed decisions."
           },
           {
             "id": "blk-ad8637e3",
@@ -53,17 +53,17 @@
               {
                 "id": "row-208e945a",
                 "label": "Requirement Definition",
-                "text": "Business and user requirements often drive initial design discussions, while technical constraints and implementation complexity are overlooked. Without tangible artefacts to visualise the proposed solution, stakeholders struggle to align on requirements, leading to frequent changes and design rework."
+                "text": "The beginning of every design initiative usually starts with draft requirements, but the technical constraints and implementation complexity aren't always considered upfront. Without tangible artefacts to visualise the proposed solution, stakeholders struggle to align on requirements, leading to frequent changes and design rework."
               },
               {
                 "id": "row-352b7163",
                 "label": "Knowledge Gaps",
-                "text": "Without tangible solutions or prototypes to demonstrate how the existing product works, teams often lack a shared understanding of its underlying architecture, interactions and user flows. This makes it difficult to make informed design decisions that account for the existing system and user experience."
+                "text": "Product managers, POs and BAs change frequently, and there isn't always one point of contact who understands the entire product.\n\nWith limited documentation and restricted access to the environment, teams often lack a shared understanding of the existing architecture and interaction patterns. This makes decision-making difficult, as even a small change can require significant technical effort. Teams also need to carefully consider the time and resources available within each sprint to meet delivery deadlines."
               },
               {
                 "id": "row-9eb7d0a8",
                 "label": "Delayed Decisions",
-                "text": "Design directions often depend on engineering teams validating feasibility. However, reviews frequently happen after designs are completed. Further clarification around requirements and interaction behaviour can trigger repeated design changes, revisiting decisions and delaying delivery."
+                "text": "Design directions often depend on engineering teams validating feasibility. However, due to time constraints, these reviews often happen after the designs are completed. This can lead to further clarification of requirements, revisiting design decisions and additional rework, eventually delaying delivery."
               }
             ]
           },
@@ -86,17 +86,22 @@
           {
             "id": "blk-d1bce801",
             "type": "paragraph",
-            "text": "We were often making decisions based on incomplete context, without tangible solutions to explore or a clear understanding of how things would work in practice."
+            "text": "We often made decisions based on incomplete context or a clear understanding of how things would work in practice."
           },
           {
             "id": "blk-83358b04",
             "type": "paragraph",
-            "text": "I started thinking about how AI could help change this."
+            "text": "I started questioning how I, as a designer, could connect all the dots by bringing more context and technical understanding into the design process earlier. So to get everyone on the same page, simplify complex problems and help teams make better decisions."
+          },
+          {
+            "id": "blk-d909c8f7",
+            "type": "paragraph",
+            "text": "That's where I began experimenting with AI, not simply to generate designs faster, but to give teams a clearer picture of the product and proposed solutions. This helped improve alignment and make delivery more efficient."
           },
           {
             "id": "blk-9808dcd2",
             "type": "paragraph",
-            "text": "Rather than using AI simply to generate UI faster, I wanted to use it to make different design possibilities tangible, help teams understand complex product behaviour and communicate design intent more clearly to engineering."
+            "text": "I wanted to use it to make different design possibilities tangible, strengthen the thinking behind each decision and communicate design intent more clearly to stakeholders and leadership."
           },
           {
             "id": "blk-056dc5d5",
@@ -110,17 +115,17 @@
               {
                 "id": "row-b861ada6",
                 "label": "Broaden Design Exploration",
-                "text": "I wanted to use AI to explore different design directions and generate alternative solutions. This gives stakeholders tangible options to compare, discuss trade-offs and align on what should be included before committing to a solution."
+                "text": "I used AI to explore different design directions and generate alternative solutions. This gives stakeholders tangible options to compare, discuss trade-offs and align on what should be included before committing to a solution."
               },
               {
                 "id": "row-39fef978",
                 "label": "Make Product Behaviour Visible",
-                "text": "I explored using AI to turn complex user journeys into interactive prototypes, helping the team better understand how the product works, how users navigate between screens and how different interactions behave."
+                "text": "I explored using AI to turn complex user journeys into interactive prototypes. By presenting prototypes instead of static screens in Figma, I helped the team better understand how the product works, how users navigate between screens and how different interactions behave."
               },
               {
                 "id": "row-a6d4d52e",
                 "label": "Improve Design Handoff",
-                "text": "I wanted to go beyond static design files by using AI to create more functional and detailed handoff artefacts. This helps engineers understand the intended interactions, screen transitions and underlying logic, reducing guesswork during implementation."
+                "text": "I went beyond static design files by using AI to create more functional and detailed handoff artefacts. This helped engineers understand the intended interactions, screen transitions and underlying logic, reducing guesswork during implementation."
               }
             ]
           },
@@ -128,6 +133,11 @@
             "id": "blk-b73faf2f",
             "type": "heading",
             "text": "From Explore, Understand to Implement"
+          },
+          {
+            "id": "blk-2e915b68",
+            "type": "paragraph",
+            "text": "The goal was to bring clarity into the design process earlier, helping teams make better informed decisions and move into development with greater alignment."
           },
           {
             "id": "blk-42cc4a6e",
@@ -200,7 +210,7 @@
           {
             "id": "blk-f6121ea6",
             "type": "paragraph",
-            "text": "With the design foundation in place, I moved on to exploring how the new feature could work across different user stories. The initial requirements left gaps in interactions and edge cases, so I used Claude and Figma MCP to turn these uncertainties into tangible design scenarios. By generating and iterating on different design approaches directly in Figma, I could validate assumptions, identify missing interactions and refine solutions against usability and technical constraints before bringing them to stakeholders for validation."
+            "text": "With the design foundation in place, the next challenge was exploring how the new feature could work across different user stories. As I started, I found gaps between the requirements and what was needed to create a user friendly experience. Some edge cases and conditions were still undefined. I first identified those gaps and made assumptions where requirements were missing. Then I used Claude and Figma MCP to quickly generate design variations directly in Figma. This helped me visualise the flows, validate my thinking and compare different approaches before finalising a solution. \n\nThroughout the process, I didn't simply rely on AI generated designs. I refined them myself and balanced usability with technical constraints. By the time I brought the designs to stakeholders for validation, I had already worked through much of the thinking. This helped reduce uncertainty and minimise potential rework during development."
           },
           {
             "id": "blk-22a05fbd",
@@ -216,7 +226,7 @@
           {
             "id": "blk-9fc8c0fc",
             "type": "paragraph",
-            "text": "With the design direction agreed upon, I used AI-assisted coding to turn the Figma designs into a working MFA prototype. I connected the key screens and interactions, bringing the journey from initial MFA setup through to verification and different edge cases. Rather than relying on static screens to communicate the intended behaviour, the prototype allowed stakeholders and engineers to experience the proposed flow, understand interaction details and validate the solution before development."
+            "text": "With the design direction agreed upon, I moved on to turning the Figma designs into a working MFA prototype using Claude Code.\n\nI shared the key screens and interaction requirements with Claude, asking it to build an HTML prototype covering the journey from initial MFA setup through to verification, including different edge cases.\n\nInstead of relying on static screens to explain the experience, I could now walk stakeholders and leadership through the actual interactions. This helped them better understand my design intent and the reasoning behind my design decisions."
           }
         ]
       },
@@ -295,7 +305,7 @@
           {
             "id": "blk-9344ce34",
             "type": "paragraph",
-            "text": "In this project, all AI-generated outputs needed to be validated against the platform's actual behaviour and technical constraints. A design guide is only as reliable as the sources and evidence behind it, while recommendations affecting authentication, security and patient data still require appropriate stakeholder and clinical safety review."
+            "text": "In this project, all AI-generated outputs have been validated against the platform's actual behaviour and technical constraints. A design guide is only as reliable as the sources and evidence behind it, while recommendations affecting authentication, security and patient data still require appropriate stakeholder and clinical safety review."
           },
           {
             "id": "blk-a4397361",
@@ -305,7 +315,7 @@
           {
             "id": "blk-b3d3693b",
             "type": "code",
-            "text": "AI can generate the possibilities. Good design judgement turns them into solutions that matter to people."
+            "text": "AI can generate possibilities. Human judgement turns them into solutions that matter to people."
           }
         ]
       }
