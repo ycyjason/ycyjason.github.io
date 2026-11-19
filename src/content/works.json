@@ -298,6 +298,12 @@
         "label": "What still needs a human",
         "blocks": [
           {
+            "id": "blk-0499b857",
+            "type": "image",
+            "src": "media/works/telstrahealth/th-taste-1795129657654.webp",
+            "caption": ""
+          },
+          {
             "id": "blk-0bf91c7c",
             "type": "paragraph",
             "text": "I believe a Human-in-the-Loop approach is essential when designing with AI. Rather than allowing AI to operate independently, I keep human judgement involved throughout the process to establish guardrails, guide, review and validate its outputs, ensuring the work remains grounded in real user needs and context."
