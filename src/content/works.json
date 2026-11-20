@@ -220,9 +220,24 @@
             "text": "Stage 03:Validate Through Prototyping"
           },
           {
-            "id": "blk-4e6dc4ce",
-            "type": "image",
-            "src": "media/works/telstrahealth/th-vibecode-1792988567774.webp",
+            "id": "blk-34288652",
+            "type": "video",
+            "src": "media/works/telstrahealth/scene1_login_with_password-1795141904089.webm",
+            "mode": "autoplay-loop",
+            "caption": ""
+          },
+          {
+            "id": "blk-7699c1e1",
+            "type": "video",
+            "src": "media/works/telstrahealth/scene2_receive_otp-1795141920189.webm",
+            "mode": "autoplay-loop",
+            "caption": ""
+          },
+          {
+            "id": "blk-9d58e1f7",
+            "type": "video",
+            "src": "media/works/telstrahealth/scene3_enter_otp-1795141947057.webm",
+            "mode": "autoplay-loop",
             "caption": ""
           },
           {
