@@ -306,12 +306,22 @@
           {
             "id": "blk-6b2f9691",
             "type": "paragraph",
-            "text": "This tool gives a study one central home that the whole team shares. A designer creates a study with tasks and uploads the prototype, and the tool stores it in one place for everyone. Teammates pin comments to a live prototype, reply in threads, and resolve them. Each upload creates a new version, and every comment stays attached to the version it was left on, so the team always discusses the same build."
+            "text": "I built a tool that brings the entire usability testing workflow into one connected workspace, from study planning and prototype preparation to participant testing, interaction recording and feedback analysis."
           },
           {
             "id": "blk-182133c3",
             "type": "paragraph",
-            "text": "For testing, the designer shares a session link. Participants open it in a browser, with nothing to download or install, pick a task, and work through it. Every click, scroll, and input is recorded. The team can watch a session live as it happens, or replay any recorded attempt later. The same link works in a workshop, so a client can click through the prototype while the team watches."
+            "text": "Designers can create a study, define testing tasks and upload prototypes into a shared workspace with version control and built-in commenting. Teammates can review different versions, pin comments directly onto prototypes and discuss feedback in threads, keeping collaboration organised and ensuring everyone stays aligned on the latest build."
+          },
+          {
+            "id": "blk-912107ce",
+            "type": "paragraph",
+            "text": "For testing, participants simply open a shared link in their browser, follow clearly defined tasks and interact with the prototype without downloads or complicated setup. Every click, scroll and input is recorded, allowing teams to observe sessions live or replay them later."
+          },
+          {
+            "id": "blk-4ea18edf",
+            "type": "paragraph",
+            "text": "By bringing collaboration, testing and feedback into one place, the tool gives participants a simple, frictionless testing experience while keeping teams aligned throughout the process. With less time spent on coordination and setup, teams can focus on uncovering insights that drive better design decisions."
           },
           {
             "id": "blk-579ba5d0",
