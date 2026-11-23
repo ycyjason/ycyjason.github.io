@@ -227,27 +227,10 @@
             "caption": ""
           },
           {
-            "id": "blk-dbafe3a1",
-            "type": "image",
-            "src": "media/tools/bld02/bld02-project-detail-1794811136850.webp",
-            "caption": ""
-          },
-          {
-            "id": "blk-55592a4b",
-            "type": "image",
-            "src": "media/tools/bld02/bld02-comment-1794811231827.webp",
-            "caption": ""
-          },
-          {
-            "id": "blk-a9b26d8f",
-            "type": "image",
-            "src": "media/tools/bld02/bld02-playback-1794811257049.webp",
-            "caption": ""
-          },
-          {
-            "id": "blk-0edc407a",
-            "type": "image",
-            "src": "media/tools/bld02/bld02-streaming-1794814484440.webp",
+            "id": "blk-c3a2b5d5",
+            "type": "video",
+            "src": "media/tools/bld02/bld02_showreel_v15_4k-1795429909991.webm",
+            "mode": "autoplay-loop",
             "caption": ""
           }
         ]
