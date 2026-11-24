@@ -229,8 +229,8 @@
           {
             "id": "blk-c3a2b5d5",
             "type": "video",
-            "src": "media/tools/bld02/bld02_showreel-1795476829628.mp4",
-            "mode": "autoplay-loop",
+            "src": "media/tools/bld02/bld02_showreel-1795495316166.mp4",
+            "mode": "click-to-play",
             "caption": ""
           }
         ]
