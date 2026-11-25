@@ -1,5 +1,236 @@
 [
   {
+    "id": "new-work-1795641452783",
+    "slug": "VHP",
+    "title": "Telstra Health: Expanding Product into New Market",
+    "company": "Telstra Health",
+    "date": "2025-2026",
+    "summary": "",
+    "tags": [],
+    "cover": "media/works/vhp/vhp-hero-1795647417331.webp",
+    "meta": [
+      "Product Designer"
+    ],
+    "lead": "Telstra Health aimed to expand its Virtual Health Platform into the aged-care market, but needed a clearer understanding of frontline professionals’ needs to ensure the product addressed real challenges. As the Product Designer, I led customer discovery, validated proposed ideas with aged-care professionals, and worked with product, clinical and engineering teams to prioritise and design three key capabilities: multi-party video consultations, clinical notes and task management. The resulting designs helped shape the platform for aged-care workflows and supported Telstra Health in securing customer deals.",
+    "linkUrl": "https://www.telstrahealth.com/products/virtual-health-platform/",
+    "linkLabel": "Learn about VHP",
+    "sections": [
+      {
+        "id": "sec-a88877c7",
+        "label": "",
+        "blocks": [
+          {
+            "id": "blk-90eb6e5e",
+            "type": "code",
+            "text": "Due to company confidentiality policies, some project details and product screens cannot be shared publicly. If you'd like to learn more about my work and design process, feel free to get in touch."
+          },
+          {
+            "id": "blk-c054b2aa",
+            "type": "image",
+            "src": "media/works/vhp/vhp-hero-1795647557657.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-8eb53192",
+        "label": "Where It Started",
+        "blocks": [
+          {
+            "id": "blk-63651184",
+            "type": "paragraph",
+            "text": "Telstra Health's leadership recognised growing demand in the aged-care market, where providers were facing increasing pressure to coordinate care across residential and community settings. This presented an opportunity to position Virtual Health Platform (VHP) more strongly in the market and expand its adoption among aged-care providers."
+          },
+          {
+            "id": "blk-0d3a5ac8",
+            "type": "paragraph",
+            "text": "When I joined the project, the Product Manager and team had already developed an initial product vision informed by market research and competitor analysis. More than 20 potential capabilities had been identified as opportunities for the platform."
+          },
+          {
+            "id": "blk-2fb1c09e",
+            "type": "paragraph",
+            "text": "However, they hadn't yet spoken directly with frontline professionals. They didn't know how they managed their day-to-day responsibilities, where their biggest challenges were or which proposed capabilities would deliver the most value."
+          },
+          {
+            "id": "blk-570f6428",
+            "type": "paragraph",
+            "text": "The team had a clear market opportunity and plenty of ideas, but needed a better understanding of customer needs to determine the right product direction."
+          }
+        ]
+      },
+      {
+        "id": "sec-138dda6b",
+        "label": "Why I Was Brought In",
+        "blocks": [
+          {
+            "id": "blk-9a28234c",
+            "type": "paragraph",
+            "text": "I was brought in to help shape the design strategy for VHP's expansion into aged care. With an initial product vision already in place, my role was to bring customer perspectives into the process, validate the proposed ideas against real-world workflows and identify the capabilities that would deliver the most value.\n\nI worked across customer discovery, product prioritisation and experience design, bridging customer needs, business priorities and technical considerations to turn the opportunity into practical product solutions."
+          }
+        ]
+      },
+      {
+        "id": "sec-25e86322",
+        "label": "How I Helped",
+        "blocks": [
+          {
+            "id": "blk-cf9ad020",
+            "type": "image",
+            "src": "media/works/vhp/vhp-workshop-1795646948989.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-8eaa6d27",
+            "type": "heading",
+            "text": "Uncovering the real problems"
+          },
+          {
+            "id": "blk-1fad085e",
+            "type": "paragraph",
+            "text": "I designed two customer workshops to understand how aged-care professionals managed their day-to-day work, where they experienced friction and what support they needed."
+          },
+          {
+            "id": "blk-9118da75",
+            "type": "paragraph",
+            "text": "I explored their existing workflows before introducing the team's proposed capabilities, so their feedback wasn't influenced by our assumptions. I then used prioritisation exercises and storyboards to identify the most valuable opportunities and understand how potential solutions would fit into their work."
+          },
+          {
+            "id": "blk-e4c12e65",
+            "type": "image",
+            "src": "media/works/vhp/vhp-affinity-1795646303578.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-e1ba3776",
+            "type": "heading",
+            "text": "Turning insights into product priorities"
+          },
+          {
+            "id": "blk-5db754fe",
+            "type": "paragraph",
+            "text": "I synthesised the workshop findings and played them back to the team to establish a shared understanding of customer needs."
+          },
+          {
+            "id": "blk-47aed27f",
+            "type": "paragraph",
+            "text": "Working with product, clinical and engineering stakeholders, I evaluated the opportunities against customer value, technical feasibility and implementation complexity. This helped us move beyond a long list of ideas and agree on three priorities for the initial product scope: multi-party video consultations, clinical notes and task management."
+          },
+          {
+            "id": "blk-68065f0f",
+            "type": "image",
+            "src": "media/works/vhp/vhp-ideation-1795646958337.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-b0894339",
+            "type": "heading",
+            "text": "Design and deliver implementation-ready solutions"
+          },
+          {
+            "id": "blk-b738fa47",
+            "type": "paragraph",
+            "text": "I translated the agreed capabilities into user flows and interface designs, working through interaction logic and different design options with stakeholders."
+          },
+          {
+            "id": "blk-b35e2d41",
+            "type": "paragraph",
+            "text": "I considered edge cases and clinical safety throughout the process, using AI-assisted exploration to challenge assumptions and coded prototypes to communicate complex interactions. I also validated the end-to-end designs with customers before preparing annotated Figma specifications for engineering handover."
+          }
+        ]
+      },
+      {
+        "id": "sec-a092bca6",
+        "label": "Key Decisions and Trade-offs I Made",
+        "blocks": [
+          {
+            "id": "blk-cbfb0d77",
+            "type": "paragraph",
+            "text": "The solutions didn't come together instantly. Throughout the process, I explored different options, challenged assumptions and weighed trade-offs to work towards the right direction for both customers and the business."
+          },
+          {
+            "id": "blk-dc7179ca",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-4f5d7fc0",
+                "label": "Putting customer needs before product assumptions",
+                "text": "I separated workflow discovery from capability validation during the workshops. This gave participants space to describe their actual challenges before seeing our proposed solutions, helping us avoid leading their feedback and uncover needs we might otherwise have missed."
+              },
+              {
+                "id": "row-28ea6962",
+                "label": "Balancing customer value with technical feasibility",
+                "text": "Not every customer need could fit into the initial scope. I worked with product, clinical and engineering stakeholders to weigh customer value against technical complexity and implementation effort. This helped us prioritise the capabilities that delivered the greatest value while keeping the MVP focused and achievable within a shorter delivery timeframe."
+              },
+              {
+                "id": "row-112078b2",
+                "label": "Using AI to challenge my thinking",
+                "text": "I used AI as a thinking partner to challenge initial requirements, explore alternative approaches and identify potential gaps, user scenarios and edge cases. Rather than accepting its suggestions at face value, I applied my own design judgement to evaluate the options and decide on the final direction."
+              },
+              {
+                "id": "row-6bc30c3d",
+                "label": "Prioritising clarity in clinical workflows",
+                "text": "In clinical environments, ambiguity can lead to confusion and mistakes. I worked with the Clinical Safety Officer to consider how information was presented and how users interacted with critical workflows. For example, I explored different ways to display patient identity and consultation participants during scheduling to make their roles clearer."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-2e3d46c3",
+        "label": "Outcome",
+        "blocks": [
+          {
+            "id": "blk-2217ef03",
+            "type": "paragraph",
+            "text": "In this client engagement, I brought clarity to the problem space, helping the team make informed product decisions that aligned with real market needs. I then delivered designs for 3 key capabilities to support VHP's expansion into the aged-care market."
+          },
+          {
+            "id": "blk-94fa2221",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-f8025a69",
+                "label": "Multi-party video consultations",
+                "text": "Supporting virtual consultations involving multiple participants."
+              },
+              {
+                "id": "row-2b1860ee",
+                "label": "Clinical notes",
+                "text": "Improving access to patient information and clinical documentation."
+              },
+              {
+                "id": "row-65ce4c03",
+                "label": "Task management",
+                "text": "Supporting clearer task coordination and ownership."
+              }
+            ]
+          },
+          {
+            "id": "blk-868d1f8a",
+            "type": "paragraph",
+            "text": ""
+          },
+          {
+            "id": "blk-5a346dca",
+            "type": "code",
+            "text": "My design deliverables were presented to and validated by customers, helping Telstra Health secure deals to expand its services across aged-care facilities."
+          },
+          {
+            "id": "blk-d6180c67",
+            "type": "image",
+            "src": "media/works/vhp/vhp-solution-1795647574553.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-9529928b",
+            "type": "paragraph",
+            "text": "The capabilities were released in stages, with implementation considerations shaping the rollout. The work helped establish how VHP could evolve to better support the needs of aged-care providers."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "new-work-1792972695149",
     "slug": "telstrahealth",
     "title": "Telstra Health: Designing with AI",
@@ -7,7 +238,7 @@
     "date": "2025-26",
     "summary": "",
     "tags": [],
-    "cover": "media/works/telstrahealth/th-hero-1792986593376.webp",
+    "cover": "media/works/telstrahealth/th-hero-1795648426510.webp",
     "meta": [
       "Product Designer",
       "Healthcare",
@@ -24,7 +255,7 @@
           {
             "id": "blk-79c2b065",
             "type": "image",
-            "src": "media/works/telstrahealth/th-hero-1792986593376.webp",
+            "src": "media/works/telstrahealth/th-hero-1795648436935.webp",
             "caption": ""
           }
         ]
@@ -823,6 +1054,285 @@
       }
     ],
     "company": "University of Queensland"
+  },
+  {
+    "id": "new-work-1795639324948",
+    "slug": "four-seasons-hotel",
+    "title": "Four Seasons Hotel: Reservation & Loyalty App",
+    "company": "Google UX cERTIFICATE",
+    "date": "2022",
+    "summary": "",
+    "tags": [],
+    "cover": "media/works/four-seasons-hotel/fs-cover-1795640212253.webp",
+    "meta": [],
+    "lead": "The Four Seasons Hotel app was redesigned to address long-standing user pain points and enhance the overall experience. This redesign focuses on streamlining the reservation process and improving customer retention by integrating a loyalty rewards program to boost engagement and conversions.",
+    "linkUrl": "",
+    "linkLabel": "",
+    "sections": [
+      {
+        "id": "sec-3fb7d217",
+        "label": "",
+        "blocks": [
+          {
+            "id": "blk-ca0ff31f",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-cover-1795640212253.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-4b535764",
+        "label": "The challenge",
+        "blocks": [
+          {
+            "id": "blk-c16d3ee6",
+            "type": "paragraph",
+            "text": "Since its launch nine years ago, the Four Seasons Hotel app has lacked updates based on user feedback, resulting in several usability challenges. The reservation process is overly complicated, making it frustrating for users to book seamlessly. Additionally, the lack of a reservation management feature creates inconvenience, preventing guests from modifying or tracking their bookings easily. With limited essential features, the app struggles to drive conversions, while the absence of direct communication channels leaves users feeling disconnected from resort staff. These pain points highlight the need for a comprehensive redesign to enhance usability, improve engagement, and streamline the booking experience."
+          },
+          {
+            "id": "blk-f84e5930",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-review-1795640344314.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-7b59b5af",
+        "label": "Understanding User Needs",
+        "blocks": [
+          {
+            "id": "blk-c3e07ae2",
+            "type": "paragraph",
+            "text": "To ensure a user-centric design, I combined user interviews and persona development to uncover key pain points and expectations. These insights informed design opportunities and guided the creation of a more seamless and intuitive booking experience."
+          },
+          {
+            "id": "blk-e2fc84ec",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-affinity-1795640462762.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-e7036a05",
+            "type": "heading",
+            "text": "User interviews - insights from four Participants on hotel booking experiences"
+          },
+          {
+            "id": "blk-030792e7",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-8133fa14",
+                "label": "Research questions",
+                "text": "- Can you describe the process when you make a reservation for a hotel room?\n- What challenges did you face when browsing/reserving a room?\n- What will you do during your stay in a hotel?\n- Tell me about last time you used a booking app?"
+              },
+              {
+                "id": "row-682a1ada",
+                "label": "Insights",
+                "text": "- Interviewees prefer browsing the accommodations with detailed information, e.g. room photos, facilities, bed types, etc.\n- Interviewees prioritise the price of the accommodations.\n- Interviewees tend to reserve accommodation with a package including, e.g. breakfast included."
+              }
+            ]
+          },
+          {
+            "id": "blk-f8e7cd27",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-persona-1795640675105.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-7971a208",
+            "type": "heading",
+            "text": "User Personas - defining target users"
+          },
+          {
+            "id": "blk-9a46e0d8",
+            "type": "paragraph",
+            "text": "I created two personas to specify my target user group based on distinct travel needs and behaviours. Jack Leung represents family-oriented travellers who prioritise comfort, service quality, and booking flexibility, while Cecilia Cheung reflects young professionals seeking luxury experiences with seamless digital interactions. These personas help me refine the design to address their specific needs."
+          }
+        ]
+      },
+      {
+        "id": "sec-0ed2729c",
+        "label": "Prototype testing & iteration",
+        "blocks": [
+          {
+            "id": "blk-e932df26",
+            "type": "paragraph",
+            "text": "To inform my design decisions, I developed low-fidelity prototypes from initial sketches and conducted usability tests with five participants aged 20 to 55. Based on the feedback, I analysed the data and identified key areas for improvement, which led to updates such as a streamlined payment module, an enhanced booking confirmation page, and added filtering and sorting features for a more intuitive user experience."
+          },
+          {
+            "id": "blk-97055f26",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-86817ca4",
+                "label": "Insights",
+                "text": "- Users want easier and more accessible payment\n- Users want a booking confirmation page for verification\n- Users want more control over search\n- Users prefer using a calendar for dates"
+              },
+              {
+                "id": "row-673acddd",
+                "label": "Changes made",
+                "text": "- Redesigned payment experience to a module, making payment details accessible on a single page.\n- Enhanced the booking confirmation page, allowing users to confirm details more easily.\n- Added sorting and filtering features for better control and more effective searching.\n- Introduced a calendar interface for selecting check-in and check-out dates for better usability."
+              }
+            ]
+          },
+          {
+            "id": "blk-028367bc",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-wireframe-1795641004130.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-e2ab84da",
+        "label": "Redesigning to address existing user problems",
+        "blocks": [
+          {
+            "id": "blk-5440e4cd",
+            "type": "paragraph",
+            "text": "The final app features have been designed with a high-fidelity prototype, aligning closely with the Four Seasons branding. The new design effectively addresses existing user problems, providing an enhanced and intuitive experience."
+          },
+          {
+            "id": "blk-f9ef8a15",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-redesign1-1795641048408.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-4a90a7dd",
+            "type": "heading",
+            "text": "Optimising search & relevant information display"
+          },
+          {
+            "id": "blk-bf92346a",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-55cb9d0a",
+                "label": "User pain point",
+                "text": "The original design lacked an efficient way for users to search for accommodations based on key criteria like date, location, and group size. Instead, users had to manually browse through different locations in a gallery, making it difficult to find suitable options quickly. This resulted in a time-consuming and frustrating experience."
+              },
+              {
+                "id": "row-99ef4490",
+                "label": "Goal",
+                "text": "Users need a more effective and straightforward way to search for accommodations based on their specific requirements. Additionally, they should be able to view relevant and useful information while keeping the search functionality easily accessible."
+              },
+              {
+                "id": "row-8fa5244a",
+                "label": "Design solutions",
+                "text": "- Redesigned the landing page to display relevant and useful information.\n- Integrated an easily accessible search feature for quick and efficient accommodation discovery.\n- Streamlined the search process to enhance usability and reduce friction."
+              }
+            ]
+          },
+          {
+            "id": "blk-577246b5",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-redesign2-1795641133301.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-7fb61573",
+            "type": "heading",
+            "text": "Streamlining booking management for a hassle-free experience"
+          },
+          {
+            "id": "blk-7aad1438",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-43b2f925",
+                "label": "User pain point",
+                "text": "The original design allows users to check in via the app but lacks essential details like booking information, pricing, and the hotel’s exact location. Users also cannot modify or cancel their bookings, often leading to frustrating and unsuccessful attempts to contact customer service."
+              },
+              {
+                "id": "row-34c536d9",
+                "label": "Goal",
+                "text": "Users need a seamless way to track, manage, and modify their bookings. They also want the ability to share reservation details easily."
+              },
+              {
+                "id": "row-5a1fd7c7",
+                "label": "Design solutions",
+                "text": "- Introduced a centralised Reservation History page for quick access to all bookings.\n- Enabled users to track upcoming stays, view booking history, and access important trip details in one place.\n- Added options to modify or cancel bookings, reducing reliance on customer service."
+              }
+            ]
+          },
+          {
+            "id": "blk-adeda3fe",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-redesign3-1795641194243.webp",
+            "caption": ""
+          },
+          {
+            "id": "blk-a27c4992",
+            "type": "heading",
+            "text": "Boosting engagement through exclusive rewards"
+          },
+          {
+            "id": "blk-e319c8fc",
+            "type": "table",
+            "items": [
+              {
+                "id": "row-640a438b",
+                "label": "User pain point",
+                "text": "Low user retention and engagement due to a lack of incentives for repeat bookings and the absence of attractive offers."
+              },
+              {
+                "id": "row-b0c996bd",
+                "label": "Goal",
+                "text": "Encourage loyalty by offering exclusive perks and rewards to returning users, enhancing their overall experience and engagement."
+              },
+              {
+                "id": "row-739e61ed",
+                "label": "Design solutions",
+                "text": "- Introduced a loyalty program where users earn points based on their bookings and transactions at Four Seasons hotels.\n- Designed a Redemption Page where users can redeem rewards, such as discounts, room upgrades, or special offers, using their accumulated points."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sec-620f06f2",
+        "label": "Ensuring design consistency with a comprehensive style guide",
+        "blocks": [
+          {
+            "id": "blk-d2653106",
+            "type": "paragraph",
+            "text": "To ensure design consistency and brand alignment, I developed a comprehensive style guide and created smart components to maintain uniformity throughout the high-fidelity prototype."
+          },
+          {
+            "id": "blk-14262e60",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-style-1795641367882.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-fc330c73",
+        "label": "Final solutions",
+        "blocks": [
+          {
+            "id": "blk-1fb8a3f8",
+            "type": "image",
+            "src": "media/works/four-seasons-hotel/fs-final-1795641386292.webp",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "id": "sec-6f681781",
+        "label": "Takeaway",
+        "blocks": [
+          {
+            "id": "blk-9af26597",
+            "type": "paragraph",
+            "text": "This project helped me apply the knowledge from the Google UX course to a real-world scenario, reinforcing key lessons on user-centric design. Initially, I believed my design would meet users' needs, but usability testing revealed minor issues that I hadn't anticipated. This taught me that user experience is personal and subjective, and we must avoid biases in our designs. Understanding users' true needs was challenging, but it highlighted the importance of being open-minded and putting the user at the centre of the design process. Conducting usability studies was the most rewarding part, showing me that effective design priorities functionality and usability over aesthetics."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "new-work-1789703679951",
